@@ -14,4 +14,7 @@ export  const usuarioModelo=mongoose.model('Users',new mongoose.Schema({
     carrito: {
         type: mongoose.Types.ObjectId, ref: "carts"
     }
+},
+{
+    timestamps: true, strict:false
 }))

@@ -1,4 +1,38 @@
-<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page"  href="/">Home</a>
+        </li>
+        {{#if login}}
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/productos">Ir a productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/api/sessions/logout" id="logoutBtn">Cerrar Sesion</a>
+        </li>
+        {{else}}
+         <li class="nav-item">
+          <a class="nav-link" href="/register">Registrate</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/login">Iniciar Sesion</a>
+        </li>
+         {{/if}}
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+{{!-- <div class="container">
     <ul class="navbar navbar-light navbar">
       <li class="nav-item">
         <a class="btn btn-primary m-3" href="/">Home Page</a>
@@ -7,12 +41,12 @@
         <li class="nav-item">
           <a class="btn btn-primary m-3" href="/profile">Perfil</a>
         </li>
-        <li class="nav-item">
-          <a class="btn btn-primary m-3" href="/api/sessions/logout" id="logoutBtn">Logout</a>
-        </li>
         <li>
-        <a class="btn btn-primary" href="/productos">Ir a productos</a>
-      </li>
+          <a class="btn btn-primary" href="/productos">Ir a productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary m-3" href="/api/sessions/logout" id="logoutBtn">Cerrar Sesion</a>
+        </li>
       {{else}}
         <li class="nav-item">
           <a class="btn btn-primary m-3" href="/register">Registro</a>
@@ -23,6 +57,18 @@
       {{/if}}
     </ul>
   </div>
+ --}}
+
+
+
+
+
+
+
+
+
+
+
     <script>
  document.getElementById('logoutButton').addEventListener('click', function() {
     // Mostrar ventana de confirmación
@@ -30,21 +76,15 @@
         // Si el usuario confirma el cierre de sesión
         fetch('http://localhost:8080/api/sessions/logout', {
             method: 'POST', // o 'GET' dependiendo del método que uses
-            // Puedes agregar headers y datos del usuario aquí si es necesario
         })
         .then(response => {
-            // Manejar la respuesta del servidor (puede ser redirección a la página de inicio de sesión)
             window.location.href = '/login'; // Redirige a la página de inicio de sesión
         })
         .catch(error => {
             // Manejar errores, como problemas de conexión, etc.
             console.error('Error al cerrar sesión:', error);
-            // Aquí puedes mostrar un mensaje de error al usuario si es necesario
         });
-    } else {
-        // Si el usuario cancela el cierre de sesión
-        // No hacer nada o mostrar algún mensaje opcional
-    }
+    } 
 });
 
   </script>

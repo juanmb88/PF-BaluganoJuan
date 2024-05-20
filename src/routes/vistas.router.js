@@ -12,10 +12,6 @@ const cartManager = new CartManager();
     res.status(200).render('realTimeProducts') 
 }) ;
 
-////////////////////////CHAT/////////
-router.get('/chat', async (req,res) => {
-    res.status(200).render('chat')
-});
 
 ////////////////////////VISTA INICIO/////////////
 router.get('/',auth, async (req, res) => {
@@ -40,9 +36,15 @@ router.get('/',auth, async (req, res) => {
         } else if (sort === 'desc') {
             filteredProducts.sort((a, b) => b.title.localeCompare(a.title));
         }
-        //MENSAJE DE BIENVENIDA
-        const usuarioDatoParaBienvenida = req.session.usuario; 
-        const mensajeBienvenida = `¡Bienvenido, ${usuarioDatoParaBienvenida.nombre}!`; // Suponiendo que el nombre del usuario está en userData.nombre
+        // MENSAJE DE BIENVENIDA
+        let mensajeBienvenida = null;
+        const usuarioEnSesion = req.session.usuario;
+
+        // Verificar si el mensaje de bienvenida ya se ha mostrado para no repetirlo
+        if (usuarioEnSesion && !req.session.mensajeBienvenidaMostrado) {
+            mensajeBienvenida = `¡Bienvenido de nuevo:  ${usuarioEnSesion.nombre}!`;
+            req.session.mensajeBienvenidaMostrado = true;
+        } 
 
         res.setHeader('Content-Type', 'text/html');
         res.status(200).render('inicio',{

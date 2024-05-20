@@ -1,9 +1,9 @@
-<h2>Productos</h2>
+{{>menu}}
 <hr>
+<h2 class="text-center">Productos</h2>
 <a class="mx-5 my-5 btn btn-success" href="/realtimeproducts">Tiempo real</a>
 
 <input type="text" value="{{carrito._id}}"  id="inputCarrito">
-    {{>menu}}
 <a href="/carrito/{{carrito._id}}" class="bg-warning">Ver carrito</a>
 
 {{#each productos}}

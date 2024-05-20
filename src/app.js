@@ -2,7 +2,6 @@ import express from "express";
 import path from "path"; 
 import __dirname from "./utils.js"; 
 import { engine } from "express-handlebars";
-import { Server } from "socket.io";
 import connectDB from "./connection/MongoDB.js"
 import MongoStore from "connect-mongo";
 import { router as productRouter } from "./routes/products-router.js";
@@ -10,10 +9,11 @@ import { router as cartRouter } from "./routes/cart-router.js";
 import { router as vistasRouter } from './routes/vistas.router.js';
 import { router as sessionsRouter } from './routes/sessions-router.js';
 import sessions from "express-session";
-import socketChat from "./socket/socketChat.js";
-import socketProducts from './socket/socketProducts.js';
 import  dotenv from 'dotenv';
+import  passport  from "passport";
+import { initPassport } from "./config/passportConfig.js";
 dotenv.config();
+
 const port = 8080;
 
 const app = express();
@@ -35,6 +35,11 @@ app.use(sessions({
     })
 }))
 //FIN SESSION
+//PASSPORT
+initPassport();
+app.use(passport.initialize());
+app.use(passport.session());//esta linea solo si usamos sessions
+//FIN PASSPORT
 //CONECCION A MONGO DB
 connectDB();
 //CONECCION A MONGO DB
@@ -63,9 +68,6 @@ app.use('/',(req, res)=>{
 const serverHTTP= app.listen(port, ()=> console.log(`Server corriendo en http://localhost:${port}`));
 serverHTTP.on('error', (err)=> console.log(err));
 
-const socketServer = new Server(serverHTTP);
 
-socketProducts(socketServer);
-socketChat(socketServer);
 //FIN Escucha del servidor
  

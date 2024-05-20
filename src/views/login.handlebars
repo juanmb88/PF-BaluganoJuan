@@ -1,5 +1,7 @@
-<h2>Login:</h2>
+<div class="d-flex justify-content-evenly">
 {{>menu}}
+</div>
+
 <hr>
 <form action="/api/sessions/login" method="post">
 
@@ -9,11 +11,37 @@
  {{#if mensaje}}
         <div style="font-weight: bolder; color: blue;">{{mensaje}}</div>
     {{/if}}
+<div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group m-3" >
+                        <label for="email" class="fs-4">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico">
+                    </div>
+                    <div class="form-group  m-3">
+                        <label for="password" class="fs-4">Contraseña</label>
+                        <input type="password" class="form-control" name="password" placeholder="contraseña">
+                    </div>
+                    <input type="text" name="web" value="web" hidden>
 
-    <input type="email" name="email" placeholder="correo electrónico">
+
+                    <div class="d-flex justify-content-around m-5">
+                        <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                        <a class="btn btn-primary" href="/api/sessions/github">Acceder con GitHub</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+ {{!--    <input type="email" name="email" placeholder="correo electrónico">
     <input type="password" name="password" placeholder="contraseña">
     <input type="text" name="web" value="web" hidden>
-    <br><br>
-    <input type="submit" value="Login">
+    <br>
+    <hr>
+    <a href="/api/sessions/github" class="btn btn-primary">Acceder con Git-Hub</a> --}}
+   {{!--  <br>
+    <hr>
+    <input type="submit" value="Login"> --}}
 </form>
 <br><br>
