@@ -24,6 +24,7 @@ router.post('/register', passport.authenticate('register', { failureRedirect:"ap
 router.post("/login", passport.authenticate("login", {failureRedirect:"/api/sessions/error"}) , async(req, res)=>{
     let { web }=req.body;
     let usuario = {...req.user};
+    console.log(req.user)
         delete usuario.password;// aca evito que quede guardo el password del user
         req.session.usuario = usuario;
         

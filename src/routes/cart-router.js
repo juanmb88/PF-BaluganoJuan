@@ -1,6 +1,6 @@
 import { Router } from "express";
-import CartManager from "../dao/cartManagerMONGO.js";
-import ProductManager from "../dao/productManagerMONGO.js";
+import CartManager from "../controllers/cartController.js";
+import ProductManager from "../controllers/productController.js";
 import { isValidObjectId } from "mongoose";
 import { auth } from "../middleware/auth.js";
 
@@ -159,7 +159,6 @@ router.delete("/:cid/products/:pid", async (req, res) => {
 });
 
 // Modificar un producto desde el carrito
-
 router.put("/:cId/products/:pId", async (req, res) => {
   const { cId, pId } = req.params;
   if (!isValidObjectId(cId) || !isValidObjectId(pId)) {
@@ -180,7 +179,6 @@ router.put("/:cId/products/:pId", async (req, res) => {
       return res.status(400).json({ error: `El producto con id ${pId} no está en el carrito` });
     }
 
-    // Assuming you have a body with new product data
     const { quantity } = req.body;
 
     if (quantity <= 0) {

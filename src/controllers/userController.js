@@ -1,6 +1,6 @@
-import  {usuarioModelo}  from "./models/usuarioModelo.js";
+import  {usuarioModelo}  from "../dao/models/usuarioModelo.js";
 
-export class UsuariosManagerMongo{
+export class UsersController{
 
     async create(usuario){
         let nuevoUsuario=await usuarioModelo.create(usuario)
@@ -11,5 +11,8 @@ export class UsuariosManagerMongo{
         return await usuarioModelo.findOne(filtro).lean()
     }
 
+    async getByPopulate(filtro={}){
+        return await usuarioModelo.findOne(filtro).populate("carrito").lean()
+    }
 }
 

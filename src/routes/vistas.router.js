@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import  ProductManagerMONGO from '../dao/productManagerMONGO.js';
-import CartManager from '../dao/cartManagerMONGO.js';
+import  productController from '../controllers/productController.js';
+import CartManager from '../controllers/cartController.js';
 import {auth, sessionOn} from "../middleware/auth.js"
 export const router = Router();
 
-const productManager = new ProductManagerMONGO();
+const productManager = new productController();
 const cartManager = new CartManager();
 
 //////////////REAL TIME PRODUCTS/////////
@@ -45,9 +45,13 @@ router.get('/',auth, async (req, res) => {
             mensajeBienvenida = `¡Bienvenido de nuevo:  ${usuarioEnSesion.nombre}!`;
             req.session.mensajeBienvenidaMostrado = true;
         } 
+         let carrito={
+            _id: req.session.usuario.carrito._id
+        } 
 
         res.setHeader('Content-Type', 'text/html');
         res.status(200).render('inicio',{
+            carrito,
             mensajeBienvenida :mensajeBienvenida,
             listOfProducts: filteredProducts, // Usar los productos filtrados y ordenados
             totalPages,
@@ -119,11 +123,12 @@ router.get('/paginacion', async (req, res) => {
 
 //VISTA CARRITO INDIVIDUAL
 router.get("/carrito/:cid", async (req, res) => {
-    let id = req.params.cid
+    let { cid } = req.params
     let products
     try {
-        let carrito = await cartManager.getCartById(id)
-        console.log(carrito._id,"acacacacac")
+        let carrito = await cartManager.getOneByPopulate({ _id: cid })
+       // let carrito = await cartManager.getCartById(id)
+       // console.log(carrito._id,"acacacacac")
         products = carrito.products
         res.setHeader("Content-Type", "text/html")
         res.status(200).render("carrito",{products})
@@ -136,14 +141,12 @@ router.get("/carrito/:cid", async (req, res) => {
 
 //VISTA PRODUCTOS
 router.get('/productos',auth, async(req,res) => {
-   /*  let carrito = await cartManager.getOneBy()
-    if( !carrito ) {
-        carrito = await cartManager.createCart()
-    }; */
-    let carrito = {
-        id : req.session.usuario.carritoId//usuario tiene un carrito 
-    }
+     let carrito={
+      // _id: req.session.usuario.carritoId
+       _id: req.session.usuario.carrito._id
 
+    } 
+    console.log(carrito)
     let productos;
     try {
         productos=await productManager.getAll()        
@@ -157,11 +160,12 @@ router.get('/productos',auth, async(req,res) => {
             }
         )
     };
-
+    
     res.setHeader('Content-Type','text/html')
     res.status(200).render("productos", {
         productos,
-        carrito
+        carrito,
+        login: req.session.usuario
     })
 });
 
