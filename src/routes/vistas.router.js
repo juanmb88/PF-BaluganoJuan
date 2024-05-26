@@ -127,11 +127,10 @@ router.get("/carrito/:cid", async (req, res) => {
     let products
     try {
         let carrito = await cartManager.getOneByPopulate({ _id: cid })
-       // let carrito = await cartManager.getCartById(id)
-       // console.log(carrito._id,"acacacacac")
+       
         products = carrito.products
         res.setHeader("Content-Type", "text/html")
-        res.status(200).render("carrito",{products})
+        res.status(200).render("carrito",{ carrito, products })
     } catch (error) {
         res.setHeader("Content-Type", "application/json")
         res.status(500).res.json({ Error: "Error 500 - Error inesperado en el servidor" })        

@@ -1,7 +1,7 @@
 {{>menu}}
 
 {{!-- <a class="mx-5 my-5 btn btn-success border-warning" href="/realtimeproducts">Tiempo real</a>
- --}}<input type="text" value="{{this.carrito._id}}"  id="inputCarrito" hidden>
+ --}}<input type="text" value="{{carrito._id}}"  id="inputCarrito" >
 <a href="/carrito/{{carrito._id}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
 
 {{#if mensajeBienvenida}}
@@ -49,18 +49,18 @@
 
 <br>
 <div class="d-flex justify-content-center">
-<a class="mx-5 my-5 btn btn-success" href="/?pagina=1">Pág. 1</a>
+<a class="btn btn-success flex flex-center m-5 border-warning" href="/?pagina=1">Pág. 1</a>
 
  {{#if hasPrevPage}}
-    <a class="mx-5 my-5 btn btn-success" href="/?pagina={{prevPage}}">Ant.</a>
+    <a class="btn btn-success flex flex-center m-5 border-warning" href="/?pagina={{prevPage}}">Ant.</a>
 {{/if}} 
 
 {{#if hasNextPage}}
-    <a class="mx-5 my-5 btn btn-success" href="/?pagina={{nextPage}}">Sig.</a>
+    <a class="btn btn-success flex flex-center m-5 border-warning" href="/?pagina={{nextPage}}">Sig.</a>
 {{/if}}
 
 
-<a class="mx-5 my-5 btn btn-success" href="/?pagina={{totalPages}}">Ult.Pág.</a>
+<a class="btn btn-success flex flex-center m-5 border-warning" href="/?pagina={{totalPages}}">Ult.Pág.</a>
 
 </div>
 <br>

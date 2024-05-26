@@ -88,8 +88,8 @@ export const initPassport =()=>{
             'github',
             new github.Strategy(
                 {
-                    clientID : "",
-                    clientSecret : "",
+                    clientID : "Iv23liJk69wGRbk6p4SZ",
+                    clientSecret : "bdac66bf8d50bed5b440da4df0b66bdd18a5ecb7",
                     callbackURL : "http://localhost:8080/api/sessions/devolucionGithub"
 
                 },

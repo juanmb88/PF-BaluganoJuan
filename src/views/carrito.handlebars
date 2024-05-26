@@ -1,12 +1,13 @@
 {{>menu}}
   <a class="mx-5 my-5 btn btn-success border-warning" href="/">Inicio</a>
   <a href="/productos" class="btn btn-success flex flex-center m-5 border-warning">Seguir Comprando</a>
-    <h2 class="text-center">Carrito del cliente {{this.carrito._id}}</h2>
-
-<div class="container col-12 border border-primary">
-      <div class="row  row-cols-md-4 row-cols-md-5 ">  
+    <h2 class="text-center">Carrito del cliente {{carrito._id}} </h2>
+<input type="text" value="{{this.carrito._id}}"  id="inputCarrito" >
+<a href="/carrito/{{this.carrito._id}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
+<div class="container col-12 ">
+      <div class="row  row-cols-md-4 row-cols-md-6 ">  
           {{#each products}}
-         <div class="col mb-4">
+         <div class="col-2 ">
             <div class="card h-100 bg-light">
                 <div class="card-header bg-primary text-white">
                        <i class="bi bi-info-circle">ID : </i>{{this.product._id}}
@@ -30,7 +31,7 @@
                         <li >
                             <img src="{{this.product.thumbnail}}" alt="{{this.product.title}}" class="img-fluid mt-2">
                         </li>
-                        <button class="btn btn-danger mx-3 mt-5"> Eliminar Producto</button>
+                        <button class="btn btn-danger"  id="btnEliminar" onclick="eliminar('{{carrito._id}}')">Eliminar</button>
                     </ul>
                 </div>
             </div>
@@ -38,7 +39,7 @@
         {{/each}}
       </div> 
 </div>
-
+<script src="/js/productos.js"></script>
 
 
 

@@ -54,21 +54,21 @@ router.post("/", async (req, res) => {
 });
 
 ///////////////////AGREGAR PRODUCTOS AL CARRITO//////////////////
-router.post('/:cid/products/:pid', /* auth , */ async(req,res)=>{
+router.post('/:cid/products/:pid', async( req,res ) => {
 
-  let {cid, pid}=req.params
+  let { cid, pid } = req.params
   if(!isValidObjectId(cid) || !isValidObjectId(pid)){
       res.setHeader('Content-Type','application/json')
       return res.status(400).json({error:`Ingrese cid / pid válidos`})
   }
 
-  let carrito=await cartManager.getOneBy({_id:cid})
+  let carrito = await cartManager.getOneBy({_id:cid})
   if(!carrito){
       res.setHeader('Content-Type','application/json');
       return res.status(400).json({error:`Carrito inexistente: id ${cid}`})
   }
 
-  let product=await productManager.getOneBy({_id:pid})
+  let product = await productManager.getOneBy({_id:pid})
   if(!product){
       res.setHeader('Content-Type','application/json');
       return res.status(400).json({error:`No existe producto con id ${pid}`})
@@ -84,7 +84,7 @@ router.post('/:cid/products/:pid', /* auth , */ async(req,res)=>{
   }
   
   console.log(carrito, " console de carrito")
-  let resultado=await cartManager.update(cid, carrito)
+  let resultado = await cartManager.update(cid, carrito)
   if(resultado.modifiedCount>0){
       res.setHeader('Content-Type','application/json');
       return res.status(200).json({payload:"Carrito actualizado"});
@@ -108,7 +108,6 @@ router.put("/:cid/products/:pid", async (req, res) => {
     return res.status(400).json({ error: `Ingrese cid / pid válidos` });
   }
   try {
-    // Restar 1 a la cantidad del producto en el carrito
     await cartManager.decreaseProductQuantity(cid, pid);
 
     res.json({
