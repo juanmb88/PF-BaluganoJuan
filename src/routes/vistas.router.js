@@ -12,7 +12,6 @@ const cartManager = new CartManager();
     res.status(200).render('realTimeProducts') 
 }) ;
 
-
 ////////////////////////VISTA INICIO/////////////
 router.get('/',auth, async (req, res) => {
     try {
@@ -168,7 +167,6 @@ router.get('/productos',auth, async(req,res) => {
     })
 });
 
-
 //VISTA DE REGISTRO
 router.get('/register',sessionOn, (req, res) => {
     let {error} = req.query
@@ -190,5 +188,3 @@ router.get('/profile', auth, (req, res) => {
     res.setHeader("Content-Type", "text/html")
     res.status(200).render("profile", { usuario, login: usuario });
 });
-
-    

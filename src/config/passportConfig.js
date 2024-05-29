@@ -44,7 +44,7 @@ export const initPassport =()=>{
                         return done(error)
                     }        
                 })
-        )
+    )
 
 //CONFIGURACION DEL LOGIN
         passport.use(
@@ -55,15 +55,13 @@ export const initPassport =()=>{
                 },
                 async(username, password, done ) => {
                    try {
-                    if(username == "adminCoder@coder.com" && password == "adminCod3r123"){
-                        
+                    if(username == "adminCoder@coder.com" && password == "adminCod3r123"){  
                         let usuario = {
                             _id: "idAdmin", nombre: "admin", email: username, 
                             carrito: {_id:"664d10c5bbd2e4bf27e832c3"}, rol: "admin"
                         }
                         return done(null, usuario)
                     }
-
 
                     let usuario = await usuariosManager.getByPopulate({email:username})
                         if(!usuario){//si no llega usuario
@@ -82,7 +80,7 @@ export const initPassport =()=>{
                    } 
                 }
             )
-        )
+    )
 //CONFIGURACION DEL LOGIN CON GIT HUB
          passport.use(
             'github',
@@ -117,8 +115,7 @@ export const initPassport =()=>{
                     }
                 }
             )
-        ) 
-     
+    ) 
 
     //PASO 1BIS solo si usamos sessions, config el serializar
     passport.serializeUser( (usuario, done) => {
