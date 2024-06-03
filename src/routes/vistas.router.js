@@ -1,19 +1,21 @@
 import { Router } from 'express';
 import  productController from '../controllers/productController.js';
 import CartManager from '../controllers/cartController.js';
-import {auth, sessionOn} from "../middleware/auth.js"
+import { authToken} from "../middleware/auth.js"
+import passport from 'passport';
+import { passportCall } from '../utils.js';
 export const router = Router();
 
 const productManager = new productController();
 const cartManager = new CartManager();
 
 //////////////REAL TIME PRODUCTS/////////
- router.get('/realTimeproducts', async (req,res) => {
+ router.get('/realTimeproducts',/*  passport.authenticate("current", { session: false }),  */async (req,res) => {
     res.status(200).render('realTimeProducts') 
 }) ;
 
 ////////////////////////VISTA INICIO/////////////
-router.get('/',auth, async (req, res) => {
+router.get('/',passport.authenticate("current", {session : false}), async (req, res) => {
     try {
         let { pagina, query, sort } = req.query;
         // Si no se proporciona una página, usar la página 1
@@ -37,16 +39,16 @@ router.get('/',auth, async (req, res) => {
         }
         // MENSAJE DE BIENVENIDA
         let mensajeBienvenida = null;
-        const usuarioEnSesion = req.session.usuario;
+        const usuarioEnSesion = req.user;
 
         // Verificar si el mensaje de bienvenida ya se ha mostrado para no repetirlo
-        if (usuarioEnSesion && !req.session.mensajeBienvenidaMostrado) {
-            mensajeBienvenida = `¡Bienvenido de nuevo:  ${usuarioEnSesion.nombre}!`;
-            req.session.mensajeBienvenidaMostrado = true;
+        if (usuarioEnSesion && !req.cookies.mensajeBienvenidaMostrado) {
+            mensajeBienvenida = `¡Bienvenido de nuevo:  ${usuarioEnSesion.first_name}!`;
+            req.cookies.mensajeBienvenidaMostrado = true;
         } 
-         let carrito={
-            _id: req.session.usuario.carrito._id
-        } 
+          let carrito = {
+            _id: usuarioEnSesion.carrito
+        }  
 
         res.setHeader('Content-Type', 'text/html');
         res.status(200).render('inicio',{
@@ -58,7 +60,7 @@ router.get('/',auth, async (req, res) => {
             hasNextPage,
             prevPage,
             nextPage,
-            login : req.session.usuario
+            login : req.user
         });
     } catch (error) {
         console.error('Error al obtener los productos paginados:', error);
@@ -121,70 +123,42 @@ router.get('/paginacion', async (req, res) => {
 });
 
 //VISTA CARRITO INDIVIDUAL
-router.get("/carrito/:cid", async (req, res) => {
+router.get("/carrito/:cid",passport.authenticate("current", {session : false}), async (req, res) => {
     let { cid } = req.params
+    console.log(cid)
     let products
     try {
         let carrito = await cartManager.getOneByPopulate({ _id: cid })
-       
+        if (!carrito) {
+            return res.status(404).json({ error: "Carrito no encontrado" });
+        }
         products = carrito.products
         res.setHeader("Content-Type", "text/html")
         res.status(200).render("carrito",{ carrito, products })
     } catch (error) {
         res.setHeader("Content-Type", "application/json")
-        res.status(500).res.json({ Error: "Error 500 - Error inesperado en el servidor" })        
+        res.status(500).json({ Error: "Error 500 - Error inesperado en el servidor" })        
     }
     
 })
 
-//VISTA PRODUCTOS
-router.get('/productos',auth, async(req,res) => {
-     let carrito={
-      // _id: req.session.usuario.carritoId
-       _id: req.session.usuario.carrito._id
-
-    } 
-    console.log(carrito)
-    let productos;
-    try {
-        productos=await productManager.getAll()        
-    } catch (error) {
-        console.log(error);
-        res.setHeader( 'Content-Type','application/json' );
-        return res.status(500).json(
-            {
-                error:`Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
-                detalle:`${error.message}`
-            }
-        )
-    };
-    
-    res.setHeader('Content-Type','text/html')
-    res.status(200).render("productos", {
-        productos,
-        carrito,
-        login: req.session.usuario
-    })
-});
 
 //VISTA DE REGISTRO
-router.get('/register',sessionOn, (req, res) => {
-    let {error} = req.query
-    res.setHeader("Content-Type", "text/html")
-    res.status(200).render("register", {error, login : req.session.usuario})
+router.get('/register', (req, res) => {
+    res.setHeader("Content-Type", "text/html");
+    res.status(200).render("register");
 });
     
 //VISTA DE LOGIN PARA EL USUARIO
-router.get('/login', sessionOn, (req,res)=>{
-
-    let {error, mensaje}=req.query
-
-    res.status(200).render('login', {error, mensaje, login : req.session.usuario})
+router.get('/login', (req,res)=>{
+    let {error, mensaje} = req.query
+    res.status(200).render('login', {error, mensaje, login : req.user})
 })
 
 //VISTA PERFIL DEL USUARIO
-router.get('/profile', auth, (req, res) => {
-    const { usuario } = req.session;
+ router.get('/profile',authToken, (req, res) => {
+    const usuario  = req.user;
+    console.log("consolelog desde la ruta /profile     ",req.user);
     res.setHeader("Content-Type", "text/html")
     res.status(200).render("profile", { usuario, login: usuario });
-});
+}); 

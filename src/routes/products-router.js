@@ -1,6 +1,7 @@
 import {Router} from "express"
 import productController from "../controllers/productController.js";
-import { auth } from "../middleware/auth.js";
+import { authToken } from "../middleware/auth.js";
+//import { auth } from "../middleware/auth.js";
 
 const productManager = new productController();
 
@@ -35,7 +36,7 @@ router.delete("/:pid", async (req, res) => {
 });
 
 /// POST /////
-router.post("/", auth, async(req, res)=>{
+router.post("/", authToken, async(req, res)=>{
 
     let {title, ...otrasPropiedades}=req.body;
 

@@ -1,5 +1,5 @@
 //En este archivo se encuentra la logica manejada  desde el front-end
-//LOGICA BOTONES DE AGREGAR PRODUCTO A CARRITO Y VER CARRITO
+//LOGICA BOTONES DE AGREGAR PRODUCTO A CARRITO 
 const comprar = async (pid)=>{
     let inputCarrito = document.getElementById("inputCarrito");
     let cid = inputCarrito.value;

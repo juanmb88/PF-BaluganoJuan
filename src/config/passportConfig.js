@@ -3,16 +3,45 @@ PASO 1 toda la logica para que funciones nuestro register, PASO 2 configurar est
 PASO 3 hago la llamada de este middleware en mi ruta de sesion-router.js */
 import  passport  from "passport";
 import local from 'passport-local';
+import passportJWT from "passport-jwt";
 import github from "passport-github2";
 import { UsersController as UsuariosManager } from '../controllers/userController.js';
 import CartManager from '../controllers/cartController.js'
-import  {generaHash, validaPassword}  from "../utils.js";
+import  {generaHash, SECRET, validaPassword}  from "../utils.js";
 
 const usuariosManager = new UsuariosManager();
 const cartManager = new CartManager();
 
+const buscaToken = (req) => {
+	let token = null;
+	if (req.cookies["CookiePrueba"]) {
+		token = req.cookies["CookiePrueba"];
+	}
+
+	return token;
+};
 
 export const initPassport =()=>{
+//CONFIGURACION DEL CURRENT
+        passport.use(
+		"current",
+		new passportJWT.Strategy(
+			{
+				secretOrKey: SECRET,
+				jwtFromRequest: new passportJWT.ExtractJwt.fromExtractors([
+					buscaToken,
+				]),
+			},
+			async (usuarioToken, done) => {
+				try {
+					return done(null, usuarioToken);//token con datos del user
+				} catch (error) {
+					return done(error);
+				}
+			}
+		)
+	);
+
 //CONFIGURACION DEL REGISTRO
         passport.use(
             'register',//nombre de la estrategia
@@ -23,8 +52,8 @@ export const initPassport =()=>{
                 },// 1er argumrento objeto de config para la estrategia
                 async ( req, username, password, done )=>{//funcion callback, los arg. depende de el primer argumento, siempre async y el done
                     try{
-                        let {nombre}=req.body;
-                        if(!nombre){
+                        let {first_name, last_name, age }=req.body;
+                        if(!first_name){
                         return done(null, false,{ message: 'Nombre es requerido' });
                         }
                     
@@ -35,10 +64,18 @@ export const initPassport =()=>{
                         let nuevoCarrito= await cartManager.createCart()
                         password=generaHash(password) // otras validaciones  
                     
-                        let nuevoUsuario = await usuariosManager.create({nombre, email:username, password, carrito: nuevoCarrito._id, rol:"user"})
+                        let nuevoUsuario = await usuariosManager.create({
+                            first_name,
+                            last_name, 
+                            email:username, 
+                            age, 
+                            password, 
+                            role: 'user',
+                            carrito: nuevoCarrito._id
+                        })
                   
+                        console.log(nuevoUsuario)
                                 return done(null,nuevoUsuario)
-                            
                     
                     } catch (error) {
                         return done(error)
@@ -55,13 +92,7 @@ export const initPassport =()=>{
                 },
                 async(username, password, done ) => {
                    try {
-                    if(username == "adminCoder@coder.com" && password == "adminCod3r123"){  
-                        let usuario = {
-                            _id: "idAdmin", nombre: "admin", email: username, 
-                            carrito: {_id:"664d10c5bbd2e4bf27e832c3"}, rol: "admin"
-                        }
-                        return done(null, usuario)
-                    }
+             
 
                     let usuario = await usuariosManager.getByPopulate({email:username})
                         if(!usuario){//si no llega usuario
@@ -82,7 +113,7 @@ export const initPassport =()=>{
             )
     )
 //CONFIGURACION DEL LOGIN CON GIT HUB
-         passport.use(
+        passport.use(
             'github',
             new github.Strategy(
                 {
@@ -93,22 +124,21 @@ export const initPassport =()=>{
                 },
                 async(tokenAcceso, tokenRefresh, profile, done)=>{
                     try {
-                         // console.log(profile)
-                    let email = profile._json.email
-                    let nombre = profile._json.name
-                    if(!nombre || !email){
-                        return done(null, false)
-                    }
+                        let email = profile._json.email;
+                        let first_name = profile._json.name;
+                        if (!first_name || !email) {
+                            return done(null, false);
+                        }
                     let usuario = await usuariosManager.getByPopulate({email});
                     
                     if(!usuario){
                         let nuevoCarrito = await cartManager.createCart()
                         usuario = await usuariosManager.create({
-                            nombre, email, profile, carrito: nuevoCarrito._id
+                            first_name, email, profile, carrito: nuevoCarrito._id
                         })
-                        let usuario = await usuariosManager.getByPopulate({email});
+                         usuario = await usuariosManager.getByPopulate({email});
                     }
-
+                    
                     return done(null, usuario);
                     } catch (error) {
                         return done(error);
@@ -116,23 +146,5 @@ export const initPassport =()=>{
                 }
             )
     ) 
-
-    //PASO 1BIS solo si usamos sessions, config el serializar
-    passport.serializeUser( (usuario, done) => {
-        return done(null, usuario._id)
-    });
-
-    passport.deserializeUser(async(id, done)=>{
-        let usuario
-        if(id === "idAdmin"){
-            usuario = {
-                _id: "idAdmin", nombre: "admin", email: "adminCoder@coder.com", 
-                carrito: {_id:"664d10c5bbd2e4bf27e832c3"}, rol: "admin"
-            }
-        }else{
-            usuario = await usuariosManager.getBy({_id:id})
-        }
-        return done(null, usuario)
-    })
 
 };

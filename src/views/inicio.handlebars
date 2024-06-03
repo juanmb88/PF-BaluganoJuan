@@ -1,8 +1,7 @@
 {{>menu}}
 
-{{!-- <a class="mx-5 my-5 btn btn-success border-warning" href="/realtimeproducts">Tiempo real</a>
- --}}<input type="text" value="{{carrito._id}}"  id="inputCarrito" >
-<a href="/carrito/{{carrito._id}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
+<input type="text" value="{{carrito}}"  id="inputCarrito" >
+<a href="/carrito/{{carrito}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
 
 {{#if mensajeBienvenida}}
     <p id="mensajeBienvenida" class="mensaje-bienvenida">{{mensajeBienvenida}}</p>
