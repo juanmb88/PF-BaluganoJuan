@@ -1,21 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { SECRET } from '../utils.js';
-/* export const auth=(req, res, next)=>{
-    if(!req.session.usuario){
-        res.setHeader('Content-Type','application/json');
-        return res.status(401).json({error:`No existen usuarios autenticados`})
-    }
 
-    next()
-}
-
-export const sessionOn = (req,res,next)=>{
-    if(req.session.usuario){
-        return  res.redirect("/profile")
-    }
-
-    next()
-} */
 
 /* export const authToken = (req,res,next )=>{
     
@@ -26,23 +11,23 @@ export const sessionOn = (req,res,next)=>{
     next()
 } */
 
-export const authTokenPermisos = (permissions = []) => {
-	// auth(["admin", "user"])  o  auth(["admin"])
-	return (req, res, next) => {
-		permissions = permissions.map((p) => p.toLowerCase());
+export const authTokenPermisos = (permisos = []) => {// auth(["admin", "user"])  o  auth(["admin"])
 
-		if (permissions.includes("public")) {
+	return (req, res, next) => {
+		permisos = permisos.map((p) => p.toLowerCase());
+
+		if (permisos.includes("public")) {
 			return next();
 		}
 
-		if (!req.user?.rol) {
+		if (!req.user?.role) {//si existe usuario y rol OR 
 			res.setHeader("Content-Type", "application/json");
 			return res
 				.status(401)
 				.json({ error: `No hay usuarios autenticados, o problema con el rol` });
 		}
 
-		if (!permissions.includes(req.user.rol.toLowerCase())) {
+		if (!permisos.includes(req.user.role.toLowerCase())) {
 			res.setHeader("Content-Type", "application/json");
 			return res
 				.status(403)
@@ -54,7 +39,7 @@ export const authTokenPermisos = (permissions = []) => {
 };
 
 export  const authToken = (req, res, next) => {
-    const token = req.cookies.CookiePrueba; // Asegúrate de que el nombre de la cookie es correcto
+    const token = req.cookies.CookiePrueba; //  el nombre de la cookie DEBE SER correcto
     if (!token) {
         return res.status(401).json({ message: 'No token provided' });
     }

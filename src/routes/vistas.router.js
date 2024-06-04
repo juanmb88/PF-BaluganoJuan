@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import  productController from '../controllers/productController.js';
 import CartManager from '../controllers/cartController.js';
-import { authToken} from "../middleware/auth.js"
+import { authTokenPermisos } from "../middleware/auth.js"
 import passport from 'passport';
 import { passportCall } from '../utils.js';
 export const router = Router();
@@ -10,7 +10,7 @@ const productManager = new productController();
 const cartManager = new CartManager();
 
 //////////////REAL TIME PRODUCTS/////////
- router.get('/realTimeproducts',/*  passport.authenticate("current", { session: false }),  */async (req,res) => {
+ router.get('/realTimeproducts',passportCall("current"), authTokenPermisos(['admin']), async (req,res) => {
     res.status(200).render('realTimeProducts') 
 }) ;
 
@@ -156,7 +156,7 @@ router.get('/login', (req,res)=>{
 })
 
 //VISTA PERFIL DEL USUARIO
- router.get('/profile',authToken, (req, res) => {
+ router.get('/profile',passportCall("current"), (req, res) => {
     const usuario  = req.user;
     console.log("consolelog desde la ruta /profile     ",req.user);
     res.setHeader("Content-Type", "text/html")

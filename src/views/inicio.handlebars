@@ -1,7 +1,8 @@
 {{>menu}}
 
-<input type="text" value="{{carrito}}"  id="inputCarrito" >
-<a href="/carrito/{{carrito}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
+<input type="text" value="{{carrito._id}}"  id="inputCarrito" >
+<a href="/carrito/{{carrito._id}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
+<a href="/realTimeproducts" class="btn btn-success flex flex-center m-5 border-warning">Registrar un producto</a>
 
 {{#if mensajeBienvenida}}
     <p id="mensajeBienvenida" class="mensaje-bienvenida">{{mensajeBienvenida}}</p>

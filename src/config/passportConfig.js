@@ -34,6 +34,10 @@ export const initPassport =()=>{
 			},
 			async (usuarioToken, done) => {
 				try {
+                    if(usuarioToken.email === " " || usuarioToken.password === " "){
+                        return done(null, false, {message : "Email y Password son obligatorios"})
+                    }
+                    
 					return done(null, usuarioToken);//token con datos del user
 				} catch (error) {
 					return done(error);
