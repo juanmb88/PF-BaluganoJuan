@@ -20,18 +20,14 @@ export const authTokenPermisos = (permisos = []) => {// auth(["admin", "user"]) 
 			return next();
 		}
 
-		if (!req.user?.role) {//si existe usuario y rol OR 
+		if (!req.user?.role) {//si existe usuario y rol 
 			res.setHeader("Content-Type", "application/json");
-			return res
-				.status(401)
-				.json({ error: `No hay usuarios autenticados, o problema con el rol` });
+			return res.status(401).json({ error: `No tienes los roles permitidos para acceder a esta informacion` });
 		}
 
 		if (!permisos.includes(req.user.role.toLowerCase())) {
 			res.setHeader("Content-Type", "application/json");
-			return res
-				.status(403)
-				.json({ error: `Acceso denegado por rol insuficiente` });
+			return res.status(403).json({ error: `Acceso denegado por rol insuficiente` });
 		}
 
 		return next();
@@ -41,11 +37,11 @@ export const authTokenPermisos = (permisos = []) => {// auth(["admin", "user"]) 
 export  const authToken = (req, res, next) => {
     const token = req.cookies.CookiePrueba; //  el nombre de la cookie DEBE SER correcto
     if (!token) {
-        return res.status(401).json({ message: 'No token provided' });
+        return res.status(401).json({ message: 'Token no provisto' });
     }
     jwt.verify(token, SECRET, (err, decoded) => {
         if (err) {
-            return res.status(401).json({ message: 'Failed to authenticate token' });
+            return res.status(401).json({ message: 'Fallo error al autenticar token' });
         }
         req.user = decoded; // Aquí se guarda el usuario decodificado en req.user
         next();

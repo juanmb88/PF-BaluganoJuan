@@ -42,3 +42,19 @@ const eliminar = async (pid)=>{
         alert("Producto eliminado con exito.")
     }
 };
+
+//LOGICA DE CERRAR SESION 
+document.getElementById('logoutBtn').addEventListener('click', function() {
+    if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
+        // Si el usuario confirma el cierre de sesión
+        fetch('http://localhost:8080/api/sessions/logout', {
+            method: 'POST', // o 'GET' dependiendo del método que uses
+        })
+        .then(response => {
+            window.location.href = '/login'; //
+        })
+        .catch(error => {
+            console.error('Error al cerrar sesión:', error);
+        });
+    } 
+});

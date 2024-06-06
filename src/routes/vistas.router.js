@@ -123,7 +123,7 @@ router.get('/paginacion', async (req, res) => {
 });
 
 //VISTA CARRITO INDIVIDUAL
-router.get("/carrito/:cid",passport.authenticate("current", {session : false}), async (req, res) => {
+router.get("/carrito/:cid", passport.authenticate("current", {session : false}),  async (req, res) => {
     let { cid } = req.params
     console.log(cid)
     let products

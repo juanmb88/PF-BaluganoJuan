@@ -34,7 +34,6 @@ router.post("/login", passport.authenticate("login", {session : false, failureRe
    delete usuario.password;// aca evito que quede guardo el password del user
     
     let token = jwt.sign(usuario, SECRET, {expiresIn : "1h"})
-
 	res.cookie("CookiePrueba", token, { httpOnly: true }); //enviamos desde el servidor cookie
         
      if(web){
@@ -84,8 +83,8 @@ router.get("/error", (req, res)=>{
     
 });
 
-//RUTA DE CUURENT PARA DESAFIO INTEGRADOR II
-router.get("/current", authToken, (req, res) => {
+//RUTA DE CURRENT PARA DESAFIO INTEGRADOR II
+router.get("/current", passport.authenticate("current", {session : false}), (req, res) => {
     const usuario = req.user;
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json({ usuario, login: usuario });
