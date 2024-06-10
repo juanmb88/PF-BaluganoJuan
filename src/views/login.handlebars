@@ -2,7 +2,6 @@
 {{>menu}}
 </div>
 
-<hr>
 <form action="/api/sessions/login" method="post">
 
     {{#if error}}
@@ -11,7 +10,7 @@
  {{#if mensaje}}
         <div style="font-weight: bolder; color: blue;">{{mensaje}}</div>
     {{/if}}
-<div class="container mt-5">
+<div>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form>
@@ -34,14 +33,6 @@
             </div>
         </div>
     </div>
- {{!--    <input type="email" name="email" placeholder="correo electrónico">
-    <input type="password" name="password" placeholder="contraseña">
-    <input type="text" name="web" value="web" hidden>
-    <br>
-    <hr>
-    <a href="/api/sessions/github" class="btn btn-primary">Acceder con Git-Hub</a> --}}
-   {{!--  <br>
-    <hr>
-    <input type="submit" value="Login"> --}}
+
 </form>
 <br><br>

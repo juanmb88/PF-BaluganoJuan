@@ -1,14 +1,13 @@
-/*Aca vamos a almacenar todas nuestras estrategias de autenticacion para el proyecto, ej, registro y login, autet. por terceros, JWT 
-PASO 1 toda la logica para que funciones nuestro register, PASO 2 configurar este archivo con nuestro app.js
-PASO 3 hago la llamada de este middleware en mi ruta de sesion-router.js */
+/*Aca vamos a almacenar todas nuestras estrategias de autenticacion para el proyecto, ej, registro y login, autet. por terceros, JWT*/
 import  passport  from "passport";
 import local from 'passport-local';
 import passportJWT from "passport-jwt";
 import github from "passport-github2";
-import { UsersController as UsuariosManager } from '../controllers/userController.js';
-import CartManager from '../controllers/cartController.js'
+import { UsersManager as UsuariosManager } from '../services/userManager.js';
+import CartManager from '../services/cartManager.js'
 import  {generaHash, SECRET, validaPassword}  from "../utils.js";
-
+import dotenv from 'dotenv';
+dotenv.config();
 const usuariosManager = new UsuariosManager();
 const cartManager = new CartManager();
 
@@ -85,7 +84,7 @@ export const initPassport =()=>{
                         return done(error)
                     }        
                 })
-    )
+    );
 
 //CONFIGURACION DEL LOGIN
         passport.use(
@@ -115,15 +114,15 @@ export const initPassport =()=>{
                    } 
                 }
             )
-    )
+    );
 //CONFIGURACION DEL LOGIN CON GIT HUB
         passport.use(
             'github',
             new github.Strategy(
                 {
-                    clientID : "Iv23liJk69wGRbk6p4SZ",
-                    clientSecret : "bdac66bf8d50bed5b440da4df0b66bdd18a5ecb7",
-                    callbackURL : "http://localhost:8080/api/sessions/devolucionGithub"
+                    clientID: process.env.GITHUB_CLIENT_ID,
+                    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+                    callbackURL: process.env.GITHUB_CALLBACK_URL
 
                 },
                 async(tokenAcceso, tokenRefresh, profile, done)=>{
@@ -149,6 +148,6 @@ export const initPassport =()=>{
                     }
                 }
             )
-    ) 
+    );
 
 };

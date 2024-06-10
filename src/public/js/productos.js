@@ -16,9 +16,7 @@ const comprar = async (pid)=>{
     }
 };
 //LOGICA MENSAJE DE BIENVENIDA
-
 const mensajeBienvenida = document.getElementById('mensajeBienvenida');
-
 if (mensajeBienvenida) {
     setTimeout(() => {
         mensajeBienvenida.remove(); 
@@ -32,7 +30,7 @@ const eliminar = async (pid)=>{
    // console.log(`Codigo producto: ${pid}, Codigo Carrito: ${cid}`);
 
     let respuesta = await fetch(`/api/carts/${cid}/products/${pid}`,{
-        method:"delete"
+        method:"DELETE"
     });
     console.log(pid)
     console.log(cid)
@@ -48,7 +46,7 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
     if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
         // Si el usuario confirma el cierre de sesión
         fetch('http://localhost:8080/api/sessions/logout', {
-            method: 'POST', // o 'GET' dependiendo del método que uses
+            method: 'POST', 
         })
         .then(response => {
             window.location.href = '/login'; //

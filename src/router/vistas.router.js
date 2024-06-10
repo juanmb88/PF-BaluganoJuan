@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import  productController from '../controllers/productController.js';
-import CartManager from '../controllers/cartController.js';
+import  productController from '../services/productManager.js';
+import CartManager from '../services/cartManager.js';
 import { authTokenPermisos } from "../middleware/auth.js"
 import passport from 'passport';
 import { passportCall } from '../utils.js';
@@ -42,10 +42,10 @@ router.get('/',passport.authenticate("current", {session : false}), async (req, 
         const usuarioEnSesion = req.user;
 
         // Verificar si el mensaje de bienvenida ya se ha mostrado para no repetirlo
-        if (usuarioEnSesion && !req.cookies.mensajeBienvenidaMostrado) {
+         if (usuarioEnSesion && !req.cookies.mensajeBienvenidaMostrado) {
             mensajeBienvenida = `¡Bienvenido de nuevo:  ${usuarioEnSesion.first_name}!`;
             req.cookies.mensajeBienvenidaMostrado = true;
-        } 
+        }  
           let carrito = {
             _id: usuarioEnSesion.carrito
         }  
@@ -158,7 +158,6 @@ router.get('/login', (req,res)=>{
 //VISTA PERFIL DEL USUARIO
  router.get('/profile',passportCall("current"), (req, res) => {
     const usuario  = req.user;
-    console.log("consolelog desde la ruta /profile     ",req.user);
     res.setHeader("Content-Type", "text/html")
     res.status(200).render("profile", { usuario, login: usuario });
 }); 

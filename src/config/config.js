@@ -6,7 +6,10 @@ dotenv.config({
 
 
 
-export const configVarEntorno = {
-    PORT : process.env.PORT || 3001,
-    
-}
+export const configVarEntorno = { 
+    PORT : process.env.PORT || 3001
+};
+
+export const configEntornoClusterMDB = {
+    CLUSTER: process.env.MONGODB
+};

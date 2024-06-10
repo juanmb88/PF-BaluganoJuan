@@ -2,11 +2,9 @@ import { Router } from 'express';
 import passport from 'passport';
 import jwt from "jsonwebtoken"
 import {  SECRET } from '../utils.js';
-import { authToken } from '../middleware/auth.js';
 export const router=Router()
 
 
-//RUTA REGISTRO DE USUARIO
 router.post('/register', async (req, res, next) => {
     passport.authenticate('register', { session: false, failureRedirect: "/api/sessions/error" }, async (err, usuario) => {
         try {
@@ -24,7 +22,6 @@ router.post('/register', async (req, res, next) => {
     })(req, res, next);
 });
  
-//RUTA LOGIN DE USUARIO
 router.post("/login", passport.authenticate("login", {session : false, failureRedirect:"/api/sessions/error"}), async(req, res)=>{
     //router.post("/login", passportCall("current"), async(req, res)=>{
     let { web }=req.body;
@@ -44,10 +41,8 @@ router.post("/login", passport.authenticate("login", {session : false, failureRe
     } 
 }); 
 
-//RUTA de peticion a github
 router.get("/github", passport.authenticate("github", {}), async()=>{
 });
-//RUTA devolucion de github
 router.get("/devolucionGithub", passport.authenticate("github", { session: false, failureRedirect: "/api/sessions/error" }), async (req, res) => {
     try {
         const usuario = req.user;
@@ -63,7 +58,6 @@ router.get("/devolucionGithub", passport.authenticate("github", { session: false
     }
 });
 
-//RUTA DE LOGOUT PARA DESTRUIR UNA SESSION
 router.get("/logout", (req, res) => {
   
     res.clearCookie("CookiePrueba");
@@ -71,7 +65,6 @@ router.get("/logout", (req, res) => {
 
 });
 
-//RUTA ERROR
 router.get("/error", (req, res)=>{
     res.setHeader('Content-Type','application/json');
     return res.status(500).json(
@@ -83,7 +76,6 @@ router.get("/error", (req, res)=>{
     
 });
 
-//RUTA DE CURRENT PARA DESAFIO INTEGRADOR II
 router.get("/current", passport.authenticate("current", {session : false}), (req, res) => {
     const usuario = req.user;
     res.setHeader('Content-Type', 'application/json');

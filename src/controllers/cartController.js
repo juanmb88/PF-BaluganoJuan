@@ -1,97 +1,181 @@
-import  {cartsModel}  from "../dao/models/carts.model.js";
+import CartManager from "../services/cartManager.js";
+import ProductManager from "../services/productManager.js";
+import { isValidObjectId } from "mongoose";//se usa en addProductToCart
 
-export default class CartManager {
+const cartManager = new CartManager();
+const productManager = new ProductManager();
 
-   // METODO PARA CREAR CARRITO
-  ID_FIELD = "_id";
+export class CartController{
 
-  async createCart() {
-    try {
-     let carrito = await cartsModel.create({products:[]});
-     return carrito.toJSON()
-    } catch (error) {
-      console.log(error);
-      return false;
-    }
-  }
-  //METODO PARA TRAER TODOS LOS CARRITOS
-  async getAllCarts() {
-    const carts = await cartsModel.find().lean();
-    return carts;
-  };
-  //Obtener carrito por id
-  async getCartById(id) {
-    return await cartsModel.findOne({ _id: id }).populate("products.product").lean();
-  };
-  ///mandar un solo producto 
-  async getOneBy(filtro={}) {
-    return await cartsModel.findOne(filtro).lean();
-  };
-
-  //ELIMINAR CARRITO
-  async deleteCartById(id) {
-    try {
-      return await cartsModel.findByIdAndDelete({[this.ID_FIELD]: id})
-    } catch (error) {
-      console.log(error);
-      return false;
-    }
-  }; 
-  //ACTUIALIZAR CARRITO
-  async update(id, carrito){
-    return await cartsModel.updateOne({_id:id}, carrito)
-}
-
-// METODO PARA AGREGAR PRODUCTOS AL CARRITO
-async getOneByPopulate(filtro = {}) {
-  return await cartsModel.findOne(filtro).populate("products.product").lean();
-}
+    static getAll = async (req, res) => {
+        try {
+          const response = await cartManager.getAllCarts();
+          res.json(response);
+        } catch (error) {
+          console.log(error);
+          res.send("Error al intentar crear el carrito");
+        }
+      }
     
-  //METODO DE ELIMINAR PRODUCTO 
-  async deleteProductFromCart(id, productId) {
-    try {
-      const cart = await cartsModel.findById(id);
-      cart.products.remove(productId);
-      cart.save();
-      return true;
-    } catch (error) {
-      console.log(error);
-      return false;
-    }
-};
-
-/*  async getAllProductsFromCart(id) {
-  try {
-    return await cartsModel.findById(id).populate("producto.products").select({productos: 1, _id:0});
-  } catch (error) {
-    console.log(error);
-    return false;
-  }
-};  */
-
-//METODO DE ELIMINAR PRODUCTO POR CANTIDAD RESTANDFO QUANTITY
-async decreaseProductQuantity(cid, pid) {
-  try {
-      const cart = await cartsModel.findById(cid);
-      const productIndex = cart.products.findIndex(product => product.product == pid);
-
-      if (productIndex !== -1) {
-          // Si el producto existe en el carrito, disminuir su cantidad
-          if (cart.products[productIndex].quantity > 1) {
-              cart.products[productIndex].quantity -= 1;
-              await cart.save();
-          } else {
-              // Si la cantidad es 1, eliminar el producto del carrito
-              cart.products.splice(productIndex, 1);
-              await cart.save();
+    static getById = async (req, res) => {
+        const { cid } = req.params;
+        try {
+          if (!isValidObjectId(cid)) {
+            res.setHeader("Content-Type", "application/json");
+            return res.status(400).json({ error: `Enter valid cid/pid` });
           }
+      
+          const carrito = await cartManager.getOneByPopulate({ _id: cid });
+      
+          if (!carrito) {
+            res.setHeader("Content-Type", "application/json");
+            return res.status(400).json({ error: `Non-existent cart: id ${cid}` });
+          }
+      
+          res.setHeader("Content-Type", "application/json");
+          return res.status(200).json({ carrito });
+        } catch (error) {
+          res.status(500).send("Error trying to get cart");
+        }
       }
 
-      return true;
-  } catch (error) {
-      console.log(error);
-      return false;
-  }
- };
+    static createNewCart = async (req, res) => {
+        try {
+          const response = await cartManager.createCart();
+          res.json(response);
+        } catch (error) {
+          res.send("Error when trying to create cart");
+        }
+      }
+    
+    static addProductToCart = async( req,res ) => {
 
+        let { cid, pid } = req.params
+
+        if(!isValidObjectId(cid) || !isValidObjectId(pid)){
+            res.setHeader('Content-Type','application/json')
+            return res.status(400).json({error:`Ingrese cid / pid válidos`})
+        }
+      
+        let carrito = await cartManager.getOneBy({_id:cid})
+        if(!carrito){
+            res.setHeader('Content-Type','application/json');
+            return res.status(400).json({error:`Carrito inexistente: id ${cid}`})
+        }
+      
+        let product = await productManager.getOneBy({_id:pid})
+        if(!product){
+            res.setHeader('Content-Type','application/json');
+            return res.status(400).json({error:`No existe producto con id ${pid}`})
+        }
+      
+        let indiceProducto = carrito.products.findIndex(p=>p.product==pid)
+        if(indiceProducto === -1){
+          carrito.products.push({
+            product: pid, quantity:1
+          })
+        }else{
+          carrito.products[indiceProducto].quantity++
+        }
+        
+        console.log(carrito, " console de carrito")
+        let resultado = await cartManager.update(cid, carrito)
+        if(resultado.modifiedCount>0){
+            res.setHeader('Content-Type','application/json');
+            return res.status(200).json({payload:"Carrito actualizado, se agrego producto exitosamente"});
+        }else{
+            res.setHeader('Content-Type','application/json');
+            return res.status(500).json(
+                {
+                    error:`Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
+                    detalle:`No se pudo realizar la actualizacion`
+                }
+            )}
+      
+      }
+
+    static deleteProductByCart = async (req, res) => {
+        const { cid, pid } = req.params;
+        // Verifica si los IDs son válidos
+        if (!isValidObjectId(cid) || !isValidObjectId(pid)) {
+          res.setHeader("Content-Type", "application/json");
+          return res.status(400).json({ error: `Ingrese cid / pid válidos` });
+        }
+        try {
+          await cartManager.decreaseProductQuantity(cid, pid);
+      
+          res.json({
+            payload: `Se redujo la cantidad del producto con ID: ${pid} en el carrito con ID: ${cid}`,
+          });
+        } catch (error) {
+          return res.status(500).json({ error: `${error.message}` });
+        }
+      }
+     
+    static deleteCartById = async (req, res) => {
+        let { cid } = req.params;
+        if (!isValidObjectId(cid)) {
+          return res.status(400).json({
+            error: `Enter a valid MongoDB id`,
+          });
+        }
+      
+        if (!cid) {
+          return res.status(300).json({ error: "Check unfilled fields" });
+        }
+      
+        try {
+          await cartManager.deleteCartById(cid);
+          res.setHeader("Content-Type", "application/json");
+          res.json({ payload: `Carrito con ID :${cid} fue eliminado con exito` });
+          //console.log("Carrito eliminado");
+        } catch (error) {
+          return res.status(500).json({ error: `${error.message}` });
+        }
+      }  
+
+    static updateProduct = async (req, res) => {
+        const { cId, pId } = req.params;
+        if (!isValidObjectId(cId) || !isValidObjectId(pId)) {
+          res.setHeader("Content-Type", "application/json");
+          return res.status(400).json({ error: `Ingrese cid / pid válidos` });
+        }
+      
+        try {
+          let carrito = await cartManager.getOneBy({ _id: cId });
+          if (!carrito) {
+            res.setHeader("Content-Type", "application/json");
+            return res.status(400).json({ error: `Carrito inexistente: id ${cId}` });
+          }
+      
+          let productIndex = carrito.products.findIndex((p) => p.product == pId);
+          if (productIndex === -1) {
+            res.setHeader("Content-Type", "application/json");
+            return res.status(400).json({ error: `El producto con id ${pId} no está en el carrito` });
+          }
+      
+          const { quantity } = req.body;
+      
+          if (quantity <= 0) {
+            res.setHeader("Content-Type", "application/json");
+            return res.status(400).json({ error: `La cantidad debe ser mayor que cero` });
+          }
+      
+          carrito.products[productIndex].quantity = quantity;
+      
+          const resultado = await cartManager.update(cId, carrito);
+          if (resultado.modifiedCount > 0) {
+            res.setHeader("Content-Type", "application/json");
+            return res.status(200).json({ payload: "Producto en el carrito actualizado" });
+          } else {
+            res.setHeader("Content-Type", "application/json");
+            return res.status(500).json({
+              error: `Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
+              detalle: `No se pudo realizar la actualizacion`,
+            });
+          }
+        } catch (error) {
+          return res.status(500).json({ error: `${error.message}` });
+        }
+      }  
 }

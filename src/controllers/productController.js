@@ -1,105 +1,71 @@
-import {productsModel} from "../dao/models/products.model.js"
+import ProductManager from "../services/productManager.js";
+import { authToken } from "../middleware/auth.js";
 
-export default class ProductManager{
+const productManager = new ProductManager();
 
-    getProducts = async () => {
-        try {
-            return await productsModel.find().lean();
-        } catch (err) {
-            return err
+
+export class ProductController{
+
+    static getProduct = async (req,res) => {
+        const products= await productManager.getProducts();
+        res.json({products})
+    }
+
+    static getProductById = async (req, res) => {
+        const productfind = await productManager.getProductById(req.params);
+        res.json({ status: "success", productfind });
+    }
+
+    static updateProduct = async (req, res) => {
+        const updatedproduct = await productManager.updateProduct( req.params, req.body );
+         res.json({ status: "success", updatedproduct });
+    }
+
+    static deleteById = async (req, res) => {
+        const id=parseInt(req.params.pid)
+        const deleteproduct = await productManager.deleteProductById(id);
+         res.json({ status: "success",deleteproduct });
+    }
+
+    static addProduct = async(req, res)=>{
+
+        let {title, ...otrasPropiedades}=req.body;
+    
+        if(!title){
+            res.setHeader('Content-Type','application/json');
+            return res.status(400).json({error:`titulo es requerido`})
         }
-    };
-
-    getProductsView = async () => {
+    
+        let existe;
+    
         try {
-            return await productsModel.find().lean();
-
-        } catch (err) {
-            return err
+            existe = await productManager.getOneBy({title})
+        } catch (error) {
+            console.log(error);
+            res.setHeader('Content-Type','application/json');
+            return res.status(500).json(
+                {
+                    error:`Unexpected server error - Try later, or contact your administrator`,
+                    detalle:`${error.message}`
+                } )
         }
-    }; 
-        
-    getProductById = async (id) => {
-        try {
-            return await productsModel.findById(id)
-            
-        } catch (err) {
-            return {error: err.message}
-        }
-    };
-
-    async getOneBy(filtro={}){
-        return await productsModel.findOne(filtro).lean()
-    };
-
-    async create(product){
-        return await productsModel.create(product)
-    };
-
-    addProduct = async (product) => {
-        try {
-            await productsModel.create(product);
-            return await productsModel.findOne( { title: product.title } )
-        }
-        catch (err) {
-            return err
+         if(existe) {
+            res.setHeader('Content-Type','application/json');
+            return res.status(400).json({error:`Ya existe ${title} en BD`});
         } 
-    };
-
-    updateProduct = async (id, product) => {
+    
         try {
-            return await productsModel.findByIdAndUpdate( id, { $set: product } );
-        } catch (err) {
-            return err
+            let newProduct=await productManager.create({title, ...otrasPropiedades});
+            res.setHeader('Content-Type','application/json');
+            return res.status(201).json({newProduct});
+        } catch (error) {
+            console.log(error);
+            res.setHeader('Content-Type','application/json');
+            return res.status(500).json(
+                {
+                    error:`Unexpected server error - Try later, or contact your administrator`,
+                    detalle:`${error.message}`
+                } )
         }
-    };
-
-    deleteProductById = async (id) => {
-        try {
-            return await productsModel.deleteOne( {id} );
-        } catch (err) {
-            return err
-        }
-    };
-
-   //modelo de paginacion
-    async getAll(){
-        return await productsModel.find().lean();
-    };
-
-   //modelo de paginacion
-    async getAllPaginate(page = 1){
-        return await productsModel.paginate( {}, {limit:5, page, lean:true} );
-    };
-
-     //indico que va a recibir una pagina como parametro y seteo defecto su valor en 1, lo saqué porque ya defini en la ruta eso
-    async getProductsPaginate(filtro, opciones) {
-        //1 argumento es un filtro, el 2do es para indicar ciertos aspectos del paginado
-        console.log(opciones)
-        let resultado = await productsModel.paginate(filtro, opciones)
-        console.log(resultado)
-
-        //Agrego validaciones para el sort
-        let sortOrder = opciones.sort
-        if (sortOrder == "asc") {
-            return resultado = resultado.docs.sort(function (a, b) { return a.price - b.price })
-            
-        } else if (sortOrder == "desc") {
-            return resultado = resultado.docs.sort(function (a, b) { return b.price - a.price })
-
-        } else {
-            return resultado = {
-                status: "success",
-                payload: resultado.docs,
-                totalPages: resultado.totalPages,
-                prevPage: resultado.prevPage,
-                nextPage: resultado.nextPage,
-                page: resultado.page,
-                hasPrevPage: resultado.hasPrevPage,
-                hasNextPage: resultado.hasNextPage,
-                prevLink: "En construccion",
-                nextLink: "En construccion"
-            }   
-        }        
-    };
+    }
 }

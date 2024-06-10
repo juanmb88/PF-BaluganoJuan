@@ -1,15 +1,16 @@
 {{>menu}}
 
-<input type="text" value="{{carrito._id}}"  id="inputCarrito" >
-<a href="/carrito/{{carrito._id}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
+<input type="text" value="{{this.carrito._id}}"  id="inputCarrito" >
+<a href="/carrito/{{this.carrito._id}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
+
 <a href="/realTimeproducts" class="btn btn-success flex flex-center m-5 border-warning">Registrar un producto</a>
 
 {{#if mensajeBienvenida}}
-    <p id="mensajeBienvenida" class="mensaje-bienvenida">{{mensajeBienvenida}}</p>
+    <p id="mensajeBienvenida" class="text-white fs-4 fw-1 text-center mensaje-bienvenida">{{mensajeBienvenida}}</p>
 {{/if}}
 
 
-<div class="container col-12 border border-primary">
+<div>
     <h1 class="text-center mb-4 fs-1 font-monospace">Productos</h1>
       <div class="row  row-cols-md-4 row-cols-md-5 ">  
           {{#each listOfProducts}}

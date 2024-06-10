@@ -3,11 +3,10 @@ import path from "path";
 import __dirname from "./utils.js"; 
 import { engine } from "express-handlebars";
 import connectDB from "./connection/MongoDB.js"
-import { router as productRouter } from "./routes/products-router.js";
-import { router as cartRouter } from "./routes/cart-router.js";
-import { router as vistasRouter } from './routes/vistas.router.js';
-import { router as sessionsRouter } from './routes/sessions-router.js';
-import { router as cookieRouter } from './routes/cookie-router.js';
+import { router as productRouter } from "./router/products-router.js";
+import { router as cartRouter } from "./router/cart-router.js";
+import { router as vistasRouter } from './router/vistas.router.js';
+import { router as sessionsRouter } from './router/sessions-router.js';
 import  dotenv from 'dotenv';
 import  passport  from "passport";
 import cookieParser from "cookie-parser";
@@ -50,7 +49,6 @@ app.use(express.static(path.join(__dirname,'/public')));
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 app.use('/api/sessions', sessionsRouter);
-app.use("/",cookieRouter)
 app.use('/', vistasRouter);//ruta de las vistas con handlebars
 app.use('/',(req, res)=>{
     res.setHeader('Content-Type', 'text/plain');

@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-const dbName = 'ecommerce';
+ import  {configEntornoClusterMDB} from "../config/config.js";
 
 
  const connectDB = async ()=>{
     
     try{
-        await mongoose.connect(`mongodb+srv://user:1234@cluster.s4bt3ui.mongodb.net/?&dbName=${dbName}`) 
+        await mongoose.connect(configEntornoClusterMDB.CLUSTER) 
         console.log("Conectado a la base de datos de MongoDB")
     }catch(error){
         console.log("Error conectar a la base de datos de MongoDB", error.message)
@@ -13,3 +13,6 @@ const dbName = 'ecommerce';
 }
  
 export default connectDB;
+
+
+
