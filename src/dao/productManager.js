@@ -1,4 +1,4 @@
-import {productsModel} from "../dao/models/products.model.js"
+import {productsModel} from "./models/products.model.js"
 
 export default class ProductManager{
 
@@ -54,9 +54,9 @@ export default class ProductManager{
         }
     };
 
-    deleteProductById = async (id) => {
+    deleteProductById = async (_id) => {
         try {
-            return await productsModel.deleteOne( {id} );
+            return await productsModel.deleteOne( {_id} );
         } catch (err) {
             return err
         }
@@ -72,7 +72,7 @@ export default class ProductManager{
         return await productsModel.paginate( {}, {limit:5, page, lean:true} );
     };
 
-     //indico que va a recibir una pagina como parametro y seteo defecto su valor en 1, lo saqué porque ya defini en la ruta eso
+     //indico que va a recibir una pagina como parametro y seteo defecto su valor en 1
     async getProductsPaginate(filtro, opciones) {
         //1 argumento es un filtro, el 2do es para indicar ciertos aspectos del paginado
         console.log(opciones)
@@ -103,3 +103,4 @@ export default class ProductManager{
         }        
     };
 }
+export { ProductManager };

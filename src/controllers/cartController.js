@@ -1,9 +1,7 @@
-import CartManager from "../services/cartManager.js";
-import ProductManager from "../services/productManager.js";
-import { isValidObjectId } from "mongoose";//se usa en addProductToCart
+import { isValidObjectId } from "mongoose";
+import { cartService } from "../services/CartService.js";
+import { productService } from "../services/ProductService.js";
 
-const cartManager = new CartManager();
-const productManager = new ProductManager();
 
 export class CartController{
 
@@ -25,7 +23,7 @@ export class CartController{
             return res.status(400).json({ error: `Enter valid cid/pid` });
           }
       
-          const carrito = await cartManager.getOneByPopulate({ _id: cid });
+          const carrito = await cartService.getOneByPopulate({ _id: cid });
       
           if (!carrito) {
             res.setHeader("Content-Type", "application/json");
@@ -41,7 +39,7 @@ export class CartController{
 
     static createNewCart = async (req, res) => {
         try {
-          const response = await cartManager.createCart();
+          const response = await cartService.createCart();
           res.json(response);
         } catch (error) {
           res.send("Error when trying to create cart");
@@ -57,13 +55,13 @@ export class CartController{
             return res.status(400).json({error:`Ingrese cid / pid válidos`})
         }
       
-        let carrito = await cartManager.getOneBy({_id:cid})
+        let carrito = await cartService.getOneBy({_id:cid})
         if(!carrito){
             res.setHeader('Content-Type','application/json');
             return res.status(400).json({error:`Carrito inexistente: id ${cid}`})
         }
       
-        let product = await productManager.getOneBy({_id:pid})
+        let product = await productService.getOneBy({_id:pid})
         if(!product){
             res.setHeader('Content-Type','application/json');
             return res.status(400).json({error:`No existe producto con id ${pid}`})
@@ -79,7 +77,7 @@ export class CartController{
         }
         
         console.log(carrito, " console de carrito")
-        let resultado = await cartManager.update(cid, carrito)
+        let resultado = await cartService.update(cid, carrito)
         if(resultado.modifiedCount>0){
             res.setHeader('Content-Type','application/json');
             return res.status(200).json({payload:"Carrito actualizado, se agrego producto exitosamente"});
@@ -102,7 +100,7 @@ export class CartController{
           return res.status(400).json({ error: `Ingrese cid / pid válidos` });
         }
         try {
-          await cartManager.decreaseProductQuantity(cid, pid);
+          await cartService.decreaseProductQuantity(cid, pid);
       
           res.json({
             payload: `Se redujo la cantidad del producto con ID: ${pid} en el carrito con ID: ${cid}`,
@@ -125,7 +123,7 @@ export class CartController{
         }
       
         try {
-          await cartManager.deleteCartById(cid);
+          await cartService.deleteCartById(cid);
           res.setHeader("Content-Type", "application/json");
           res.json({ payload: `Carrito con ID :${cid} fue eliminado con exito` });
           //console.log("Carrito eliminado");
@@ -142,7 +140,7 @@ export class CartController{
         }
       
         try {
-          let carrito = await cartManager.getOneBy({ _id: cId });
+          let carrito = await cartService.getOneBy({ _id: cId });
           if (!carrito) {
             res.setHeader("Content-Type", "application/json");
             return res.status(400).json({ error: `Carrito inexistente: id ${cId}` });
@@ -163,7 +161,7 @@ export class CartController{
       
           carrito.products[productIndex].quantity = quantity;
       
-          const resultado = await cartManager.update(cId, carrito);
+          const resultado = await cartService.update(cId, carrito);
           if (resultado.modifiedCount > 0) {
             res.setHeader("Content-Type", "application/json");
             return res.status(200).json({ payload: "Producto en el carrito actualizado" });

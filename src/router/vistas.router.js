@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import  productController from '../services/productManager.js';
-import CartManager from '../services/cartManager.js';
+import  productController from '../dao/productManager.js';
+import {CartManager} from '../dao/cartManager.js';
 import { authTokenPermisos } from "../middleware/auth.js"
 import passport from 'passport';
 import { passportCall } from '../utils.js';
@@ -18,10 +18,8 @@ const cartManager = new CartManager();
 router.get('/',passport.authenticate("current", {session : false}), async (req, res) => {
     try {
         let { pagina, query, sort } = req.query;
-        // Si no se proporciona una página, usar la página 1
-        if (!pagina) pagina = 1;
+        if (!pagina) pagina = 1;        // Si no se proporciona una página, usar la página 1
         
-        // Obtener los productos paginados
         const { docs: listOfProducts, totalPages, hasPrevPage, hasNextPage, prevPage, nextPage } = await productManager.getAllPaginate(pagina);
 
         let filteredProducts = listOfProducts;// Aplicar el filtro si se proporciona
@@ -46,9 +44,16 @@ router.get('/',passport.authenticate("current", {session : false}), async (req, 
             mensajeBienvenida = `¡Bienvenido de nuevo:  ${usuarioEnSesion.first_name}!`;
             req.cookies.mensajeBienvenidaMostrado = true;
         }  
-          let carrito = {
-            _id: usuarioEnSesion.carrito
-        }  
+        let carrito = null;
+        if (usuarioEnSesion && usuarioEnSesion.carrito) {
+            if (typeof usuarioEnSesion.carrito === 'object' && usuarioEnSesion.carrito._id) {
+                carrito = { _id: usuarioEnSesion.carrito._id };
+            } else {
+                carrito = { _id: usuarioEnSesion.carrito };
+            }
+        }
+        
+        console.log(usuarioEnSesion)
 
         res.setHeader('Content-Type', 'text/html');
         res.status(200).render('inicio',{

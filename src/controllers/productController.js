@@ -1,29 +1,27 @@
-import ProductManager from "../services/productManager.js";
 import { authToken } from "../middleware/auth.js";
-
-const productManager = new ProductManager();
+import { productService } from "../services/ProductService.js";
 
 
 export class ProductController{
 
     static getProduct = async (req,res) => {
-        const products= await productManager.getProducts();
+        const products= await productService.getProducts();
         res.json({products})
     }
 
     static getProductById = async (req, res) => {
-        const productfind = await productManager.getProductById(req.params);
+        const productfind = await productService.getProductById(req.params);
         res.json({ status: "success", productfind });
     }
 
     static updateProduct = async (req, res) => {
-        const updatedproduct = await productManager.updateProduct( req.params, req.body );
+        const updatedproduct = await productService.updateProduct( req.params, req.body );
          res.json({ status: "success", updatedproduct });
     }
 
     static deleteById = async (req, res) => {
-        const id=parseInt(req.params.pid)
-        const deleteproduct = await productManager.deleteProductById(id);
+        const id = req.params.pid
+        const deleteproduct = await productService.deleteProductById(id);
          res.json({ status: "success",deleteproduct });
     }
 
@@ -39,7 +37,7 @@ export class ProductController{
         let existe;
     
         try {
-            existe = await productManager.getOneBy({title})
+            existe = await productService.getOneBy({title})
         } catch (error) {
             console.log(error);
             res.setHeader('Content-Type','application/json');
@@ -55,7 +53,7 @@ export class ProductController{
         } 
     
         try {
-            let newProduct=await productManager.create({title, ...otrasPropiedades});
+            let newProduct=await productService.create({title, ...otrasPropiedades});
             res.setHeader('Content-Type','application/json');
             return res.status(201).json({newProduct});
         } catch (error) {

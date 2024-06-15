@@ -3,8 +3,8 @@ import  passport  from "passport";
 import local from 'passport-local';
 import passportJWT from "passport-jwt";
 import github from "passport-github2";
-import { UsersManager as UsuariosManager } from '../services/userManager.js';
-import CartManager from '../services/cartManager.js'
+import { UsersManager as UsuariosManager } from '../dao/userManager.js';
+import {CartManager} from '../dao/cartManager.js'
 import  {generaHash, SECRET, validaPassword}  from "../utils.js";
 import dotenv from 'dotenv';
 dotenv.config();
@@ -127,8 +127,9 @@ export const initPassport =()=>{
                 },
                 async(tokenAcceso, tokenRefresh, profile, done)=>{
                     try {
-                        let email = profile._json.email;
-                        let first_name = profile._json.name;
+                        let email = profile._json.email
+                        let first_name = profile._json.name
+                        // console.log(profile)
                         if (!first_name || !email) {
                             return done(null, false);
                         }

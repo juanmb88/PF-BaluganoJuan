@@ -41,8 +41,9 @@ router.post("/login", passport.authenticate("login", {session : false, failureRe
     } 
 }); 
 
-router.get("/github", passport.authenticate("github", {}), async()=>{
-});
+router.get('/github', passport.authenticate('github', { scope: ['user:email'] }));
+
+
 router.get("/devolucionGithub", passport.authenticate("github", { session: false, failureRedirect: "/api/sessions/error" }), async (req, res) => {
     try {
         const usuario = req.user;

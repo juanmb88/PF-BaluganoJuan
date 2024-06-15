@@ -1,9 +1,9 @@
 {{>menu}}
   <a class="mx-5 my-5 btn btn-success border-warning" href="/">Inicio</a>
-  <a href="/inicio" class="btn btn-success flex flex-center m-5 border-warning">Seguir Comprando</a>
+  <a href="/" class="btn btn-success flex flex-center m-5 border-warning">Seguir Comprando</a>
     <h2 class="text-center">Carrito del cliente {{carrito._id}} </h2>
     
-<input type="text" value="{{this.carrito._id}}"  id="inputCarrito" >
+<input type="text" value="{{this.carrito._id}}"  id="inputCarrito" hidden>
 <a href="/carrito/{{this.carrito._id}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
 
 <div class="container bg-secondary bg-gradient">
@@ -43,18 +43,3 @@
 </div>
 <script src="/js/productos.js"></script>
 
-
-
-{{!-- 
-  <h2>Carrito del cliente numero : {{carrito._id}}</h2>
-
-<ul>
-    {{#each carrito.productos}}
-        <li>
-            {{producto.descripcion}} - precio: {{producto.precio}} - cantidad: {{cantidad}}
-        </li>
-    {{/each}}
-</ul>
-
-<br>
-<br> --}}
