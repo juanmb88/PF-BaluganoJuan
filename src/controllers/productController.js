@@ -1,4 +1,3 @@
-import { authToken } from "../middleware/auth.js";
 import { productService } from "../services/ProductService.js";
 
 

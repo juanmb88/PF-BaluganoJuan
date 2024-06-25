@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken';
-import { SECRET } from '../utils.js';
+import dotenv from 'dotenv';
+
+dotenv.config(); 
 
 export const authTokenPermisos = (permisos = []) => {// auth(["admin", "user"])  o  auth(["admin"])
 
@@ -24,17 +26,17 @@ export const authTokenPermisos = (permisos = []) => {// auth(["admin", "user"]) 
 	};
 };
 
-export  const authToken = (req, res, next) => {
-    const token = req.cookies.CookiePrueba; //  el nombre de la cookie DEBE SER correcto
+export const authToken = (req, res, next) => {
+    const token = req.cookies.CookiePrueba; // Cambiar a signedCookies
     if (!token) {
         return res.status(401).json({ message: 'Token no provisto' });
-    }
-    jwt.verify(token, SECRET, (err, decoded) => {
+}
+
+	jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
         if (err) {
-            return res.status(401).json({ message: 'Fallo error al autenticar token' });
+            return res.status(401).json({ message: 'Fallo al autenticar token' });
         }
         req.user = decoded; // Aquí se guarda el usuario decodificado en req.user
         next();
     });
 };
-

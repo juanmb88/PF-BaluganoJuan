@@ -5,7 +5,7 @@ import passportJWT from "passport-jwt";
 import github from "passport-github2";
 import { UsersManager as UsuariosManager } from '../dao/userManager.js';
 import {CartManager} from '../dao/cartManager.js'
-import  {generaHash, SECRET, validaPassword}  from "../utils.js";
+import  {generaHash, validaPassword}  from "../utils.js";
 import dotenv from 'dotenv';
 dotenv.config();
 const usuariosManager = new UsuariosManager();
@@ -26,7 +26,7 @@ export const initPassport =()=>{
 		"current",
 		new passportJWT.Strategy(
 			{
-				secretOrKey: SECRET,
+				secretOrKey: process.env.ACCESS_TOKEN_SECRET,
 				jwtFromRequest: new passportJWT.ExtractJwt.fromExtractors([
 					buscaToken,
 				]),
@@ -126,7 +126,7 @@ export const initPassport =()=>{
 
                 },
                 async(tokenAcceso, tokenRefresh, profile, done)=>{
-                    try {
+                     try {
                         let email = profile._json.email
                         let first_name = profile._json.name
                         // console.log(profile)

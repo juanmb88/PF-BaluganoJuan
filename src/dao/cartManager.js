@@ -18,7 +18,7 @@ class CartManager {
     return carts;
   };
   async getCartById(id) {
-    return await cartsModel.findOne({ _id: id }).populate("products.product").lean();
+    return await cartsModel.findOne({ _id: id }).populate("products.product");
   };
  
   async getOneBy(filtro={}) { //manda un solo producto 
@@ -65,16 +65,11 @@ class CartManager {
             return false;
           }
         };
+
+        
         
   }
       
-      /*  async getAllProductsFromCart(id) {
-        try {
-          return await cartsModel.findById(id).populate("producto.products").select({productos: 1, _id:0});
-          } catch (error) {
-            console.log(error);
-            return false;
-            }
-            };  */
+      
 
-            export { CartManager };
+export { CartManager };

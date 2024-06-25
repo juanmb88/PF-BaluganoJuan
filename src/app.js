@@ -7,6 +7,9 @@ import { router as productRouter } from "./router/products-router.js";
 import { router as cartRouter } from "./router/cart-router.js";
 import { router as vistasRouter } from './router/vistas.router.js';
 import { router as sessionsRouter } from './router/sessions-router.js';
+import socketChat from "./socket/socketChat.js";
+import socketProducts from './socket/socketProducts.js';
+import { Server } from "socket.io";
 import  dotenv from 'dotenv';
 import  passport  from "passport";
 import cookieParser from "cookie-parser";
@@ -14,8 +17,8 @@ import { initPassport } from "./config/passportConfig.js";
 import {configVarEntorno} from "./config/config.js"
 dotenv.config();
 
-const port = configVarEntorno.PORT;
 const app = express();
+const port = configVarEntorno.PORT;
 
 //middlewares 
 app.use(express.json());
@@ -50,12 +53,20 @@ app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use('/', vistasRouter);//ruta de las vistas con handlebars
-app.use('/',(req, res)=>{
+app.use('/',async(req, res)=>{
     res.setHeader('Content-Type', 'text/plain');
-    res.status(200).send("Todo Ok")});
-//FIN RUTAS
-
-//Escucha del servidor
-const serverHTTP= app.listen(port, ()=> console.log(`Server corriendo en http://localhost:${port}`));
+    res.status(200).send("Todo Ok")
+});
+    
+    //FIN RUTAS
+    
+    //Escucha del servidor
+    const serverHTTP= app.listen(port, ()=> console.log(`Server corriendo en http://localhost:${port}`));
 serverHTTP.on('error', (err)=> console.log(err));
- 
+
+//socket
+const socketServer = new Server(serverHTTP);
+
+socketProducts(socketServer);
+socketChat(socketServer);
+//socket FIN

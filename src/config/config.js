@@ -4,8 +4,6 @@ dotenv.config({
     override : true
 });
 
-
-
 export const configVarEntorno = { 
     PORT : process.env.PORT || 3001
 };

@@ -16,6 +16,10 @@ class ProductService {
     getProductById = async (id) => {
         return this.dao.getProductById(id)
     };
+    
+    getProductsByFiltro = async (filtro) => {
+        return this.dao.getProductsByFiltro(filtro)
+    }
 
     getOneBy = async (filtro = {}) =>{
         return this.dao.getOneBy(filtro)

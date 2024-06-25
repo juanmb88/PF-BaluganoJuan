@@ -61,7 +61,9 @@ export default class ProductManager{
             return err
         }
     };
-
+    async getProductsByFiltro(filtro) { 
+        return await productsModel.findOne(filtro)
+    }
    //modelo de paginacion
     async getAll(){
         return await productsModel.find().lean();

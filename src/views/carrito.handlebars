@@ -1,10 +1,11 @@
-{{>menu}}
-  <a class="mx-5 my-5 btn btn-success border-warning" href="/">Inicio</a>
+
   <a href="/" class="btn btn-success flex flex-center m-5 border-warning">Seguir Comprando</a>
     <h2 class="text-center">Carrito del cliente {{carrito._id}} </h2>
     
-<input type="text" value="{{this.carrito._id}}"  id="inputCarrito" hidden>
-<a href="/carrito/{{this.carrito._id}}" class="btn btn-warning mx-3 my-3">Ver carrito</a>
+<a onclick="finalizarCompra()" class="btn btn-success flex flex-center m-5 border-warning">Finalizar compra</a>
+
+<!-- Input oculto para almacenar el ID del carrito -->
+<input type="text" value="{{this.carrito._id}}" id="inputCarrito" hidden>
 
 <div class="container bg-secondary bg-gradient">
       <div class="row  row-cols-md-4 row-cols-md-6 m-5 mt-4 ">  
@@ -33,7 +34,11 @@
                         <li >
                             <img src="{{this.product.thumbnail}}" alt="{{this.product.title}}" class="img-fluid mt-2">
                         </li>
-                        <button class="btn btn-danger"  id="btnEliminar" onclick="eliminar('{{carrito._id}}')">Eliminar</button>
+
+  <div>
+    <button class="btn btn-danger" onclick="eliminar('{{../cart._id}}', '{{this.product._id}}')">Eliminar</button>
+  </div>
+
                     </ul>
                 </div>
             </div>

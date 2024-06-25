@@ -53,8 +53,6 @@ router.get('/',passport.authenticate("current", {session : false}), async (req, 
             }
         }
         
-        console.log(usuarioEnSesion)
-
         res.setHeader('Content-Type', 'text/html');
         res.status(200).render('inicio',{
             carrito,

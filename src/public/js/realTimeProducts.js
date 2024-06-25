@@ -12,7 +12,7 @@ productList.forEach( product => {
     productsHTML += `  <div class="border border-dark card h-100 bg-white mx-4 my-3" style="max-width:30rem">
     
                             <div class="w-100 card-header bg-secondary text-white ">
-                                 <i class="bi bi-tag fw-normal fw-bold">ID Producto:</i> ${product.id}
+                                 <i class="bi bi-tag fw-normal fw-bold">ID Producto:</i> ${product._id}
                             </div>
 
                             <div class="card-body">

@@ -1,7 +1,8 @@
 import { isValidObjectId } from "mongoose";
 import { cartService } from "../services/CartService.js";
 import { productService } from "../services/ProductService.js";
-
+import { ticketService } from "../services/TicketService.js";
+import { sendTicketDeCompraEmail } from '../helper/nodeMailer.js'; // Importa la función de envío de correo
 
 export class CartController{
 
@@ -132,6 +133,7 @@ export class CartController{
         }
       }  
 
+
     static updateProduct = async (req, res) => {
         const { cId, pId } = req.params;
         if (!isValidObjectId(cId) || !isValidObjectId(pId)) {
@@ -176,4 +178,86 @@ export class CartController{
           return res.status(500).json({ error: `${error.message}` });
         }
       }  
+
+      static purchase = async (req, res) => {
+        let cid = req.params.cid; 
+        let usuario = req.user;
+        let productosConStock = [];
+        let productosSinStock = [];
+
+        try {
+        
+            const cart = await cartService.getCartById(cid); 
+
+            if (!cart) {
+                return res.status(404).json({ message: "Carrito no encontrado" });
+            }
+            // Verifico stock del producto
+             for (let i = 0; i < cart.products.length; i++) { 
+                let product = await productService.getProductsByFiltro(cart.products[i].product._id); 
+                if (!product) {
+                    return res.status(404).json({ message: `Id de producto : ${cart.products[i].product._id} no encontrado` });
+                }
+
+                if (cart.products[i].quantity <= product.stock) {
+                    let nuevoStock = { stock: product.stock - cart.products[i].quantity };
+                    await productService.updateProduct(cart.products[i].product._id, nuevoStock);
+                    productosConStock.push(cart.products[i])//agrego a la lista creada
+                    console.log("Producto  añadido:", cart.products[i]);
+                } else {
+                    productosSinStock.push(cart.products[i]);
+                    console.log("Producto no facturable añadido:", cart.products[i]);
+                }
+            }
+            //FIN Verifico stock del producto
+            console.log("Productos para facturar:", productosConStock);
+            console.log("Productos sin stock restantes:", productosSinStock);
+
+            // Obtengo el precio total de la compra, se agraga cantidad de item en el calculo
+            const precioTotal = productosConStock.map(item => ({
+              price: item.product.price * item.quantity,
+              quantity: item.quantity,
+              product: item.product._id
+          }));
+  
+          const total = precioTotal.reduce((acumulador, valorActual) => acumulador + valorActual.price, 0);
+  
+          const cantidadesPorUnidad = precioTotal.reduce((acumulador, valorActual) => {
+              acumulador[valorActual.product] = valorActual.quantity;
+              return acumulador;
+          }, {});
+  
+          console.log("Total a pagar:", total);
+          console.log("Cantidades por unidad:", cantidadesPorUnidad);
+
+            //actualizo carrito
+            await cartService.update(cart._id, { products: productosSinStock });
+
+           //ticket a dar...
+            const compraFinal = {
+                purchaser: usuario.email,
+                code: Math.floor(Math.random() * 100000),
+                amount: total,
+                products: productosConStock.map(item => ({
+                  product: item.product._id, 
+                  quantity: item.quantity 
+                })),
+                purchase_datetime: Date.now(),
+            };
+            await sendTicketDeCompraEmail(usuario.email, compraFinal.code, compraFinal.amount);
+
+            console.log("Datos de compra:", compraFinal);
+
+            let ticket = await ticketService.create(compraFinal);
+
+            console.log("Ticket creado:", ticket);
+
+            res.setHeader("Content-Type", "application/json");
+            return res.status(201).json(ticket);
+        } catch (error) {
+            console.error("Error procesando compra:", error);
+            res.setHeader("Content-Type", "application/json");
+            return res.status(500).json("Error inesperado en el servidor al procesar la compra");
+        }
+    }
 }

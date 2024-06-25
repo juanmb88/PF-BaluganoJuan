@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { CartController } from "../controllers/cartController.js";
+import  { authToken } from "../middleware/auth.js";
 
 export const router = Router();
 
@@ -15,11 +16,19 @@ router.post("/", CartController.createNewCart);
 //AGREGAR PRODUCTOS AL CARRITO
 router.post('/:cid/products/:pid',  CartController.addProductToCart )
 
+
 //ELIMINAR PRODUCTO DEL CARRITO POR UNIDAD (QUANTITY)
 router.delete("/:cid/products/:pid", CartController.deleteProductByCart );
+//ELIMINAR PRODUCTO DEL CARRITO POR UNIDAD (QUANTITY)
+
+//router.delete("/:cid/products/:pid", CartController.deleteProductFromCart);
+
 
 //ELIMINAR CARRITO POR ID
 router.delete("/:cid", CartController.deleteCartById);
 
 //Modificar un producto desde el carrito
 router.put("/:cId/products/:pId", CartController.updateProduct);
+
+//Finalizar Compra 
+router.post("/:cid/purchase", authToken, CartController.purchase)
