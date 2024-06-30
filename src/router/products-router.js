@@ -1,12 +1,17 @@
-import {Router} from "express"
-import {ProductController} from "../controllers/ProductController.js";
+import { Router } from "express";
+import { ProductController } from "../controllers/ProductController.js";
 import { authToken } from "../middleware/auth.js";
 
-export const router =Router();
+export const router = Router();
 
-/// OBTENER TODOS LOS PRODUC.
+
+/// OBTENER TODOS LOS PRODUCTOS
 router.get("/", ProductController.getProduct);
+// Inserción de 100 productos con faker
+router.get("/mockingProducts", ProductController.mockProducts);
 
+/// AGREGAR PRODUCTO
+router.post("/", authToken, ProductController.addProduct);
 /// OBTENER POR ID
 router.get("/:pid", ProductController.getProductById);
 
@@ -16,5 +21,3 @@ router.put("/:pid", ProductController.updateProduct);
 /// DELETE POR ID
 router.delete("/:pid", ProductController.deleteById);
 
-/// AGREGAR PRODUCTO
-router.post("/", authToken, ProductController.addProduct);

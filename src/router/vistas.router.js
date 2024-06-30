@@ -128,7 +128,6 @@ router.get('/paginacion', async (req, res) => {
 //VISTA CARRITO INDIVIDUAL
 router.get("/carrito/:cid", passport.authenticate("current", {session : false}),  async (req, res) => {
     let { cid } = req.params
-    console.log(cid)
     let products
     try {
         let carrito = await cartManager.getOneByPopulate({ _id: cid })
@@ -144,7 +143,6 @@ router.get("/carrito/:cid", passport.authenticate("current", {session : false}),
     }
     
 })
-
 
 //VISTA DE REGISTRO
 router.get('/register', (req, res) => {

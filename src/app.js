@@ -2,7 +2,7 @@ import express from "express";
 import path from "path"; 
 import __dirname from "./utils.js"; 
 import { engine } from "express-handlebars";
-import connectDB from "./connection/MongoDB.js"
+import connectDB from "./connection/MongoDB.js";
 import { router as productRouter } from "./router/products-router.js";
 import { router as cartRouter } from "./router/cart-router.js";
 import { router as vistasRouter } from './router/vistas.router.js';
@@ -10,63 +10,55 @@ import { router as sessionsRouter } from './router/sessions-router.js';
 import socketChat from "./socket/socketChat.js";
 import socketProducts from './socket/socketProducts.js';
 import { Server } from "socket.io";
-import  dotenv from 'dotenv';
-import  passport  from "passport";
+import dotenv from 'dotenv';
+import passport from "passport";
 import cookieParser from "cookie-parser";
 import { initPassport } from "./config/passportConfig.js";
-import {configVarEntorno} from "./config/config.js"
+import { configVarEntorno } from "./config/config.js";
+
 dotenv.config();
 
 const app = express();
 const port = configVarEntorno.PORT;
 
-//middlewares 
+// Middlewares 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-//FIN middlewares 
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser("CoderBack"));
 
-//COOKIE
-app.use(cookieParser("CoderBack")) 
-//COOKIE
-
-//PASSPORT
+// Passport
 initPassport();
 app.use(passport.initialize());
-//FIN PASSPORT
 
-//CONECCION A MONGO DB
+// Conexión a MongoDB
 connectDB();
-//CONECCION A MONGO DB 
 
-//handlebars
+// Handlebars
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname,'/views'));
-//FIN handlebars
+app.set('views', path.join(__dirname, '/views'));
 
-//contenido estatico
-app.use(express.static(path.join(__dirname,'/public')));
-//FIN contenido estatico
+// Contenido estático
+app.use(express.static(path.join(__dirname, '/public')));
 
-//RUTAS
+// Rutas
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 app.use('/api/sessions', sessionsRouter);
-app.use('/', vistasRouter);//ruta de las vistas con handlebars
-app.use('/',async(req, res)=>{
+app.use('/', vistasRouter); // Ruta de las vistas con handlebars
+
+// Ruta por defecto (Debe estar al final)
+
+app.use((req, res) => {
     res.setHeader('Content-Type', 'text/plain');
-    res.status(200).send("Todo Ok")
+    res.status(200).send("Todo Ok");
 });
-    
-    //FIN RUTAS
-    
-    //Escucha del servidor
-    const serverHTTP= app.listen(port, ()=> console.log(`Server corriendo en http://localhost:${port}`));
-serverHTTP.on('error', (err)=> console.log(err));
 
-//socket
+// Escucha del servidor
+const serverHTTP = app.listen(port, () => console.log(`Server corriendo en http://localhost:${port}`));
+serverHTTP.on('error', (err) => console.log(err));
+
+// Socket
 const socketServer = new Server(serverHTTP);
-
 socketProducts(socketServer);
 socketChat(socketServer);
-//socket FIN

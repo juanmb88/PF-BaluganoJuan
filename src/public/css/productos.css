@@ -1,15 +1,15 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa; /* Color de fondo suave */
-    color: #343a40; /* Color de texto principal */
+    background-color: #f8f9fa;
+    color: #343a40; 
     margin: 0;
     padding: 20px;
 }
 h2 {
-    color: #212529; /* Color de título */
+    color: #212529; 
 }
 hr {
-    border-color: #adb5bd; /* Color de línea */
+    border-color: #adb5bd; 
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -21,17 +21,17 @@ li {
     margin-bottom: 10px;
 }
 button {
-    background-color: #007bff; /* Color de fondo del botón */
+    background-color: #007bff; 
     border: none;
-    color: #fff; /* Color del texto del botón */
+    color: #fff; 
     padding: 5px 10px;
     cursor: pointer;
 }
 button:hover {
-    background-color: #0056b3; /* Color de fondo del botón al pasar el mouse */
+    background-color: #0056b3; 
 }
 a {
-    color: #007bff; /* Color del enlace */
+    color: #007bff; 
     text-decoration: none;
 }
 a:hover {
@@ -41,9 +41,9 @@ a:hover {
 .product-card {
     display: flex;
     justify-content: flex-start;
-    width: calc(50% - 20px); /* Establece el ancho para que quepan dos elementos en una fila con un espacio entre ellos */
-    border-bottom-width: 10px; /* ancho del borde inferior */
-    border-style: solid; /* estilo del borde */
+    width: calc(50% - 20px); 
+    border-bottom-width: 10px; 
+    border-style: solid; 
     padding: 20px;
     margin-bottom: 30px;
     background-color: #f9f9f9;
@@ -52,13 +52,13 @@ a:hover {
 
 @media (max-width: 992px) {
     .product-card {
-        width: 50%; /* Cambia el ancho del elemento para que se ajuste en dos columnas */
+        width: 50%; 
     }
 }
 
 @media (max-width: 768px) {
     .product-card {
-        width: 100%; /* Cambia el ancho del elemento para que ocupe todo el ancho de la pantalla */
+        width: 100%; 
     }
 }
 

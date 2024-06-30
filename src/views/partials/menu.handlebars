@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg bg-light ">
+ <nav class="navbar navbar-expand-lg bg-light ">
   <div class="container-fluid">
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+         {{#if login}}
         <li class="nav-item">
           <a class="nav-link fw-bold" aria-current="page"  href="/">Home</a>
         </li>
-         {{#if login}}
         <li class="nav-item">
           <a class="nav-link fw-bold " href="/profile">Perfil</a>
         </li>
@@ -24,9 +24,8 @@
         </li>
           {{/if}} 
       </ul>
-
     </div>
   </div>
 </nav>
 
-  <script src="/js/productos.js"></script>
+  <script src="/js/productos.js"></script> 

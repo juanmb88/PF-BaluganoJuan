@@ -33,8 +33,11 @@ class CartService {
         return this.dao.deleteCartById(id)
     }
 
-    decreaseProductQuantity = async (cid, pid ) => {
-        return this.dao.decreaseProductQuantity(cid, pid)
+    deleteCartById = async (cid, pid ) => {
+        return this.dao.deleteCartById(cid, pid)
+    }
+    decreaseProductQuantity = async (cid,pid) =>{
+        return this.dao.decreaseProductQuantity(cid,pid)
     }
 }
 

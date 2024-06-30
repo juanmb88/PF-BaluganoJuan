@@ -48,6 +48,7 @@ const eliminar = async (cid, pid) => {
 };
 
 
+
 //LOGICA DE CERRAR SESION 
 document.getElementById('logoutBtn').addEventListener('click', function() {
     if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {

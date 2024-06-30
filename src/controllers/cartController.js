@@ -101,7 +101,7 @@ export class CartController{
           return res.status(400).json({ error: `Ingrese cid / pid válidos` });
         }
         try {
-          await cartService.decreaseProductQuantity(cid, pid);
+          await cartService.deleteProductByCartQuantity(cid, pid);
       
           res.json({
             payload: `Se redujo la cantidad del producto con ID: ${pid} en el carrito con ID: ${cid}`,
@@ -109,6 +109,9 @@ export class CartController{
         } catch (error) {
           return res.status(500).json({ error: `${error.message}` });
         }
+
+
+        
       }
      
     static deleteCartById = async (req, res) => {
