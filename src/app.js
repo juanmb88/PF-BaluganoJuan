@@ -15,6 +15,7 @@ import passport from "passport";
 import cookieParser from "cookie-parser";
 import { initPassport } from "./config/passportConfig.js";
 import { configVarEntorno } from "./config/config.js";
+import compression from "express-compression";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ const port = configVarEntorno.PORT;
 
 // Middlewares 
 app.use(express.json());
+app.use(compression({}))
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser("CoderBack"));
 

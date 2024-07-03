@@ -1,31 +1,40 @@
- <nav class="navbar navbar-expand-lg bg-light ">
+<nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-         {{#if login}}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{#if login}}
         <li class="nav-item">
-          <a class="nav-link fw-bold" aria-current="page"  href="/">Home</a>
+          <a href="/realTimeproducts" class="btn btn-success mx-2">Registrar un producto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold " href="/profile">Perfil</a>
+          <a href="/carrito/{{this.carrito._id}}" class="btn btn-warning">Ver carrito</a>
         </li>
-       {{!--  <li class="nav-item">
-          <a class="nav-link fw-bold" href="/productos">Ir a productos</a>
-        </li> --}}
+        {{/if}}
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {{#if login}}
+        <li class="nav-item">
+          <a class="nav-link fw-bold" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold" href="/profile">Perfil</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link fw-bold" href="/api/sessions/logout" id="logoutBtn">Cerrar Sesion</a>
         </li>
-         {{else}} 
-         <li class="nav-item">
+        {{else}} 
+        <li class="nav-item">
           <a class="nav-link fw-bold" href="/register">Registrate</a>
         </li>
-         <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link fw-bold" href="/login">Iniciar Sesion</a>
         </li>
-          {{/if}} 
+        {{/if}} 
       </ul>
     </div>
   </div>
 </nav>
+
+
 
   <script src="/js/productos.js"></script> 
