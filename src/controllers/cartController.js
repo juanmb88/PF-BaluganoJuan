@@ -2,18 +2,20 @@ import { isValidObjectId } from "mongoose";
 import { cartService } from "../services/CartService.js";
 import { productService } from "../services/ProductService.js";
 import { ticketService } from "../services/TicketService.js";
-import { sendTicketDeCompraEmail } from '../helper/nodeMailer.js'; // Importa la función de envío de correo
+import { sendTicketDeCompraEmail } from '../helper/nodeMailer.js';
+import { logger } from '../helper/Logger.js';
+
 
 export class CartController{
 
     static getAll = async (req, res) => {
-        try {
-          const response = await cartManager.getAllCarts();
-          res.json(response);
-        } catch (error) {
-          console.log(error);
-          res.send("Error al intentar crear el carrito");
-        }
+          try {
+              const response = await cartManager.getAllCarts();
+              res.json(response);
+          } catch (error) {
+              logger.error(`Error al intentar obtener todos los carritos: ${error.message}`);
+              res.status(500).json({ error: `Error al intentar obtener todos los carritos` });
+          }
       }
     
     static getById = async (req, res) => {
@@ -34,112 +36,125 @@ export class CartController{
           res.setHeader("Content-Type", "application/json");
           return res.status(200).json({ carrito });
         } catch (error) {
-          res.status(500).send("Error trying to get cart");
-        }
+          logger.error(`Error al intentar obtener el carrito con ID ${cid}: ${error.message}`);
+          res.status(500).json({ error: `Error al intentar obtener el carrito` });
+      }
       }
 
     static createNewCart = async (req, res) => {
         try {
-          const response = await cartService.createCart();
-          res.json(response);
+            const response = await cartService.createCart();
+            logger.info(`Nuevo carrito creado: ${response._id}`);
+            res.json(response);
         } catch (error) {
-          res.send("Error when trying to create cart");
+            logger.error(`Error al intentar crear un nuevo carrito: ${error.message}`);
+            res.status(500).send("Error when trying to create cart");
         }
       }
     
-    static addProductToCart = async( req,res ) => {
-
-        let { cid, pid } = req.params
-
-        if(!isValidObjectId(cid) || !isValidObjectId(pid)){
-            res.setHeader('Content-Type','application/json')
-            return res.status(400).json({error:`Ingrese cid / pid válidos`})
+    static addProductToCart = async (req, res) => {
+        let { cid, pid } = req.params;
+    
+        if (!isValidObjectId(cid) || !isValidObjectId(pid)) {
+            logger.error(`Ingrese cid / pid válidos: cid=${cid}, pid=${pid}`);
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(400).json({ error: `Ingrese cid / pid válidos` });
         }
-      
-        let carrito = await cartService.getOneBy({_id:cid})
-        if(!carrito){
-            res.setHeader('Content-Type','application/json');
-            return res.status(400).json({error:`Carrito inexistente: id ${cid}`})
+    
+        try {
+            let carrito = await cartService.getOneBy({ _id: cid });
+            if (!carrito) {
+                logger.error(`Carrito inexistente: id ${cid}`);
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(400).json({ error: `Carrito inexistente: id ${cid}` });
+            }
+    
+            let product = await productService.getOneBy({ _id: pid });
+            if (!product) {
+                logger.error(`No existe producto con id ${pid}`);
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(400).json({ error: `No existe producto con id ${pid}` });
+            }
+    
+            let indiceProducto = carrito.products.findIndex(p => p.product == pid);
+            if (indiceProducto === -1) {
+                carrito.products.push({ product: pid, quantity: 1 });
+            } else {
+                carrito.products[indiceProducto].quantity++;
+            }
+    
+            logger.info(`Producto añadido al carrito: ${pid}`);
+    
+            let resultado = await cartService.update(cid, carrito);
+            if (resultado.modifiedCount > 0) {
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(200).json({ payload: "Carrito actualizado, se agregó producto exitosamente" });
+            } else {
+                logger.error(`Error al actualizar el carrito con id ${cid}`);
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(500).json({
+                    error: `Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
+                    detalle: `No se pudo realizar la actualización`
+                });
+            }
+        } catch (error) {
+            logger.error(`Error en el servidor al procesar la solicitud: ${error.message}`);
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(500).json({ error: `Error inesperado en el servidor: ${error.message}` });
         }
-      
-        let product = await productService.getOneBy({_id:pid})
-        if(!product){
-            res.setHeader('Content-Type','application/json');
-            return res.status(400).json({error:`No existe producto con id ${pid}`})
-        }
-      
-        let indiceProducto = carrito.products.findIndex(p=>p.product==pid)
-        if(indiceProducto === -1){
-          carrito.products.push({
-            product: pid, quantity:1
-          })
-        }else{
-          carrito.products[indiceProducto].quantity++
-        }
-        
-        console.log(carrito, " console de carrito")
-        let resultado = await cartService.update(cid, carrito)
-        if(resultado.modifiedCount>0){
-            res.setHeader('Content-Type','application/json');
-            return res.status(200).json({payload:"Carrito actualizado, se agrego producto exitosamente"});
-        }else{
-            res.setHeader('Content-Type','application/json');
-            return res.status(500).json(
-                {
-                    error:`Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
-                    detalle:`No se pudo realizar la actualizacion`
-                }
-            )}
-      
       }
-
+    
     static deleteProductByCart = async (req, res) => {
         const { cid, pid } = req.params;
-        // Verifica si los IDs son válidos
-        if (!isValidObjectId(cid) || !isValidObjectId(pid)) {
+
+        if (!isValidObjectId(cid) || !isValidObjectId(pid)) {// Verifica si los IDs son válidos
+          logger.error(`Ingrese cid / pid válidos: cid=${cid}, pid=${pid}`);
           res.setHeader("Content-Type", "application/json");
           return res.status(400).json({ error: `Ingrese cid / pid válidos` });
         }
         try {
           await cartService.deleteProductByCartQuantity(cid, pid);
-      
+
+          logger.info(`Cantidad del producto con ID ${pid} reducida en el carrito con ID ${cid}`);
           res.json({
             payload: `Se redujo la cantidad del producto con ID: ${pid} en el carrito con ID: ${cid}`,
           });
         } catch (error) {
+          
+          logger.error(`Error al reducir cantidad del producto en carrito: ${error.message}`);
           return res.status(500).json({ error: `${error.message}` });
-        }
-
-
-        
+        }   
       }
      
     static deleteCartById = async (req, res) => {
         let { cid } = req.params;
         if (!isValidObjectId(cid)) {
-          return res.status(400).json({
-            error: `Enter a valid MongoDB id`,
-          });
+            logger.error(`Ingrese un ID de MongoDB válido: cid=${cid}`);
+            return res.status(400).json({
+                error: `Ingrese un ID de MongoDB válido`,
+            });
         }
       
         if (!cid) {
-          return res.status(300).json({ error: "Check unfilled fields" });
+            logger.warn(`Campos no llenados correctamente: cid=${cid}`);
+            return res.status(300).json({ error: "Campos no llenados correctamente" });
         }
       
         try {
-          await cartService.deleteCartById(cid);
-          res.setHeader("Content-Type", "application/json");
-          res.json({ payload: `Carrito con ID :${cid} fue eliminado con exito` });
-          //console.log("Carrito eliminado");
+            await cartService.deleteCartById(cid);
+            logger.info(`Carrito con ID ${cid} eliminado correctamente`);
+            res.setHeader("Content-Type", "application/json");
+            return res.json({ payload: `Carrito con ID :${cid} fue eliminado con éxito` });
         } catch (error) {
-          return res.status(500).json({ error: `${error.message}` });
+            logger.error(`Error al eliminar carrito: ${error.message}`);
+            return res.status(500).json({ error: `${error.message}` });
         }
       }  
-
 
     static updateProduct = async (req, res) => {
         const { cId, pId } = req.params;
         if (!isValidObjectId(cId) || !isValidObjectId(pId)) {
+          logger.error(`Ingrese cid / pid válidos: cId=${cId}, pId=${pId}`);
           res.setHeader("Content-Type", "application/json");
           return res.status(400).json({ error: `Ingrese cid / pid válidos` });
         }
@@ -147,12 +162,14 @@ export class CartController{
         try {
           let carrito = await cartService.getOneBy({ _id: cId });
           if (!carrito) {
+            logger.error(`Carrito inexistente: id ${cId}`);
             res.setHeader("Content-Type", "application/json");
             return res.status(400).json({ error: `Carrito inexistente: id ${cId}` });
           }
       
           let productIndex = carrito.products.findIndex((p) => p.product == pId);
           if (productIndex === -1) {
+            logger.error(`El producto con id ${pId} no está en el carrito`);
             res.setHeader("Content-Type", "application/json");
             return res.status(400).json({ error: `El producto con id ${pId} no está en el carrito` });
           }
@@ -160,6 +177,7 @@ export class CartController{
           const { quantity } = req.body;
       
           if (quantity <= 0) {
+            logger.error(`La cantidad debe ser mayor que cero: cantidad=${quantity}`);
             res.setHeader("Content-Type", "application/json");
             return res.status(400).json({ error: `La cantidad debe ser mayor que cero` });
           }
@@ -168,9 +186,11 @@ export class CartController{
       
           const resultado = await cartService.update(cId, carrito);
           if (resultado.modifiedCount > 0) {
+            logger.info(`Producto en el carrito actualizado: cId=${cId}, pId=${pId}`);
             res.setHeader("Content-Type", "application/json");
             return res.status(200).json({ payload: "Producto en el carrito actualizado" });
           } else {
+            logger.error(`Error inesperado en el servidor al actualizar el carrito: cId=${cId}`);
             res.setHeader("Content-Type", "application/json");
             return res.status(500).json({
               error: `Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
@@ -178,6 +198,7 @@ export class CartController{
             });
           }
         } catch (error) {
+          logger.error(`Error al procesar la solicitud: ${error.message}`);
           return res.status(500).json({ error: `${error.message}` });
         }
       }  
@@ -206,15 +227,15 @@ export class CartController{
                     let nuevoStock = { stock: product.stock - cart.products[i].quantity };
                     await productService.updateProduct(cart.products[i].product._id, nuevoStock);
                     productosConStock.push(cart.products[i])//agrego a la lista creada
-                    console.log("Producto  añadido:", cart.products[i]);
+                    logger.info("Producto añadido:", cart.products[i]);
                 } else {
                     productosSinStock.push(cart.products[i]);
-                    console.log("Producto no facturable añadido:", cart.products[i]);
+                    logger.warn("Producto no facturable añadido:", cart.products[i]);
                 }
             }
             //FIN Verifico stock del producto
-            console.log("Productos para facturar:", productosConStock);
-            console.log("Productos sin stock restantes:", productosSinStock);
+            logger.info("Productos para facturar:", productosConStock);
+            logger.info("Productos sin stock restantes:", productosSinStock);
 
             // Obtengo el precio total de la compra, se agraga cantidad de item en el calculo
             const precioTotal = productosConStock.map(item => ({
@@ -230,8 +251,8 @@ export class CartController{
               return acumulador;
           }, {});
   
-          console.log("Total a pagar:", total);
-          console.log("Cantidades por unidad:", cantidadesPorUnidad);
+          logger.info("Total a pagar:", total);
+          logger.info("Cantidades por unidad:", cantidadesPorUnidad);
 
             //actualizo carrito
             await cartService.update(cart._id, { products: productosSinStock });
@@ -249,18 +270,18 @@ export class CartController{
             };
             await sendTicketDeCompraEmail(usuario.email, compraFinal.code, compraFinal.amount);
 
-            console.log("Datos de compra:", compraFinal);
+            logger.info("Datos de compra:", compraFinal);
 
             let ticket = await ticketService.create(compraFinal);
 
-            console.log("Ticket creado:", ticket);
+            logger.info("Ticket creado:", ticket);
 
             res.setHeader("Content-Type", "application/json");
             return res.status(201).json(ticket);
         } catch (error) {
-            console.error("Error procesando compra:", error);
+            logger.error("Error procesando compra:", error);
             res.setHeader("Content-Type", "application/json");
             return res.status(500).json("Error inesperado en el servidor al procesar la compra");
         }
-    }
+      }
 }

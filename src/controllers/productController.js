@@ -1,39 +1,62 @@
 import { productService } from "../services/ProductService.js";
-import { isValidObjectId, CustomError} from "../utils.js";
+import { isValidObjectId, CustomError } from "../utils.js";
 import { TIPOS_ERROR } from "../utils/EnumeraErrores.js";
-import { argumentosRepetidosProduct, productoExistente, tituloObligatorioProduct} from "../utils/erroresProducts.js";
+import { argumentosRepetidosProduct, productoExistente, tituloObligatorioProduct } from "../utils/erroresProducts.js";
+import { logger } from "../helper/Logger.js"; // Importa tu logger aquí
+import { faker } from "@faker-js/faker";
+
 export class ProductController {
 
     static getProduct = async (req, res) => {
-        const products = await productService.getProducts();
-        res.json({ products });
+        try {
+            const products = await productService.getProducts();
+            res.json({ products });
+        } catch (error) {
+            logger.error(`Error al intentar obtener productos: ${error.message}`);
+            res.status(500).json({ error: `Error al intentar obtener productos` });
+        }
     }
 
     static getProductById = async (req, res) => {
         const { pid } = req.params;
-        if (!isValidObjectId(pid)) {
-            return res.status(400).json({ error: "Invalid product ID" });
+        try {
+            if (!isValidObjectId(pid)) {
+                return res.status(400).json({ error: "ID de producto inválido" });
+            }
+            const productfind = await productService.getProductById(pid);
+            res.json({ status: "success", productfind });
+        } catch (error) {
+            logger.error(`Error al intentar obtener producto por ID: ${pid}: ${error.message}`);
+            res.status(500).json({ error: `Error al intentar obtener producto por ID: ${pid}` });
         }
-        const productfind = await productService.getProductById(pid);
-        res.json({ status: "success", productfind });
     };
 
     static updateProduct = async (req, res) => {
         const { pid } = req.params;
-        if (!isValidObjectId(pid)) {
-            return res.status(400).json({ error: "Invalid product ID" });
+        try {
+            if (!isValidObjectId(pid)) {
+                return res.status(400).json({ error: "ID de producto inválido" });
+            }
+            const updatedproduct = await productService.updateProduct(pid, req.body);
+            res.json({ status: "success", updatedproduct });
+        } catch (error) {
+            logger.error(`Error al intentar actualizar producto con ID: ${pid}: ${error.message}`);
+            res.status(500).json({ error: `Error al intentar actualizar producto con ID: ${pid}` });
         }
-        const updatedproduct = await productService.updateProduct(pid, req.body);
-        res.json({ status: "success", updatedproduct });
     };
 
     static deleteById = async (req, res) => {
         const { pid } = req.params;
-        if (!isValidObjectId(pid)) {
-            return res.status(400).json({ error: "Invalid product ID" });
+        try {
+            if (!isValidObjectId(pid)) {
+                return res.status(400).json({ error: "ID de producto inválido" });
+            }
+            const deleteproduct = await productService.deleteProductById(pid);
+            res.json({ status: "success", deleteproduct });
+        } catch (error) {
+            logger.error(`Error al intentar eliminar producto con ID: ${pid}: ${error.message}`);
+            res.status(500).json({ error: `Error al intentar eliminar producto con ID: ${pid}` });
         }
-        const deleteproduct = await productService.deleteProductById(pid);
-        res.json({ status: "success", deleteproduct });
     };
 
     static addProduct = async (req, res) => {
@@ -49,10 +72,10 @@ export class ProductController {
         try {
             existe = await productService.getOneBy({ title });
         } catch (error) {
-            console.log(error);
+            logger.error(`Error al intentar buscar producto por título: ${title}: ${error.message}`);
             res.setHeader('Content-Type', 'application/json');
             return res.status(500).json({
-                error: `Unexpected server error - Try later, or contact your administratoooooooooor`,
+                error: `Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
                 detalle: `${error.message}`
             });
         }
@@ -66,24 +89,24 @@ export class ProductController {
             res.setHeader('Content-Type', 'application/json');
             return res.status(201).json({ newProduct });
         } catch (error) {
-            console.log(error);  
+            logger.error(`Error al intentar crear nuevo producto: ${error.message}`);
             CustomError.createError("Se repite info", argumentosRepetidosProduct(req.body), TIPOS_ERROR.ARGUMENTOS_INVALIDOS)
         }
     };
 
     static mockProducts = async (req, res) => {
-        console.log('Entering getMockProducts');
+        logger.info('Iniciando generación de productos simulados');
         const mockProducts = [];
         for (let i = 0; i < 100; i++) {
             mockProducts.push({
-                title: `Product ${i}`,
-                description: `Description for product ${i}`,
-                price: Math.floor(Math.random() * 1000),
-                stock: Math.floor(Math.random() * 100),
-                thumbnail: `https://via.placeholder.com/150`,
-                code: `code${i}`,
-                category: `Category ${i}`,
-                status: true
+                title: faker.commerce.productName(),
+                description: faker.commerce.productDescription(),
+                price: parseFloat(faker.commerce.price()),
+                stock: faker.string.numeric(3),
+                thumbnail: faker.image.imageUrl(),
+                code: faker.random.alphaNumeric(10),
+                category: faker.commerce.department(),
+                status: faker.datatype.boolean()
             });
         }
         res.setHeader('Content-Type', 'application/json');

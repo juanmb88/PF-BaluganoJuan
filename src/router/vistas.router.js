@@ -4,6 +4,7 @@ import {CartManager} from '../dao/cartManager.js';
 import { authTokenPermisos } from "../middleware/auth.js"
 import passport from 'passport';
 import { passportCall } from '../utils.js';
+import { logger } from '../helper/Logger.js';
 export const router = Router();
 
 const productManager = new productController();
@@ -17,6 +18,8 @@ const cartManager = new CartManager();
 ////////////////////////VISTA INICIO/////////////
 router.get('/',passport.authenticate("current", {session : false}), async (req, res) => {
     try {
+
+        
         let { pagina, query, sort } = req.query;
         if (!pagina) pagina = 1;        // Si no se proporciona una página, usar la página 1
         
@@ -52,7 +55,7 @@ router.get('/',passport.authenticate("current", {session : false}), async (req, 
                 carrito = { _id: usuarioEnSesion.carrito };
             }
         }
-        
+        logger.info('Página de inicio cargada con éxito', { usuario: usuarioEnSesion ? usuarioEnSesion.email : 'no logueado' });
         res.setHeader('Content-Type', 'text/html');
         res.status(200).render('inicio',{
             carrito,
@@ -66,7 +69,7 @@ router.get('/',passport.authenticate("current", {session : false}), async (req, 
             login : req.user
         });
     } catch (error) {
-        console.error('Error al obtener los productos paginados:', error);
+        logger.error('Error al obtener los productos paginados:', { error: error.message });
         res.status(500).send('Error interno del servidor');
     }
 });
@@ -92,9 +95,11 @@ router.get('/paginacion', async (req, res) => {
         } else if (sort === 'desc') {
             filteredProducts.sort((a, b) => b.title.localeCompare(a.title));
         }
+        logger.info('Productos paginados obtenidos con éxito', { totalPages, hasPrevPage, hasNextPage });
 
         // Enviar la respuesta JSON si no se solicita la vista HTML
         if (req.accepts('json')) {
+            logger.info('Enviando respuesta JSON');
             return res.status(200).json({
                 status: "success",
                 payload: filteredProducts,
@@ -110,6 +115,7 @@ router.get('/paginacion', async (req, res) => {
         }
 
         // Renderizar la vista HTML si no se solicita la respuesta JSON
+        logger.info('Renderizando la vista HTML');
         res.status(200).render('inicio', {
             listOfProducts: filteredProducts, // Usar los productos filtrados y ordenados
             totalPages,
@@ -120,7 +126,7 @@ router.get('/paginacion', async (req, res) => {
         });
     
     } catch (error) {
-        console.error('Error al obtener los productos paginados:', error);
+        logger.error('Error al obtener los productos paginados:', { error: error.message });
         res.status(500).send('Error interno del servidor');
     }
 });
@@ -129,36 +135,62 @@ router.get('/paginacion', async (req, res) => {
 router.get("/carrito/:cid", passport.authenticate("current", {session : false}),  async (req, res) => {
     let { cid } = req.params
     let products
+
+    logger.info('Solicitud recibida para obtener carrito', { cid });
     try {
-        let carrito = await cartManager.getOneByPopulate({ _id: cid })
+        let carrito = await cartManager.getOneByPopulate({ _id: cid });
         if (!carrito) {
+            logger.warn('Carrito no encontrado', { cid });
             return res.status(404).json({ error: "Carrito no encontrado" });
         }
-        products = carrito.products
+        products = carrito.products;
+
+        logger.info('Carrito encontrado y productos obtenidos', { cid, productCount: products.length });
         res.setHeader("Content-Type", "text/html")
-        res.status(200).render("carrito",{ carrito, products })
+        res.status(200).render("carrito",{ carrito, products });
     } catch (error) {
-        res.setHeader("Content-Type", "application/json")
-        res.status(500).json({ Error: "Error 500 - Error inesperado en el servidor" })        
+        logger.error('Error al obtener el carrito', { cid, error: error.message });
+        res.setHeader("Content-Type", "application/json");
+        res.status(500).json({ Error: "Error 500 - Error inesperado en el servidor" });       
     }
     
 })
 
 //VISTA DE REGISTRO
 router.get('/register', (req, res) => {
-    res.setHeader("Content-Type", "text/html");
-    res.status(200).render("register");
+    try {
+        logger.info('Acceso a la ruta de registro');//Registrar acceso a registro
+        res.setHeader("Content-Type", "text/html");
+        res.status(200).render("register");
+    } catch (error) {
+        logger.error('Error al renderizar la página de registro', { error: error.message });// Registrar errores al renderizar
+        res.status(500).send('Error interno del servidor');
+    }
 });
     
 //VISTA DE LOGIN PARA EL USUARIO
-router.get('/login', (req,res)=>{
-    let {error, mensaje} = req.query
-    res.status(200).render('login', {error, mensaje, login : req.user})
-})
+router.get('/login', (req, res) => {
+    try {
+        let { error, mensaje } = req.query;
+        logger.info('Acceso a la ruta de login');// Registrar acceso a login
+        res.status(200).render('login', { error, mensaje, login: req.user });
+    } catch (error) {
+        logger.error('Error al renderizar la página de login', { error: error.message });// Registrar errores al renderizar 
+        res.status(500).send('Error interno del servidor');
+    }
+});
 
 //VISTA PERFIL DEL USUARIO
- router.get('/profile',passportCall("current"), (req, res) => {
-    const usuario  = req.user;
-    res.setHeader("Content-Type", "text/html")
-    res.status(200).render("profile", { usuario, login: usuario });
+router.get('/profile', passportCall("current"), (req, res) => {
+    try {
+        const usuario = req.user;
+        // Registrar acceso a la ruta de perfil y el usuario que está accediendo
+        logger.info(`Acceso a la ruta de perfil para el usuario ${usuario.email}`);
+        res.setHeader("Content-Type", "text/html");
+        res.status(200).render("profile", { usuario, login: usuario });
+    } catch (error) {
+        // Registrar errores al renderizar
+        logger.error('Error al renderizar la página de perfil', { error: error.message });
+        res.status(500).send('Error interno del servidor');
+    }
 }); 

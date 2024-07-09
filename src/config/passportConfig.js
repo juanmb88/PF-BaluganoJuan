@@ -7,6 +7,7 @@ import { UsersManager as UsuariosManager } from '../dao/userManager.js';
 import {CartManager} from '../dao/cartManager.js'
 import  {generaHash, validaPassword}  from "../utils.js";
 import dotenv from 'dotenv';
+import { logger } from "../helper/Logger.js";
 dotenv.config();
 const usuariosManager = new UsuariosManager();
 const cartManager = new CartManager();
@@ -34,11 +35,13 @@ export const initPassport =()=>{
 			async (usuarioToken, done) => {
 				try {
                     if(usuarioToken.email === " " || usuarioToken.password === " "){
+                        logger.warn('Email y Password son obligatorios en el token JWT.');
                         return done(null, false, {message : "Email y Password son obligatorios"})
                     }
                     
 					return done(null, usuarioToken);//token con datos del user
 				} catch (error) {
+                    logger.error('Error durante la autenticación con JWT', { error: error.message });
 					return done(error);
 				}
 			}
@@ -77,15 +80,16 @@ export const initPassport =()=>{
                             carrito: nuevoCarrito._id
                         })
                   
-                        console.log(nuevoUsuario)
-                                return done(null,nuevoUsuario)
+                        // Registrar el nuevo usuario creado
+                         logger.info(`Nuevo usuario registrado: ${nuevoUsuario.email}`);
+                         return done(null,nuevoUsuario)
                     
                     } catch (error) {
+                        logger.error('Error al registrar nuevo usuario', { error: error.message });
                         return done(error)
                     }        
                 })
     );
-
 //CONFIGURACION DEL LOGIN
         passport.use(
             'login',
@@ -95,21 +99,28 @@ export const initPassport =()=>{
                 },
                 async(username, password, done ) => {
                    try {
-             
+                    // Registrar el inicio del proceso de autenticación
+                     logger.info(`Intento de inicio de sesión para el usuario ${username}`);
 
                     let usuario = await usuariosManager.getByPopulate({email:username})
                         if(!usuario){//si no llega usuario
+                            logger.warn(`Usuario ${username} no encontrado`);
                            return done(null, false)
                         }
 
                         if(!validaPassword(password, usuario.password )){//si no  llega clave  con el hash
+                           logger.warn(`Contraseña incorrecta para el usuario ${username}`);
                            return done(null, false)
                              
                         }//fin de validacion en 2 etapas
                         // usuario={...usuario}
                         delete usuario.password //quito dato antes de que sea devuelto
+
+                        // Registro de éxito en la autenticación
+                        logger.info(`Usuario ${username} autenticado con éxito`);
                         return done(null, usuario)
                    } catch (error) {
+                        logger.error(`Error durante el inicio de sesión para el usuario ${username}`, { error: error.message });
                            return done(error)
                    } 
                 }
@@ -131,6 +142,7 @@ export const initPassport =()=>{
                         let first_name = profile._json.name
                         // console.log(profile)
                         if (!first_name || !email) {
+                            logger.warn('Perfil de GitHub incompleto. Nombre o email no disponibles.');
                             return done(null, false);
                         }
                     let usuario = await usuariosManager.getByPopulate({email});
@@ -142,9 +154,12 @@ export const initPassport =()=>{
                         })
                          usuario = await usuariosManager.getByPopulate({email});
                     }
-                    
+                     // Registrar el inicio de sesión con GitHub
+                     logger.info(`Inicio de sesión exitoso con GitHub para el usuario ${usuario.email}`);
+
                     return done(null, usuario);
                     } catch (error) {
+                        logger.error('Error durante la autenticación con GitHub', { error: error.message });
                         return done(error);
                     }
                 }

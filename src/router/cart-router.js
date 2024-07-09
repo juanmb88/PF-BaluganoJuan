@@ -19,7 +19,6 @@ router.post('/:cid/products/:pid',  CartController.addProductToCart )
 
 //ELIMINAR PRODUCTO DEL CARRITO POR UNIDAD (QUANTITY)
 router.delete("/:cid/products/:pid", CartController.deleteProductByCart );
-//ELIMINAR PRODUCTO DEL CARRITO POR UNIDAD (QUANTITY)
 
 //router.delete("/:cid/products/:pid", CartController.deleteProductFromCart);
 

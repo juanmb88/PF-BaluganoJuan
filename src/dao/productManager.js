@@ -1,3 +1,4 @@
+import { logger } from "../helper/Logger.js";
 import {productsModel} from "./models/products.model.js"
 
 export default class ProductManager{
@@ -68,41 +69,46 @@ export default class ProductManager{
     async getAll(){
         return await productsModel.find().lean();
     };
-
    //modelo de paginacion
     async getAllPaginate(page = 1){
         return await productsModel.paginate( {}, {limit:5, page, lean:true} );
     };
-
      //indico que va a recibir una pagina como parametro y seteo defecto su valor en 1
-    async getProductsPaginate(filtro, opciones) {
-        //1 argumento es un filtro, el 2do es para indicar ciertos aspectos del paginado
-        console.log(opciones)
-        let resultado = await productsModel.paginate(filtro, opciones)
-        console.log(resultado)
-
-        //Agrego validaciones para el sort
-        let sortOrder = opciones.sort
-        if (sortOrder == "asc") {
-            return resultado = resultado.docs.sort(function (a, b) { return a.price - b.price })
+     async getProductsPaginate(filtro, opciones) {
+        try {
+            // Loguear las opciones recibidas
+         logger.debug(`Opciones de paginación recibidas: ${JSON.stringify(opciones)}`);
+            let resultado = await productsModel.paginate(filtro, opciones);
+            // Loguear el resultado obtenido
+            logger.debug(`Resultado de la paginación: ${JSON.stringify(resultado)}`);
+    
+            // Agrego validaciones para el sort
+            let sortOrder = opciones.sort;
+            if (sortOrder === "asc") {
+                resultado = resultado.docs.sort((a, b) => a.price - b.price);
+            } else if (sortOrder === "desc") {
+                resultado = resultado.docs.sort((a, b) => b.price - a.price);
+            } else {
+                resultado = {
+                    status: "success",
+                    payload: resultado.docs,
+                    totalPages: resultado.totalPages,
+                    prevPage: resultado.prevPage,
+                    nextPage: resultado.nextPage,
+                    page: resultado.page,
+                    hasPrevPage: resultado.hasPrevPage,
+                    hasNextPage: resultado.hasNextPage,
+                    prevLink: "En construcción",
+                    nextLink: "En construcción"
+                };
+            }
             
-        } else if (sortOrder == "desc") {
-            return resultado = resultado.docs.sort(function (a, b) { return b.price - a.price })
-
-        } else {
-            return resultado = {
-                status: "success",
-                payload: resultado.docs,
-                totalPages: resultado.totalPages,
-                prevPage: resultado.prevPage,
-                nextPage: resultado.nextPage,
-                page: resultado.page,
-                hasPrevPage: resultado.hasPrevPage,
-                hasNextPage: resultado.hasNextPage,
-                prevLink: "En construccion",
-                nextLink: "En construccion"
-            }   
-        }        
+            return resultado;
+        } catch (error) {
+            // Aquí registra el error con el logger
+            logger.error(`Error en getProductsPaginate: ${error.message}`);
+            throw error; // Lanza el error para que sea manejado en otra parte si es necesario
+        }
     };
 }
 export { ProductManager };
