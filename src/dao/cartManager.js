@@ -37,8 +37,31 @@ class CartManager {
       return await cartsModel.findByIdAndDelete({[this.ID_FIELD]: id})
   }; 
   
-  async decreaseProductQuantity(cid,pid){
+/*   async decreaseProductQuantity(cid,pid){
     return await cartsModel.updateOne({_id:cid}, {$pull: {products: {product: pid}}})
+  }; */
+  async decreaseProductQuantity(cid, pid) {//ELIMINAR PRODUCTO POR CANTIDAD RESTANDO QUANTITY
+    try {
+      const cart = await cartsModel.findById(cid);
+      const productIndex = cart.products.findIndex(product => product.product == pid);
+      
+      if (productIndex !== -1) {
+        // Si el producto existe en el carrito, disminuir su cantidad
+        if (cart.products[productIndex].quantity > 1) {
+          cart.products[productIndex].quantity -= 1;
+          await cart.save();
+        } else {
+          // Si la cantidad es 1, eliminar el producto del carrito
+          cart.products.splice(productIndex, 1);
+          await cart.save();
+        }
+      }
+      
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   };
 
 }

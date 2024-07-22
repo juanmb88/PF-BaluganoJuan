@@ -1,188 +1,26 @@
-
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:38:51.055Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:39:40.064Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:39:42.423Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:40:01.896Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:40:04.423Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:40:19.623Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:40:21.981Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:41:01.398Z"}
-{"level":"error","message":"Este es un mensaje de error","timestamp":"2024-07-09T15:41:03.071Z"}
-{"level":"warn","message":"Este es un mensaje de advertencia","timestamp":"2024-07-09T15:41:03.071Z"}
-{"level":"info","message":"Este es un mensaje informativo","timestamp":"2024-07-09T15:41:03.072Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:41:03.759Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:41:40.830Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:41:43.265Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:43:53.646Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:43:56.070Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:44:27.852Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:44:30.238Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:45:26.976Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:45:29.402Z"}
-{"level":"info","message":"Intento de inicio de sesión para el usuario juanjuan","timestamp":"2024-07-09T15:45:34.059Z"}
-{"level":"warn","message":"Usuario juanjuan no encontrado","timestamp":"2024-07-09T15:45:34.310Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:48:13.529Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:48:15.996Z"}
-{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-07-09T15:48:26.740Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:50:05.306Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:50:07.750Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:50:31.779Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:50:34.139Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:51:18.692Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:51:21.127Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:52:22.107Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:52:24.640Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:54:03.165Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:54:05.638Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:54:51.135Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:54:53.510Z"}
-{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-09T15:54:54.364Z"}
-{"level":"info","message":"Inicio de sesión exitoso con GitHub para el usuario juanbalugano@gmail.com","timestamp":"2024-07-09T15:54:58.898Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T15:54:59.156Z"}
-{"level":"info","message":"Acceso a la ruta de perfil para el usuario undefined","timestamp":"2024-07-09T15:55:04.700Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T15:55:09.554Z"}
-{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-09T15:55:12.145Z"}
-{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-09T15:55:12.155Z"}
-{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-07-09T15:55:17.801Z"}
-{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-07-09T15:55:18.354Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T15:55:18.608Z","usuario":"lili@lili"}
-{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-07-09T15:55:21.024Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T15:55:29.784Z","usuario":"lili@lili"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:57:02.818Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:57:05.229Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T15:59:23.032Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T15:59:25.509Z"}
-{"error":"Este es un error de prueba para el logger.","level":"error","message":"Error de prueba en la ruta /errorTest","timestamp":"2024-07-09T16:00:12.303Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:05:57.265Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:06:00.552Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:07:09.535Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:07:12.034Z"}
-{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-07-09T16:07:28.668Z"}
-{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-07-09T16:07:45.440Z"}
-{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-07-09T16:07:45.991Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:08:45.062Z"}
-{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-07-09T16:08:48.675Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:08:49.394Z"}
-{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-07-09T16:08:50.764Z"}
-{"$__":{"activePaths":{"paths":{"_id":"init","product":"init","quantity":"init"},"states":{"default":{},"init":{"_id":true,"product":true,"quantity":true}}},"populated":{"product":{"options":{"_childDocs":[{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","price":50430,"status":true,"stock":27,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"}],"_docs":{"667df4fce16135a87bb44e43":["667f1b3a877f4172e11e00e0"]},"_queryProjection":null,"path":"products.product"},"value":"667f1b3a877f4172e11e00e0"}}},"$__parent":{"__v":0,"_id":"667df4fce16135a87bb44e43","createdAt":"2024-06-27T23:25:48.001Z","products":[{"_id":"668d6034303a62686ffceb7e","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","price":50430,"status":true,"stock":27,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1}],"updatedAt":"2024-07-09T16:07:16.094Z"},"$isNew":false,"__index":0,"__parentArray":[{"_id":"668d6034303a62686ffceb7e","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","price":50430,"status":true,"stock":27,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1}],"_doc":{"_id":"668d6034303a62686ffceb7e","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","price":50430,"status":true,"stock":27,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1},"level":"info","message":"Producto añadido:","timestamp":"2024-07-09T16:08:55.848Z"}
-{"0":{"_id":"668d6034303a62686ffceb7e","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","price":50430,"status":true,"stock":27,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1},"level":"info","message":"Productos para facturar:","timestamp":"2024-07-09T16:08:55.849Z"}
-{"level":"info","message":"Productos sin stock restantes:","timestamp":"2024-07-09T16:08:55.850Z"}
-{"level":"info","message":"Total a pagar:","timestamp":"2024-07-09T16:08:55.850Z"}
-{"667f1b3a877f4172e11e00e0":1,"level":"info","message":"Cantidades por unidad:","timestamp":"2024-07-09T16:08:55.851Z"}
-{"amount":50430,"code":14397,"level":"info","message":"Datos de compra:","products":[{"product":"667f1b3a877f4172e11e00e0","quantity":1}],"purchase_datetime":1720541336117,"purchaser":"lili@lili","timestamp":"2024-07-09T16:08:58.919Z"}
-{"$__":{"$versionError":null,"activePaths":{"paths":{"amount":"require","code":"require","purchase_dateTime":"require","purchaser":"require"},"states":{"default":{},"modify":{},"require":{"amount":true,"code":true,"purchase_dateTime":true,"purchaser":true}}},"backup":{"activePaths":{"default":{"_id":true,"purchase_dateTime":true},"modify":{"amount":true,"code":true,"createdAt":true,"products":true,"purchaser":true,"updatedAt":true}},"validationError":null},"cachedRequired":{},"inserting":true,"op":null,"pathsToScopes":{"products":{"__v":0,"_id":"668d609a662b612019d92bc9","amount":50430,"code":"14397","createdAt":"2024-07-09T16:08:58.926Z","products":[{"product":"667f1b3a877f4172e11e00e0","quantity":1}],"purchase_dateTime":"2024-07-09T16:08:58.923Z","purchaser":"lili@lili","updatedAt":"2024-07-09T16:08:58.926Z"}},"saveOptions":null,"savedState":{},"saving":null,"validating":null},"$isNew":false,"_doc":{"__v":0,"_id":"668d609a662b612019d92bc9","amount":50430,"code":"14397","createdAt":"2024-07-09T16:08:58.926Z","products":[{"product":"667f1b3a877f4172e11e00e0","quantity":1}],"purchase_dateTime":"2024-07-09T16:08:58.923Z","purchaser":"lili@lili","updatedAt":"2024-07-09T16:08:58.926Z"},"level":"info","message":"Ticket creado:","timestamp":"2024-07-09T16:08:59.191Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:17:07.420Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:17:09.954Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:17:17.430Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:17:19.815Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:18:20.536Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:18:23.012Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:18:41.433Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:18:43.775Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:22:58.433Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:23:00.884Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:24:33.160Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:24:35.718Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:25:13.172Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:25:15.548Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:25:50.023Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:25:52.537Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:26:02.851Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:26:05.253Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:27:46.528Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:27:48.903Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:27:55.956Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:27:58.383Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:28:40.585Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:28:42.963Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:29:36.290Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:29:38.750Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:30:09.412Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:30:11.870Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:36:36.772Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:36:39.270Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:38:16.354Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:38:17.823Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:38:20.175Z"}
-{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-09T16:38:28.120Z"}
-{"level":"info","message":"Intento de inicio de sesión para el usuario adminCoder@coder.com","timestamp":"2024-07-09T16:38:41.494Z"}
-{"level":"info","message":"Usuario adminCoder@coder.com autenticado con éxito","timestamp":"2024-07-09T16:38:42.045Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T16:38:42.311Z","usuario":"adminCoder@coder.com"}
-{"level":"info","message":"Acceso a la ruta de perfil para el usuario adminCoder@coder.com","timestamp":"2024-07-09T16:38:44.381Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T16:38:53.269Z","usuario":"adminCoder@coder.com"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:39:24.784Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:39:27.223Z"}
-{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-07-09T16:39:27.478Z"}
-{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-07-09T16:44:10.080Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:45:41.307Z"}
-{"error":"queryTxt ESERVFAIL cluster.s4bt3ui.mongodb.net","level":"error","message":"Error al conectar a la base de datos de MongoDB","timestamp":"2024-07-09T16:45:51.328Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:51:19.641Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:51:22.162Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:51:27.459Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:51:29.819Z"}
-{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-07-09T16:51:34.809Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T16:51:38.073Z","usuario":"adminCoder@coder.com"}
-{"level":"info","message":"Acceso a la ruta de perfil para el usuario adminCoder@coder.com","timestamp":"2024-07-09T16:51:39.032Z"}
-{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-09T16:51:40.740Z"}
-{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-07-09T16:51:50.639Z"}
-{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-07-09T16:51:51.206Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T16:51:51.459Z","usuario":"lili@lili"}
-{"level":"warn","message":"Acceso denegado por rol insuficiente: user","timestamp":"2024-07-09T16:51:53.592Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:52:35.574Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:52:37.941Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:52:49.731Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:52:52.110Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:53:02.649Z"}
-{"level":"error","message":"Este es un mensaje de error","timestamp":"2024-07-09T16:53:02.757Z"}
-{"level":"warn","message":"Este es un mensaje de advertencia","timestamp":"2024-07-09T16:53:02.758Z"}
-{"level":"info","message":"Este es un mensaje informativo","timestamp":"2024-07-09T16:53:02.758Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:53:05.117Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:54:04.439Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:54:06.836Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:57:01.305Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:57:03.806Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:57:12.241Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:57:14.692Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:57:23.315Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:57:25.662Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:57:31.063Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:57:33.514Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T16:57:44.746Z"}
-{"level":"error","message":"Este es un mensaje de error","timestamp":"2024-07-09T16:57:44.960Z"}
-{"level":"warn","message":"Este es un mensaje de advertencia","timestamp":"2024-07-09T16:57:44.960Z"}
-{"level":"info","message":"Este es un mensaje informativo","timestamp":"2024-07-09T16:57:44.961Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T16:57:47.219Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T16:58:48.213Z","usuario":"lili@lili"}
-{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-07-09T16:58:49.951Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T16:58:50.965Z","usuario":"lili@lili"}
-{"level":"warn","message":"Acceso denegado por rol insuficiente: user","timestamp":"2024-07-09T16:58:52.301Z"}
-{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-07-09T16:58:55.068Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T16:58:56.489Z","usuario":"lili@lili"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T17:06:19.437Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T17:06:21.829Z"}
-{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-07-09T17:06:25.001Z"}
-{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-07-09T17:06:25.584Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T17:07:47.479Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T17:07:50.061Z"}
-{"level":"error","message":"Error al intentar crear nuevo producto: E11000 duplicate key error collection: ecommerce.products index: code_1 dup key: { code: \"as21a\" }","timestamp":"2024-07-09T17:07:53.051Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T17:09:10.702Z"}
-{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-07-09T17:09:11.087Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T17:09:13.198Z"}
-{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-07-09T17:09:14.557Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T17:09:46.179Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T17:09:48.692Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T17:10:22.852Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T17:10:25.305Z"}
-{"level":"error","message":"Carrito inexistente: id 66621de6ec9f175d61c68ede","timestamp":"2024-07-09T17:11:55.751Z"}
-{"level":"error","message":"Carrito inexistente: id 66621de6ec9f175d61c68ede","timestamp":"2024-07-09T17:12:44.558Z"}
-{"level":"info","message":"Iniciando generación de productos simulados","timestamp":"2024-07-09T17:14:28.643Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T17:15:01.212Z","usuario":"lili@lili"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T17:15:07.167Z","usuario":"lili@lili"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T17:21:51.103Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T17:21:54.575Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T17:22:04.601Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T17:22:05.972Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T17:22:08.410Z"}
-{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-09T17:24:04.261Z"}
-{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-09T17:24:06.812Z"}
-{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-09T17:24:14.581Z","usuario":"lili@lili"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-22T19:28:05.690Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juan@juan","timestamp":"2024-07-22T19:28:09.910Z"}
+{"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-07-22T19:28:10.505Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-22T19:28:10.780Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-22T19:28:22.872Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-22T19:28:31.982Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-22T19:28:35.678Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-22T19:28:37.655Z","usuario":"juan@juan"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-07-22T19:28:45.420Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":0,"timestamp":"2024-07-22T19:28:45.671Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-22T19:28:48.479Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-22T19:28:52.559Z","usuario":"juan@juan"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-07-22T19:28:55.550Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":0,"timestamp":"2024-07-22T19:28:55.809Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-22T19:28:57.078Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-22T19:28:59.280Z","usuario":"juan@juan"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-22T19:41:52.203Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-22T19:41:55.269Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-07-22T19:41:55.798Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-22T19:41:56.344Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-07-22T19:41:56.769Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-22T19:41:57.331Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-07-22T19:41:59.169Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-07-22T19:42:35.048Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-22T19:42:36.598Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-07-22T19:47:56.790Z"}

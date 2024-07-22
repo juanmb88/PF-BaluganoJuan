@@ -21,6 +21,7 @@ export class ProductController {
         const { pid } = req.params;
         try {
             if (!isValidObjectId(pid)) {
+                logger.warn('ID de producto inválido', { pid });
                 return res.status(400).json({ error: "ID de producto inválido" });
             }
             const productfind = await productService.getProductById(pid);
@@ -35,6 +36,7 @@ export class ProductController {
         const { pid } = req.params;
         try {
             if (!isValidObjectId(pid)) {
+                logger.warn('ID de producto inválido', { pid });
                 return res.status(400).json({ error: "ID de producto inválido" });
             }
             const updatedproduct = await productService.updateProduct(pid, req.body);
@@ -49,6 +51,7 @@ export class ProductController {
         const { pid } = req.params;
         try {
             if (!isValidObjectId(pid)) {
+                logger.warn('ID de producto inválido', { pid });
                 return res.status(400).json({ error: "ID de producto inválido" });
             }
             const deleteproduct = await productService.deleteProductById(pid);
@@ -63,6 +66,7 @@ export class ProductController {
         let { title, ...otrasPropiedades } = req.body;
 
         if (!title) {
+            logger.warn('Falta el título del producto', { body: req.body });
             CustomError.createError("Argumento nombre faltante",
                 tituloObligatorioProduct(req.body), TIPOS_ERROR.ARGUMENTOS_INVALIDOS)
         }
@@ -82,6 +86,7 @@ export class ProductController {
 
         if (existe) {
             CustomError.createError("Error", productoExistente(req.body), "Ya hay un producto igual", TIPOS_ERROR.CONFLICT)
+            logger.warn('Ya existe un producto con el mismo título', { title });
         }
 
         try {

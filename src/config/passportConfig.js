@@ -8,51 +8,50 @@ import {CartManager} from '../dao/cartManager.js'
 import  {generaHash, validaPassword}  from "../utils.js";
 import dotenv from 'dotenv';
 import { logger } from "../helper/Logger.js";
+
 dotenv.config();
 const usuariosManager = new UsuariosManager();
 const cartManager = new CartManager();
 
 const buscaToken = (req) => {
 	let token = null;
-	if (req.cookies["CookiePrueba"]) {
-		token = req.cookies["CookiePrueba"];
-	}
-
+	if (req.cookies["CookiePrueba"]) { 
+        token = req.cookies["CookiePrueba"];
+     }
 	return token;
 };
 
 export const initPassport =()=>{
-//CONFIGURACION DEL CURRENT
-        passport.use(
-		"current",
-		new passportJWT.Strategy(
-			{
-				secretOrKey: process.env.ACCESS_TOKEN_SECRET,
-				jwtFromRequest: new passportJWT.ExtractJwt.fromExtractors([
-					buscaToken,
-				]),
-			},
-			async (usuarioToken, done) => {
-				try {
-                    if(usuarioToken.email === " " || usuarioToken.password === " "){
-                        logger.warn('Email y Password son obligatorios en el token JWT.');
-                        return done(null, false, {message : "Email y Password son obligatorios"})
-                    }
-                    
-					return done(null, usuarioToken);//token con datos del user
-				} catch (error) {
-                    logger.error('Error durante la autenticación con JWT', { error: error.message });
-					return done(error);
-				}
-			}
-		)
-	);
+        passport.use(//CONFIGURACION DEL CURRENT
+            "current",
+            new passportJWT.Strategy(
+                {
+                    secretOrKey: process.env.ACCESS_TOKEN_SECRET,
+                    jwtFromRequest: new passportJWT.ExtractJwt.fromExtractors([
+                        buscaToken,
+                    ]),
+                },
 
-//CONFIGURACION DEL REGISTRO
-        passport.use(
-            'register',//nombre de la estrategia
-            new local.Strategy(//definicion de la estrategia (passport-local)
-                {//primer argumento de paramtero
+                async (usuarioToken, done) => {
+                    try {
+                        if(usuarioToken.email === " " || usuarioToken.password === " "){
+                            logger.warn('Email y Password son obligatorios en el token JWT.');
+                            return done(null, false, {message : "Email y Password son obligatorios"})
+                        }
+                        
+                        return done(null, usuarioToken);//token con datos del user
+
+                    } catch (error) {
+                        logger.error('Error durante la autenticación con JWT', { error: error.message });
+                        return done(error);
+                    }
+                }
+            )
+	   );
+        passport.use(//CONFIGURACION DEL REGISTRO
+            'register',
+            new local.Strategy(
+                {
                     usernameField : "email",
                     passReqToCallback : true
                 },// 1er argumrento objeto de config para la estrategia
@@ -64,11 +63,13 @@ export const initPassport =()=>{
                         }
                     
                         let existe = await usuariosManager.getBy({ email : username });
+
                         if(existe){
-                            return done(null,false,{ message: 'El email ya está registrado' })//si existe estaria repetido, error
+                            return done(null,false,{ message: 'El email ya está registrado' });
                         }
-                        let nuevoCarrito= await cartManager.createCart()
-                        password=generaHash(password) // otras validaciones  
+
+                        let nuevoCarrito= await cartManager.createCart();
+                        password=generaHash(password); // otras validaciones  
                     
                         let nuevoUsuario = await usuariosManager.create({
                             first_name,
@@ -78,20 +79,17 @@ export const initPassport =()=>{
                             password, 
                             role: 'user',
                             carrito: nuevoCarrito._id
-                        })
+                        });
                   
-                        // Registrar el nuevo usuario creado
-                         logger.info(`Nuevo usuario registrado: ${nuevoUsuario.email}`);
-                         return done(null,nuevoUsuario)
-                    
+                         logger.info(`Nuevo usuario registrado: ${nuevoUsuario.email}`);// Registrar el nuevo usuario creado
+                         return done(null,nuevoUsuario);   
                     } catch (error) {
                         logger.error('Error al registrar nuevo usuario', { error: error.message });
-                        return done(error)
+                        return done(error);
                     }        
-                })
+            })
     );
-//CONFIGURACION DEL LOGIN
-        passport.use(
+        passport.use(//CONFIGURACION DEL LOGIN
             'login',
             new local.Strategy(
                 {
@@ -102,23 +100,22 @@ export const initPassport =()=>{
                     // Registrar el inicio del proceso de autenticación
                      logger.info(`Intento de inicio de sesión para el usuario ${username}`);
 
-                    let usuario = await usuariosManager.getByPopulate({email:username})
+                    let usuario = await usuariosManager.getByPopulate({email:username});
                         if(!usuario){//si no llega usuario
                             logger.warn(`Usuario ${username} no encontrado`);
-                           return done(null, false)
+                           return done(null, false);
                         }
 
                         if(!validaPassword(password, usuario.password )){//si no  llega clave  con el hash
                            logger.warn(`Contraseña incorrecta para el usuario ${username}`);
-                           return done(null, false)
+                           return done(null, false);
                              
                         }//fin de validacion en 2 etapas
-                        // usuario={...usuario}
                         delete usuario.password //quito dato antes de que sea devuelto
 
-                        // Registro de éxito en la autenticación
-                        logger.info(`Usuario ${username} autenticado con éxito`);
-                        return done(null, usuario)
+                        logger.info(`Usuario ${username} autenticado con éxito`);// Registro de éxito en la autenticación
+                        return done(null, usuario);
+
                    } catch (error) {
                         logger.error(`Error durante el inicio de sesión para el usuario ${username}`, { error: error.message });
                            return done(error)
@@ -126,25 +123,26 @@ export const initPassport =()=>{
                 }
             )
     );
-//CONFIGURACION DEL LOGIN CON GIT HUB
-        passport.use(
+        passport.use(//CONFIGURACION DEL LOGIN CON GIT HUB
             'github',
             new github.Strategy(
                 {
                     clientID: process.env.GITHUB_CLIENT_ID,
                     clientSecret: process.env.GITHUB_CLIENT_SECRET,
                     callbackURL: process.env.GITHUB_CALLBACK_URL
-
                 },
+
                 async(tokenAcceso, tokenRefresh, profile, done)=>{
+
                      try {
-                        let email = profile._json.email
-                        let first_name = profile._json.name
-                        // console.log(profile)
+                        let email = profile._json.email;
+                        let first_name = profile._json.name;
+
                         if (!first_name || !email) {
                             logger.warn('Perfil de GitHub incompleto. Nombre o email no disponibles.');
                             return done(null, false);
                         }
+
                     let usuario = await usuariosManager.getByPopulate({email});
                     
                     if(!usuario){
@@ -152,12 +150,13 @@ export const initPassport =()=>{
                         usuario = await usuariosManager.create({
                             first_name, email, profile, carrito: nuevoCarrito._id
                         })
+
                          usuario = await usuariosManager.getByPopulate({email});
                     }
                      // Registrar el inicio de sesión con GitHub
                      logger.info(`Inicio de sesión exitoso con GitHub para el usuario ${usuario.email}`);
-
                     return done(null, usuario);
+
                     } catch (error) {
                         logger.error('Error durante la autenticación con GitHub', { error: error.message });
                         return done(error);
@@ -165,5 +164,4 @@ export const initPassport =()=>{
                 }
             )
     );
-
 };

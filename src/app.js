@@ -8,7 +8,6 @@ import { router as cartRouter } from "./router/cart-router.js";
 import { router as vistasRouter } from './router/vistas.router.js';
 import { router as sessionsRouter } from './router/sessions-router.js';
 import { router as errorRouter } from './router/error-router.js';
-
 import socketChat from "./socket/socketChat.js";
 import socketProducts from './socket/socketProducts.js';
 import { Server } from "socket.io";
@@ -21,6 +20,10 @@ import compression from "express-compression";
 import { errorHandler } from "./middleware/manejadorErrores.js";
 import { middLogger } from "./middleware/MidlewareLogger.js";
 import { logger } from "./helper/Logger.js";
+//import os from "os";
+
+
+ 
 dotenv.config();
 
 const app = express();
@@ -28,10 +31,10 @@ const port = configVarEntorno.PORT;
 
 // Middlewares 
 app.use(express.json());
+app.use(middLogger)
 app.use(compression({}))
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser("CoderBack"));
-app.use(middLogger)
 
 // Passport
 initPassport();
@@ -82,3 +85,4 @@ const serverHTTP = app.listen(port, () =>{
 const socketServer = new Server(serverHTTP);
 socketProducts(socketServer);
 socketChat(socketServer);
+

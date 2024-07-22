@@ -2,7 +2,7 @@ import { isValidObjectId } from "mongoose";
 import { cartService } from "../services/CartService.js";
 import { productService } from "../services/ProductService.js";
 import { ticketService } from "../services/TicketService.js";
-import { sendTicketDeCompraEmail } from '../helper/nodeMailer.js';
+import { botonRecupero, sendTicketDeCompraEmail } from '../helper/nodeMailer.js';
 import { logger } from '../helper/Logger.js';
 
 
@@ -30,14 +30,15 @@ export class CartController{
       
           if (!carrito) {
             res.setHeader("Content-Type", "application/json");
-            return res.status(400).json({ error: `Non-existent cart: id ${cid}` });
+            logger.error(`Carrito con ID ${cid} inexistente: ${error.message}`);
+            return res.status(400).json({ error: `No-existent cart: id ${cid}` });
           }
       
           res.setHeader("Content-Type", "application/json");
           return res.status(200).json({ carrito });
         } catch (error) {
-          logger.error(`Error al intentar obtener el carrito con ID ${cid}: ${error.message}`);
-          res.status(500).json({ error: `Error al intentar obtener el carrito` });
+          logger.error(`Error al intentar obtener el carrito con ID ${cid}`);
+          res.status(500).json({ error: `Error al intentar obtener el carrito, carrito con ID ${cid} es inexistente` });
       }
       }
 
@@ -113,7 +114,7 @@ export class CartController{
           return res.status(400).json({ error: `Ingrese cid / pid válidos` });
         }
         try {
-          await cartService.deleteProductByCartQuantity(cid, pid);
+          await cartService.decreaseProductQuantity(cid, pid);
 
           logger.info(`Cantidad del producto con ID ${pid} reducida en el carrito con ID ${cid}`);
           res.json({
@@ -269,7 +270,6 @@ export class CartController{
                 purchase_datetime: Date.now(),
             };
             await sendTicketDeCompraEmail(usuario.email, compraFinal.code, compraFinal.amount);
-
             logger.info("Datos de compra:", compraFinal);
 
             let ticket = await ticketService.create(compraFinal);
