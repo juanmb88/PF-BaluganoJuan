@@ -11,13 +11,13 @@ router.get("/", ProductController.getProduct);
 router.get("/mockingProducts", ProductController.mockProducts);
 
 /// AGREGAR PRODUCTO
-router.post("/", authToken, ProductController.addProduct);
+router.post("/",authToken, ProductController.addProduct);
 /// OBTENER POR ID
 router.get("/:pid", ProductController.getProductById);
 
 /// UPDATE POR ID
-router.put("/:pid", ProductController.updateProduct);
+router.put("/:pid",authToken, ProductController.updateProduct);
 
 /// DELETE POR ID
-router.delete("/:pid", ProductController.deleteById);
+router.delete("/:pid",authToken, ProductController.deleteById);
 

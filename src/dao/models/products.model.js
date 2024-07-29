@@ -35,8 +35,13 @@ const productsSchema= new mongoose.Schema({
     },
     status: {
         type: Boolean,
-        default: true // Establezco true por defecto
+        default: true 
+    },
+    owner :{
+        type : String,
+        default : "admin"
     }
-})
+});
+
 productsSchema.plugin(paginate);
 export const productsModel= mongoose.model("products",productsSchema);

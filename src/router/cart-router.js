@@ -14,7 +14,7 @@ router.get("/:cid", CartController.getById);
 router.post("/", CartController.createNewCart);
 
 //AGREGAR PRODUCTOS AL CARRITO
-router.post('/:cid/products/:pid',  CartController.addProductToCart )
+router.post('/:cid/products/:pid',authToken,  CartController.addProductToCart )
 
 
 //ELIMINAR PRODUCTO DEL CARRITO POR UNIDAD (QUANTITY)

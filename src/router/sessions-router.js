@@ -9,18 +9,24 @@ dotenv.config();
 export const router = Router();
 
 router.post('/register', (req, res, next) => {
+    console.log("Solicitud de registro recibida:", req.body);
+
     passport.authenticate('register', { session: false, failureRedirect: "/api/sessions/error" }, async (err, usuario) => {
         try {
             if (err) {
+                console.error("Error en la autenticación:", err);
                 return next(err);
             }
             if (!usuario) {
+                console.log("Autenticación fallida, usuario no encontrado.");
                 return res.redirect("/api/sessions/error");
             }
             const { first_name, password, last_name } = req.body;
             await sendEmail(first_name, password, last_name); // Enviar el correo
+            console.log("Usuario registrado con éxitoooo:", usuario);
             res.redirect('/login'); // Redirigir al login
         } catch (error) {
+            console.error("Error al registrar el usuario:", error);
             next(error);
         }
     })(req, res, next);
@@ -36,7 +42,7 @@ router.post("/login", passport.authenticate("login", { session: false, failureRe
         res.cookie("CookiePrueba", token, { httpOnly: true }); // Enviamos desde el servidor la cookie
 
         if (web) {
-            res.redirect("/");
+         return  res.redirect("/");
         } else {
             res.setHeader('Content-Type', 'application/json');
             return res.status(200).json({ payload: "Login correcto", usuario, token });
@@ -72,6 +78,8 @@ router.get("/logout", (req, res, next) => {
 router.get("/error", (req, res, next) => {
     try {
         res.setHeader('Content-Type', 'application/json');
+        //res.status(500).render('error', { message: "Error interno del servidor" });
+
         return res.status(500).json({
             error: `Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,
             detalle: `Fallo al autenticar...!!!`
@@ -91,6 +99,15 @@ router.get("/current", passport.authenticate("current", { session: false }), (re
     }
 });
 
-// Asegúrate de que el middleware de manejo de errores se use después de las rutas
+router.post('/restablecerContraseña', 
+    passport.authenticate('restablecerContraseña'), 
+    async (req, res, next) => {
+      try {
+        // Redirige a la página de login con un mensaje de éxito
+        res.redirect('/login?mensaje=Contraseña+restablecida+correctamente');
+      } catch (error) {
+        next(error);
+      }
+    });
 
 export default router;

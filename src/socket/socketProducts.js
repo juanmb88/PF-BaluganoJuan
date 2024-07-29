@@ -11,7 +11,7 @@ const socketProducts = (socketServer) => {
                 try {
                     await productService.addProduct(obj);
                     const updatedProducts = await productService.getProducts();
-                    socketServer.emit('sendProducts', updatedProducts);
+                    socketServer.emit('sendProducts', updatedProducts); 
                     logger.info("Producto agregado correctamente");
                 } catch (error) {
                     logger.error("Error al agregar producto", error);

@@ -8,6 +8,7 @@ import { router as cartRouter } from "./router/cart-router.js";
 import { router as vistasRouter } from './router/vistas.router.js';
 import { router as sessionsRouter } from './router/sessions-router.js';
 import { router as errorRouter } from './router/error-router.js';
+import {router as usersRouter} from "./router/usersRouter.js"
 import socketChat from "./socket/socketChat.js";
 import socketProducts from './socket/socketProducts.js';
 import { Server } from "socket.io";
@@ -58,9 +59,11 @@ app.use('/error', (req,res)=>{
     res.status(200).send("Todo Ok");
 });
 app.use('/api/products', productRouter);
-app.use('/api/carts', cartRouter);
+app.use('/api/carts', cartRouter); 
 app.use('/api/sessions', sessionsRouter);
 app.use('/api/error', errorRouter);
+app.use("/api/users", usersRouter)   
+
 
 app.use('/', vistasRouter); // Ruta de las vistas con handlebars
 

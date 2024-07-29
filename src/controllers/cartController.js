@@ -2,7 +2,7 @@ import { isValidObjectId } from "mongoose";
 import { cartService } from "../services/CartService.js";
 import { productService } from "../services/ProductService.js";
 import { ticketService } from "../services/TicketService.js";
-import { botonRecupero, sendTicketDeCompraEmail } from '../helper/nodeMailer.js';
+import {sendTicketDeCompraEmail } from '../helper/nodeMailer.js';
 import { logger } from '../helper/Logger.js';
 
 
@@ -77,6 +77,11 @@ export class CartController{
                 return res.status(400).json({ error: `No existe producto con id ${pid}` });
             }
     
+             // Verificar si el usuario tiene permiso para agregar el producto al carrito
+              if (req.user.role === 'premium' && product.owner === req.user.email) {
+                return res.status(403).json({ error: 'No puedes agregar tus propios productos al carrito' });
+            }
+
             let indiceProducto = carrito.products.findIndex(p => p.product == pid);
             if (indiceProducto === -1) {
                 carrito.products.push({ product: pid, quantity: 1 });

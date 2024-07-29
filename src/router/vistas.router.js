@@ -3,7 +3,8 @@ import  productController from '../dao/productManager.js';
 import {CartManager} from '../dao/cartManager.js';
 import { authTokenPermisos } from "../middleware/auth.js"
 import passport from 'passport';
-import { passportCall } from '../utils.js';
+import jwt from "jsonwebtoken"
+import { passportCall, SECRET } from '../utils.js';
 import { logger } from '../helper/Logger.js';
 export const router = Router();
 
@@ -11,9 +12,9 @@ const productManager = new productController();
 const cartManager = new CartManager();
 
 //////////////REAL TIME PRODUCTS/////////
- router.get('/realTimeproducts',passportCall("current"), authTokenPermisos(['admin']), async (req,res) => {
-    res.status(200).render('realTimeProducts') 
-}) ;
+router.get('/realTimeproducts', passport.authenticate('current', { session: false }), authTokenPermisos(['admin', 'premium']), async (req, res) => {
+    res.status(200).render('realTimeProducts');
+});
 
 ////////////////////////VISTA INICIO/////////////
 router.get('/',passport.authenticate("current", {session : false}), async (req, res) => {
@@ -194,3 +195,67 @@ router.get('/profile', passportCall("current"), (req, res) => {
         res.status(500).send('Error interno del servidor');
     }
 }); 
+router.get('/olvideClave', (req, res) => {
+    try {
+        res.setHeader("Content-Type", "text/html");
+        res.status(200).render('login'); 
+    } catch (error) {
+        res.status(500).send('Error interno del servidor');
+    }
+});
+
+/* router.get("/crearNuevaClave/:token", async (req, res) => {
+    // 1) Extraer token del req.params
+    let token = req.params.token;
+    
+    // 2) Verificar la validez del token
+    let decoded;
+    try {
+        decoded = jwt.verify(token, SECRET);
+        console.log('Token válido y aún en vigencia:', decoded);
+    } catch (err) {
+        if (err.name === 'TokenExpiredError') {
+            console.error('El token ha expirado.');
+        } else if (err.name === 'JsonWebTokenError') {
+            console.error('El token no es válido.');
+        } else {
+            console.error('Error al verificar el token:', err);
+        }
+    }
+
+    // 3) Redirigir la vista según la validez del token
+    if (decoded) {
+        res.setHeader("Content-Type", "text/html");
+        return res.status(200).render("crearNuevaClave", decoded);
+    } else {
+        res.setHeader("Content-Type", "text/html");
+        return res.status(200).render("login", {
+            message: "Lo siento, el token expiró o es incorrecto, deberá repetir el procedimiento para restablecer la contraseña."
+        });
+    }
+}); */
+
+
+router.get("/crearNuevaClave/:token", async (req, res) => {
+    let token = req.params.token;
+    let decoded;
+
+    try {
+        decoded = jwt.verify(token, SECRET);
+        console.log('Token válido y aún en vigencia:', decoded);
+    } catch (err) {
+        console.error('Error al verificar el token:', err);
+        return res.status(400).render("login", {
+            message: "Lo siento, el token expiró o es incorrecto, deberá repetir el procedimiento para restablecer la contraseña."
+        });
+    }
+
+    // Renderizar la vista de restablecimiento de contraseña si el token es válido
+    res.setHeader("Content-Type", "text/html");
+    res.status(200).render("corroborarNuevaClave", { token });
+});
+
+
+router.get('/error', (req, res) => {
+    res.status(500).render('error', { message: "Error interno del servidor" });
+});

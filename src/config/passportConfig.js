@@ -27,14 +27,12 @@ export const initPassport =()=>{
             new passportJWT.Strategy(
                 {
                     secretOrKey: process.env.ACCESS_TOKEN_SECRET,
-                    jwtFromRequest: new passportJWT.ExtractJwt.fromExtractors([
-                        buscaToken,
-                    ]),
+                    jwtFromRequest: new passportJWT.ExtractJwt.fromExtractors([ buscaToken ]),
                 },
 
                 async (usuarioToken, done) => {
                     try {
-                        if(usuarioToken.email === " " || usuarioToken.password === " "){
+                        if(!usuarioToken.email === " " || !usuarioToken.password === " "){
                             logger.warn('Email y Password son obligatorios en el token JWT.');
                             return done(null, false, {message : "Email y Password son obligatorios"})
                         }
@@ -105,6 +103,7 @@ export const initPassport =()=>{
                             logger.warn(`Usuario ${username} no encontrado`);
                            return done(null, false);
                         }
+                        logger.info(`Usuario encontrado: ${username}, password almacenada: ${usuario.password}`);
 
                         if(!validaPassword(password, usuario.password )){//si no  llega clave  con el hash
                            logger.warn(`Contraseña incorrecta para el usuario ${username}`);
@@ -118,7 +117,7 @@ export const initPassport =()=>{
 
                    } catch (error) {
                         logger.error(`Error durante el inicio de sesión para el usuario ${username}`, { error: error.message });
-                           return done(error)
+                        return done(error)
                    } 
                 }
             )
@@ -163,5 +162,5 @@ export const initPassport =()=>{
                     }
                 }
             )
-    );
+    );      
 };

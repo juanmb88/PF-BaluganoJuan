@@ -150,8 +150,6 @@ const finalizarCompra = async () => {
 
 
 
-
-
 /* const restar = async (cid, pid, quantity) => {
     console.log(cid)
     console.log(pid)
