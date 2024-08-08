@@ -1,6 +1,6 @@
 import express from "express";
 import path from "path"; 
-import __dirname from "./utils.js"; 
+import __dirname, {especificacionSwagger} from "./utils.js"; 
 import { engine } from "express-handlebars";
 import connectDB from "./connection/MongoDB.js";
 import { router as productRouter } from "./router/products-router.js";
@@ -21,12 +21,10 @@ import compression from "express-compression";
 import { errorHandler } from "./middleware/manejadorErrores.js";
 import { middLogger } from "./middleware/MidlewareLogger.js";
 import { logger } from "./helper/Logger.js";
-//import os from "os";
+import swaggerUI from "swagger-ui-express";
+import cors from "cors"
 
-
- 
 dotenv.config();
-
 const app = express();
 const port = configVarEntorno.PORT;
 
@@ -36,56 +34,37 @@ app.use(middLogger)
 app.use(compression({}))
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser("CoderBack"));
-
-// Passport
-initPassport();
+app.use(cors());//para correr Swagger
+initPassport();// Passport
 app.use(passport.initialize());
-
-// Conexión a MongoDB
-connectDB();
+connectDB();// Conexión a MongoDB
 
 // Handlebars
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, '/views'));
 
-// Contenido estático
-app.use(express.static(path.join(__dirname, '/public')));
-
+app.use(express.static(path.join(__dirname, '/public')));// Contenido estático
+ 
 // Rutas
-app.use('/error', (req,res)=>{
-    console.log(asdasd)
-    res.setHeader('Content-Type', 'text/plain');
-    res.status(200).send("Todo Ok");
-});
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter); 
 app.use('/api/sessions', sessionsRouter);
 app.use('/api/error', errorRouter);
-app.use("/api/users", usersRouter)   
-
-
+app.use("/api/users", usersRouter);  
 app.use('/', vistasRouter); // Ruta de las vistas con handlebars
-
-// Ruta por defecto (Debe estar al final)
-app.use(errorHandler)
-
- app.use((req, res) => {
+app.use("/docs", swaggerUI.serve, swaggerUI.setup(especificacionSwagger))
+app.use(errorHandler)// Ruta por defecto (Debe estar al final)
+app.use((req, res) => {
     res.setHeader('Content-Type', 'text/plain');
-    res.status(200).send("Todo Ok");
+    res.status(200).send("Todo Oook");
 }); 
 
-
-
 const serverHTTP = app.listen(port, () =>{
-/*      console.log(`Server corriendo en http://localhost:${port}`)
- */
      logger.info(`Server corriendo en http://localhost:${port}`)
      serverHTTP.on('error', (err) => console.log(err));
     });
 
-// Socket
-const socketServer = new Server(serverHTTP);
+const socketServer = new Server(serverHTTP);// Socket
 socketProducts(socketServer);
 socketChat(socketServer);
-

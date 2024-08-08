@@ -1489,3 +1489,1184 @@
 {"level":"info","message":"Usuario encontrado: juan@juan, password almacenada: $2b$10$OOOhBwjiqwedHn3qVybs7ex3gSgHVHe9KFtQuBejtZgRf0uH/oVrW","timestamp":"2024-07-29T21:41:09.502Z"}
 {"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-07-29T21:41:09.561Z"}
 {"category":"herramientas","code":"as21sssss","description":"A bateria","level":"info","message":"Datos del nuevo producto:","owner":"juan@juan","price":65,"status":true,"stock":30,"timestamp":"2024-07-29T21:41:36.575Z","title":"cuchillos de cocina"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-29T21:51:02.802Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:51:03.645Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-29T21:51:05.103Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-29T21:51:05.584Z","usuario":"juan@juan"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-07-29T21:51:07.368Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:51:08.923Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:51:09.254Z"}
+{"level":"error","message":"Error al agregar producto jwt must be provided","name":"JsonWebTokenError","stack":"JsonWebTokenError: jwt must be provided\n    at module.exports [as verify] (C:\\Users\\User\\Desktop\\BackEnd\\ArquitecturaEnCapas\\ArqCapas\\node_modules\\jsonwebtoken\\verify.js:60:17)\n    at Socket.<anonymous> (file:///C:/Users/User/Desktop/BackEnd/ArquitecturaEnCapas/ArqCapas/src/socket/socketProducts.js:18:41)\n    at Socket.emit (node:events:511:28)\n    at Socket.emitUntyped (C:\\Users\\User\\Desktop\\BackEnd\\ArquitecturaEnCapas\\ArqCapas\\node_modules\\socket.io\\dist\\typed-events.js:69:22)\n    at C:\\Users\\User\\Desktop\\BackEnd\\ArquitecturaEnCapas\\ArqCapas\\node_modules\\socket.io\\dist\\socket.js:704:39\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2024-07-29T21:51:18.538Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-29T21:52:57.117Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-29T21:52:59.429Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:52:59.685Z"}
+{"level":"error","message":"Error al agregar producto Token no proporcionado","stack":"Error: Token no proporcionado\n    at Socket.<anonymous> (file:///C:/Users/User/Desktop/BackEnd/ArquitecturaEnCapas/ArqCapas/src/socket/socketProducts.js:17:31)\n    at Socket.emit (node:events:511:28)\n    at Socket.emitUntyped (C:\\Users\\User\\Desktop\\BackEnd\\ArquitecturaEnCapas\\ArqCapas\\node_modules\\socket.io\\dist\\typed-events.js:69:22)\n    at C:\\Users\\User\\Desktop\\BackEnd\\ArquitecturaEnCapas\\ArqCapas\\node_modules\\socket.io\\dist\\socket.js:704:39\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2024-07-29T21:53:08.482Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-29T21:56:30.889Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-29T21:56:33.172Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:56:33.438Z"}
+{"level":"info","message":"Producto agregado correctamente","timestamp":"2024-07-29T21:56:46.980Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:56:46.993Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-29T21:57:28.859Z","usuario":"juan@juan"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-07-29T21:57:30.543Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:57:33.461Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:57:33.800Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-07-29T21:57:36.239Z","usuario":"juan@juan"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-07-29T21:57:37.161Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-07-29T21:57:37.624Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-07-29T21:58:19.282Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:58:21.598Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-07-29T21:58:21.937Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juan@juan","timestamp":"2024-07-29T22:46:06.953Z"}
+{"level":"info","message":"Usuario encontrado: juan@juan, password almacenada: $2b$10$OOOhBwjiqwedHn3qVybs7ex3gSgHVHe9KFtQuBejtZgRf0uH/oVrW","timestamp":"2024-07-29T22:46:07.426Z"}
+{"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-07-29T22:46:07.484Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-30T00:08:35.890Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-30T00:08:38.215Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-30T23:20:11.938Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-30T23:20:14.653Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juan@juan","timestamp":"2024-07-30T23:20:23.172Z"}
+{"level":"info","message":"Usuario encontrado: juan@juan, password almacenada: $2b$10$OOOhBwjiqwedHn3qVybs7ex3gSgHVHe9KFtQuBejtZgRf0uH/oVrW","timestamp":"2024-07-30T23:20:23.713Z"}
+{"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-07-30T23:20:23.773Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-30T23:20:41.097Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juan@juan","timestamp":"2024-07-30T23:21:01.987Z"}
+{"level":"info","message":"Usuario encontrado: juan@juan, password almacenada: $2b$10$OOOhBwjiqwedHn3qVybs7ex3gSgHVHe9KFtQuBejtZgRf0uH/oVrW","timestamp":"2024-07-30T23:21:02.522Z"}
+{"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-07-30T23:21:02.581Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juan@juan","timestamp":"2024-07-30T23:21:18.681Z"}
+{"level":"info","message":"Usuario encontrado: juan@juan, password almacenada: $2b$10$OOOhBwjiqwedHn3qVybs7ex3gSgHVHe9KFtQuBejtZgRf0uH/oVrW","timestamp":"2024-07-30T23:21:19.220Z"}
+{"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-07-30T23:21:19.280Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-30T23:22:40.270Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-30T23:22:42.884Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:26:11.984Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:26:14.290Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:27:37.660Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:27:40.054Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:28:04.267Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:28:06.634Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:28:57.025Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:28:59.398Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:45:22.933Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:45:25.210Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:48:41.048Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:48:43.329Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:50:58.755Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:51:01.119Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:54:55.431Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:54:57.739Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:56:38.820Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:56:41.193Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T20:58:58.336Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T20:59:00.751Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:00:39.175Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:00:41.518Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:02:00.546Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:02:02.934Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-31T21:02:57.930Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:04:51.857Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:04:54.182Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:07:35.298Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:07:37.689Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:08:34.084Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:08:38.892Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:08:41.188Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:10:20.337Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:10:23.525Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:12:23.443Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:12:25.835Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:12:35.399Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:12:38.259Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:12:40.502Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-07-31T21:12:48.874Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:23:31.286Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:23:33.931Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:24:36.483Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:24:38.974Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:26:01.242Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:26:03.753Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:26:21.221Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:26:23.512Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:26:27.764Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:26:30.097Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:26:34.523Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:26:36.815Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:26:45.347Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:26:47.684Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:26:51.762Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:26:54.066Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:27:12.793Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:27:15.160Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-07-31T21:28:39.346Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-07-31T21:28:41.660Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T19:47:06.303Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T19:47:17.382Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-01T19:52:21.335Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-01T19:52:36.660Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$0LDpE/huPrAEsSUH0Aftou3u0Ybcm76ikMZGJmOj/HveWC94dVUTu","timestamp":"2024-08-01T19:52:37.181Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-01T19:52:37.241Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T19:52:37.523Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:52:41.635Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:52:42.026Z"}
+{"level":"info","message":"Producto agregado correctamente","timestamp":"2024-08-01T19:53:04.812Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:53:04.825Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail","timestamp":"2024-08-01T19:54:02.248Z"}
+{"level":"warn","message":"Usuario juanbalugano@gmail no encontrado","timestamp":"2024-08-01T19:54:02.503Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juan@juan","timestamp":"2024-08-01T19:54:14.291Z"}
+{"level":"info","message":"Usuario encontrado: juan@juan, password almacenada: $2b$10$OOOhBwjiqwedHn3qVybs7ex3gSgHVHe9KFtQuBejtZgRf0uH/oVrW","timestamp":"2024-08-01T19:54:14.808Z"}
+{"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-08-01T19:54:14.869Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-01T19:54:42.124Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$0LDpE/huPrAEsSUH0Aftou3u0Ybcm76ikMZGJmOj/HveWC94dVUTu","timestamp":"2024-08-01T19:54:42.662Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-01T19:54:42.722Z"}
+{"level":"info","message":"Se recibió un evento para eliminar el producto con ID: 66a1b00731723001f3c4cf8f","timestamp":"2024-08-01T19:55:11.973Z"}
+{"level":"info","message":"Producto con ID 66a1b00731723001f3c4cf8f eliminado correctamente","timestamp":"2024-08-01T19:55:12.503Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:55:12.511Z"}
+{"category":"herramientas","code":"as21sssss","description":"A bateria","level":"info","message":"Datos del nuevo producto:","owner":"juanbalugano@gmail.com","price":65,"status":true,"stock":30,"timestamp":"2024-08-01T19:55:16.729Z","title":"cuchillos de cocina"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:57:10.533Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:57:10.903Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:57:43.207Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:57:43.583Z"}
+{"category":"herramientas","code":"as21sssss","description":"A bateria","level":"info","message":"Datos del nuevo producto:","owner":"juanbalugano@gmail.com","price":65,"status":true,"stock":30,"timestamp":"2024-08-01T19:58:10.691Z","title":"cuchillos de cocina"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:58:11.846Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:58:12.212Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T19:58:17.068Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T19:58:19.150Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:58:19.214Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:58:19.234Z"}
+{"level":"info","message":"Producto añadido al carrito: 66abe7a0878eb25e8bfd375d","timestamp":"2024-08-01T19:58:28.560Z"}
+{"cid":"66a5448349979652599f6ba4","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-01T19:58:33.189Z"}
+{"cid":"66a5448349979652599f6ba4","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-08-01T19:58:33.700Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:58:33.758Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T19:58:50.799Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T19:58:53.174Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:58:53.209Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T19:58:53.241Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juanbalugano@gmail.com","timestamp":"2024-08-01T19:59:01.938Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-01T21:00:28.200Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$0LDpE/huPrAEsSUH0Aftou3u0Ybcm76ikMZGJmOj/HveWC94dVUTu","timestamp":"2024-08-01T21:00:28.716Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-01T21:00:28.772Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-01T21:01:21.534Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-01T21:01:31.216Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$0LDpE/huPrAEsSUH0Aftou3u0Ybcm76ikMZGJmOj/HveWC94dVUTu","timestamp":"2024-08-01T21:01:31.741Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-01T21:01:31.799Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:01:32.084Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:01:46.845Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:01:46.899Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:01:46.919Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:02:10.197Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:02:10.250Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:02:10.265Z"}
+{"category":"herramientas","code":"as21sssss","description":"A bateria","level":"info","message":"Datos del nuevo producto:","owner":"juanbalugano@gmail.com","price":65,"status":true,"stock":30,"timestamp":"2024-08-01T21:02:31.350Z","title":"cuchillos de cocina"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:02:47.675Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:02:47.733Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:02:47.757Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:03:24.275Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:03:24.337Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:03:24.361Z"}
+{"cid":"66a5448349979652599f6ba4","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-01T21:04:24.013Z"}
+{"cid":"66a5448349979652599f6ba4","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-08-01T21:04:24.549Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:04:24.612Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:04:28.589Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Producto añadido al carrito: 66806d4017f0cfa2181474e1","timestamp":"2024-08-01T21:04:31.846Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:04:36.912Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:04:36.967Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:04:36.983Z"}
+{"level":"info","message":"Producto añadido al carrito: 66abe7a0878eb25e8bfd375d","timestamp":"2024-08-01T21:04:59.657Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-01T21:06:53.906Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:08:04.405Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:08:07.003Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:08:15.279Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:08:17.738Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:16:24.296Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:16:26.914Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:18:05.294Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:18:07.741Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:18:45.877Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:18:48.371Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:18:55.129Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:18:57.631Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:20:03.358Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:20:05.833Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:21:22.587Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:21:25.109Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-01T21:26:39.268Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$0LDpE/huPrAEsSUH0Aftou3u0Ybcm76ikMZGJmOj/HveWC94dVUTu","timestamp":"2024-08-01T21:26:39.803Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-01T21:26:39.862Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-01T21:27:14.448Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-01T21:27:21.950Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$0LDpE/huPrAEsSUH0Aftou3u0Ybcm76ikMZGJmOj/HveWC94dVUTu","timestamp":"2024-08-01T21:27:22.454Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-01T21:27:22.512Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:27:22.773Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juanbalugano@gmail.com","timestamp":"2024-08-01T21:27:24.323Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:27:41.010Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:27:41.405Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:28:16.259Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:28:16.676Z"}
+{"category":"herramientas","code":"as21sssss","description":"A bateria","level":"info","message":"Datos del nuevo producto:","owner":"juanbalugano@gmail.com","price":65,"status":true,"stock":30,"timestamp":"2024-08-01T21:28:39.674Z","title":"cuchillos de cocina"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:28:47.870Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:28:48.264Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:31:02.904Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:31:03.356Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-01T21:31:51.924Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:32:41.599Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:32:44.039Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:32:44.301Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:33:35.704Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:33:38.110Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:33:38.385Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:34:43.291Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:34:45.776Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:34:46.066Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:35:15.189Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:35:17.626Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:35:17.916Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:35:30.543Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:35:33.128Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:35:33.427Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:36:43.122Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:36:45.643Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-01T21:36:45.923Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:37:43.086Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-01T21:37:45.390Z"}
+{"level":"info","message":"Contraseña actualizada para el usuario juanbalugano@gmail.com: $2b$10$a1dByg4DrTR2WEJh24/JUe0tzoUYpel0AgVxeaG6ZWtW56FvpNeeG","timestamp":"2024-08-01T21:38:24.342Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-01T21:38:24.347Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-01T21:38:47.960Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$a1dByg4DrTR2WEJh24/JUe0tzoUYpel0AgVxeaG6ZWtW56FvpNeeG","timestamp":"2024-08-01T21:38:48.491Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-01T21:38:48.552Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-01T21:38:48.821Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Producto añadido al carrito: 667f1b3a877f4172e11e00e0","timestamp":"2024-08-01T21:39:03.438Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T21:40:12.001Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T21:40:14.494Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-01T21:40:20.099Z"}
+{"level":"info","message":"Contraseña actualizada para el usuario juanbalugano@gmail.com: $2b$10$eAdDcKMk22qA9tbPC3qWduMYIcgTBT0e1MVblrxSeTng7ubVXa01i","timestamp":"2024-08-01T21:40:41.347Z"}
+{"$__":{"activePaths":{"paths":{"_id":"init","product":"init","quantity":"init"},"states":{"default":{},"init":{"_id":true,"product":true,"quantity":true}}},"populated":{"product":{"options":{"_childDocs":[{"__v":0,"_id":"667b5e018f0a2f2166ffc478","category":"muebles","code":"dd2fnb","description":"de madera","owner":"admin","price":80000,"status":true,"stock":293,"thumbnail":"https://i.ibb.co/8rCP6JH/sillas.png","title":"Silla"},{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","owner":"admin","price":50430,"status":true,"stock":24,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"}],"_docs":{"667df539e16135a87bb44e4d":["667f1b3a877f4172e11e00e0","667b5e018f0a2f2166ffc478"]},"_queryProjection":null,"path":"products.product"},"value":"667f1b3a877f4172e11e00e0"}}},"$__parent":{"__v":0,"_id":"667df539e16135a87bb44e4d","createdAt":"2024-06-27T23:26:49.259Z","products":[{"_id":"66a55a760cd5682203b6fb42","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","owner":"admin","price":50430,"status":true,"stock":24,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1},{"_id":"66a6871ada9d92b65b03facf","product":{"__v":0,"_id":"667b5e018f0a2f2166ffc478","category":"muebles","code":"dd2fnb","description":"de madera","owner":"admin","price":80000,"status":true,"stock":293,"thumbnail":"https://i.ibb.co/8rCP6JH/sillas.png","title":"Silla"},"quantity":1}],"updatedAt":"2024-07-28T17:59:54.417Z"},"$isNew":false,"__index":0,"__parentArray":[{"_id":"66a55a760cd5682203b6fb42","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","owner":"admin","price":50430,"status":true,"stock":24,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1},{"_id":"66a6871ada9d92b65b03facf","product":{"__v":0,"_id":"667b5e018f0a2f2166ffc478","category":"muebles","code":"dd2fnb","description":"de madera","owner":"admin","price":80000,"status":true,"stock":293,"thumbnail":"https://i.ibb.co/8rCP6JH/sillas.png","title":"Silla"},"quantity":1}],"_doc":{"_id":"66a55a760cd5682203b6fb42","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","owner":"admin","price":50430,"status":true,"stock":24,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1},"level":"info","message":"Producto añadido:","timestamp":"2024-08-01T21:48:20.810Z"}
+{"$__":{"activePaths":{"paths":{"_id":"init","product":"init","quantity":"init"},"states":{"default":{},"init":{"_id":true,"product":true,"quantity":true}}},"populated":{"product":{"options":{"_childDocs":[{"__v":0,"_id":"667b5e018f0a2f2166ffc478","category":"muebles","code":"dd2fnb","description":"de madera","owner":"admin","price":80000,"status":true,"stock":293,"thumbnail":"https://i.ibb.co/8rCP6JH/sillas.png","title":"Silla"},{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","owner":"admin","price":50430,"status":true,"stock":24,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"}],"_docs":{"667df539e16135a87bb44e4d":["667f1b3a877f4172e11e00e0","667b5e018f0a2f2166ffc478"]},"_queryProjection":null,"path":"products.product"},"value":"667b5e018f0a2f2166ffc478"}}},"$__parent":{"__v":0,"_id":"667df539e16135a87bb44e4d","createdAt":"2024-06-27T23:26:49.259Z","products":[{"_id":"66a55a760cd5682203b6fb42","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","owner":"admin","price":50430,"status":true,"stock":24,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1},{"_id":"66a6871ada9d92b65b03facf","product":{"__v":0,"_id":"667b5e018f0a2f2166ffc478","category":"muebles","code":"dd2fnb","description":"de madera","owner":"admin","price":80000,"status":true,"stock":293,"thumbnail":"https://i.ibb.co/8rCP6JH/sillas.png","title":"Silla"},"quantity":1}],"updatedAt":"2024-07-28T17:59:54.417Z"},"$isNew":false,"__index":1,"__parentArray":[{"_id":"66a55a760cd5682203b6fb42","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","owner":"admin","price":50430,"status":true,"stock":24,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1},{"_id":"66a6871ada9d92b65b03facf","product":{"__v":0,"_id":"667b5e018f0a2f2166ffc478","category":"muebles","code":"dd2fnb","description":"de madera","owner":"admin","price":80000,"status":true,"stock":293,"thumbnail":"https://i.ibb.co/8rCP6JH/sillas.png","title":"Silla"},"quantity":1}],"_doc":{"_id":"66a6871ada9d92b65b03facf","product":{"__v":0,"_id":"667b5e018f0a2f2166ffc478","category":"muebles","code":"dd2fnb","description":"de madera","owner":"admin","price":80000,"status":true,"stock":293,"thumbnail":"https://i.ibb.co/8rCP6JH/sillas.png","title":"Silla"},"quantity":1},"level":"info","message":"Producto añadido:","timestamp":"2024-08-01T21:48:21.315Z"}
+{"0":{"_id":"66a55a760cd5682203b6fb42","product":{"__v":0,"_id":"667f1b3a877f4172e11e00e0","category":"Accesorios PC","code":"asc3","description":"HD 1080p","owner":"admin","price":50430,"status":true,"stock":24,"thumbnail":"https://i.ibb.co/wJpjZ94/camaraHD.png","title":"Camara Logic"},"quantity":1},"1":{"_id":"66a6871ada9d92b65b03facf","product":{"__v":0,"_id":"667b5e018f0a2f2166ffc478","category":"muebles","code":"dd2fnb","description":"de madera","owner":"admin","price":80000,"status":true,"stock":293,"thumbnail":"https://i.ibb.co/8rCP6JH/sillas.png","title":"Silla"},"quantity":1},"level":"info","message":"Productos para facturar:","timestamp":"2024-08-01T21:48:21.317Z"}
+{"level":"info","message":"Productos sin stock restantes:","timestamp":"2024-08-01T21:48:21.318Z"}
+{"level":"info","message":"Total a pagar:","timestamp":"2024-08-01T21:48:21.319Z"}
+{"667b5e018f0a2f2166ffc478":1,"667f1b3a877f4172e11e00e0":1,"level":"info","message":"Cantidades por unidad:","timestamp":"2024-08-01T21:48:21.319Z"}
+{"amount":130430,"code":7165,"level":"info","message":"Datos de compra:","products":[{"product":"667f1b3a877f4172e11e00e0","quantity":1},{"product":"667b5e018f0a2f2166ffc478","quantity":1}],"purchase_datetime":1722548901572,"purchaser":"juanbalugano@gmail.com","timestamp":"2024-08-01T21:48:23.455Z"}
+{"$__":{"$versionError":null,"activePaths":{"paths":{"amount":"require","code":"require","purchase_dateTime":"require","purchaser":"require"},"states":{"default":{},"modify":{},"require":{"amount":true,"code":true,"purchase_dateTime":true,"purchaser":true}}},"backup":{"activePaths":{"default":{"_id":true,"purchase_dateTime":true},"modify":{"amount":true,"code":true,"createdAt":true,"products":true,"purchaser":true,"updatedAt":true}},"validationError":null},"cachedRequired":{},"inserting":true,"op":null,"pathsToScopes":{"products":{"__v":0,"_id":"66ac02a7ff10461b4188e434","amount":130430,"code":"7165","createdAt":"2024-08-01T21:48:23.461Z","products":[{"product":"667f1b3a877f4172e11e00e0","quantity":1},{"product":"667b5e018f0a2f2166ffc478","quantity":1}],"purchase_dateTime":"2024-08-01T21:48:23.459Z","purchaser":"juanbalugano@gmail.com","updatedAt":"2024-08-01T21:48:23.461Z"}},"saveOptions":null,"savedState":{},"saving":null,"validating":null},"$isNew":false,"_doc":{"__v":0,"_id":"66ac02a7ff10461b4188e434","amount":130430,"code":"7165","createdAt":"2024-08-01T21:48:23.461Z","products":[{"product":"667f1b3a877f4172e11e00e0","quantity":1},{"product":"667b5e018f0a2f2166ffc478","quantity":1}],"purchase_dateTime":"2024-08-01T21:48:23.459Z","purchaser":"juanbalugano@gmail.com","updatedAt":"2024-08-01T21:48:23.461Z"},"level":"info","message":"Ticket creado:","timestamp":"2024-08-01T21:48:23.736Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T23:51:14.318Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T23:51:16.827Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T23:53:43.457Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T23:53:46.832Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T23:55:21.365Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T23:55:24.014Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-01T23:58:05.252Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-01T23:58:07.822Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T00:48:25.305Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:16:15.077Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:16:17.755Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:20:10.101Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:20:12.730Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:20:40.869Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:20:43.280Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-02T22:20:47.767Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:22:09.893Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:22:12.440Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:22:30.105Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:22:32.641Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:22:36.321Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:22:38.766Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:22:58.372Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:23:00.799Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:24:42.875Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:24:45.368Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:25:40.263Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:25:42.767Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:26:15.909Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:26:18.404Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:26:40.306Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:26:42.839Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:26:59.956Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:27:02.460Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:27:25.871Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:27:28.473Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:27:32.439Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:27:34.905Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:27:57.411Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:27:59.895Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:28:27.117Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:28:29.659Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:28:43.521Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:28:46.042Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:30:01.667Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:30:04.189Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:33:17.813Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:33:20.369Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:33:53.371Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:33:55.744Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:34:07.099Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:34:09.598Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:34:58.480Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:35:01.168Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:38:54.019Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:38:57.802Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:39:00.308Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:40:56.638Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:40:59.197Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:41:14.121Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:41:16.596Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:41:41.911Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:41:44.311Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:45:20.857Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:45:23.411Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:47:31.173Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:47:33.696Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:48:50.528Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:48:53.077Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:48:55.500Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:48:57.985Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:49:00.217Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:49:05.464Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:49:07.951Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:49:45.472Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:49:47.852Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:49:53.661Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:49:58.860Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:50:01.346Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:50:20.330Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:50:22.880Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:50:32.999Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:50:35.431Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:50:48.845Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:50:51.339Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:51:26.628Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:51:29.118Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:52:02.079Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:52:04.700Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:52:07.683Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:52:10.229Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:52:15.903Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:52:18.423Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:52:31.128Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:52:33.555Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:52:43.099Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:52:45.629Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:52:51.681Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:52:54.134Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:53:01.249Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:53:03.736Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:53:13.926Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:53:16.380Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:54:44.054Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:54:46.550Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:54:56.573Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:54:59.055Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:55:22.105Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:55:24.614Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:55:35.700Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:55:38.310Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:57:16.494Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:57:19.105Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:57:55.554Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:57:57.964Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T22:58:14.782Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T22:58:17.285Z"}
+{"level":"warn","message":"ID de producto inválido","pid":"667f1b3a877f4172e11e00i0","timestamp":"2024-08-02T22:59:14.877Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T23:05:53.202Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T23:05:55.034Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T23:05:57.462Z"}
+{"level":"error","message":"Error al intentar obtener el carrito con ID 66621de6ec9f175d61c68ede","timestamp":"2024-08-02T23:06:08.377Z"}
+{"level":"error","message":"Error al intentar obtener todos los carritos: cartManager is not defined","timestamp":"2024-08-02T23:06:15.205Z"}
+{"level":"error","message":"Error al intentar obtener todos los carritos: cartManager is not defined","timestamp":"2024-08-02T23:06:15.956Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T23:06:23.690Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T23:06:26.189Z"}
+{"level":"error","message":"Error al intentar obtener todos los carritos: cartManager is not defined","timestamp":"2024-08-02T23:06:29.105Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T23:07:34.239Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T23:07:36.733Z"}
+{"level":"error","message":"Error al intentar obtener el carrito con ID 66621de6ec9f175d61c68ede","timestamp":"2024-08-02T23:07:36.984Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-02T23:07:46.192Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T23:08:53.846Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T23:08:56.480Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-02T23:09:11.913Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-02T23:09:14.455Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T00:58:09.837Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T18:16:17.126Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T18:16:19.788Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-03T20:58:06.679Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T21:00:39.424Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$eAdDcKMk22qA9tbPC3qWduMYIcgTBT0e1MVblrxSeTng7ubVXa01i","timestamp":"2024-08-03T21:00:39.949Z"}
+{"level":"warn","message":"Contraseña incorrecta para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T21:00:40.008Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T21:00:48.954Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$eAdDcKMk22qA9tbPC3qWduMYIcgTBT0e1MVblrxSeTng7ubVXa01i","timestamp":"2024-08-03T21:00:49.466Z"}
+{"level":"warn","message":"Contraseña incorrecta para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T21:00:49.523Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-03T21:01:05.235Z"}
+{"level":"info","message":"Contraseña actualizada para el usuario juanbalugano@gmail.com: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-03T21:01:27.761Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-03T21:01:41.317Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T21:01:56.833Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-03T21:01:57.346Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-03T21:01:57.403Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:01:57.668Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T21:02:30.026Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-03T21:02:30.512Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-03T21:02:30.570Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:02:40.286Z","usuario":"juanbalugano@gmail.com"}
+{"cid":"66a5448349979652599f6ba4","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-03T21:03:02.033Z"}
+{"cid":"66a5448349979652599f6ba4","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":3,"timestamp":"2024-08-03T21:03:02.556Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:03:02.611Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:03:05.758Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:03:12.649Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:03:23.613Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:03:35.438Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:03:44.552Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:03:46.489Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:03:46.556Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:03:46.572Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:04:03.335Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:12:58.411Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:13:00.889Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:13:06.467Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:13:08.941Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:13:12.302Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:13:14.757Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:13:25.857Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:13:28.252Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:13:30.850Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:13:33.255Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:13:56.759Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:13:59.213Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:14:02.442Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:14:04.875Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:15:03.245Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:15:05.728Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:15:15.562Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:15:18.087Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:25:40.957Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:25:45.573Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:25:48.087Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:26:25.881Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:26:28.417Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:27:33.616Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:27:36.080Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:28:09.992Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:28:12.430Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:28:53.192Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:28:55.674Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:29:10.971Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:29:13.400Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:29:31.734Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:29:31.793Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:29:31.889Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:30:11.145Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:30:13.614Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:30:52.206Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:30:54.671Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:31:11.388Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:31:13.910Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:31:20.094Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:31:22.569Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:31:25.856Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:31:28.223Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:31:55.542Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:31:57.977Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:32:22.499Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:32:24.984Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:32:26.746Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:32:29.223Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:33:37.962Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:33:40.503Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:33:59.425Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:33:59.505Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:33:59.528Z"}
+{"cid":"66a5448349979652599f6ba4","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-03T21:34:01.387Z"}
+{"cid":"66a5448349979652599f6ba4","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":3,"timestamp":"2024-08-03T21:34:01.897Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:34:01.956Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:34:31.668Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:34:34.185Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:34:51.225Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:34:53.630Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:35:04.492Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:35:06.875Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:35:22.808Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T21:37:23.434Z"}
+{"category":"herramientas","code":"as21sssss","description":"A bateria","level":"info","message":"Datos del nuevo producto:","owner":"juanbalugano@gmail.com","price":65,"status":true,"stock":30,"timestamp":"2024-08-03T21:37:38.389Z","title":"cuchillos de cocina"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:37:40.766Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:37:42.709Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:37:42.765Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:37:42.780Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:37:55.474Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:37:55.506Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:37:55.542Z"}
+{"category":"herramientas","code":"as21sssss","description":"A bateria","level":"info","message":"Datos del nuevo producto:","owner":"juanbalugano@gmail.com","price":65,"status":true,"stock":30,"timestamp":"2024-08-03T21:39:59.427Z","title":"cuchillos de cocina"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T21:40:02.140Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:40:02.196Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T21:40:02.225Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:48:10.195Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:48:12.739Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:53:04.204Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:53:06.726Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:55:15.791Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:55:18.312Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T21:56:23.477Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T21:56:26.010Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T22:00:31.777Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T22:00:34.260Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T22:06:43.980Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T22:06:46.526Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-03T22:10:28.630Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T22:10:34.978Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-03T22:10:35.538Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-03T22:10:35.598Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:10:35.879Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:10:38.783Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:10:38.839Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:10:38.850Z"}
+{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","level":"info","message":"Datos del nuevo producto:","owner":"juanbalugano@gmail.com","price":100,"status":true,"stock":10,"timestamp":"2024-08-03T22:10:47.556Z","title":"Producto de ejemplo"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:11:13.474Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:11:13.536Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:11:13.555Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:11:26.450Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:11:26.519Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:11:26.537Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:11:28.446Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:11:28.499Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:11:28.512Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:11:30.166Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:11:30.199Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:11:30.232Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T22:16:52.564Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T22:16:55.132Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T22:22:58.690Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T22:23:01.174Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T22:23:35.988Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-03T22:23:36.500Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-03T22:23:36.557Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:24:07.925Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:24:08.001Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:24:08.082Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:24:10.100Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:24:11.959Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:24:12.015Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T22:35:54.841Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T22:35:57.335Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T22:36:10.348Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T22:36:12.807Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T22:36:21.167Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T22:36:23.657Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:37:16.244Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:37:16.730Z"}
+{"level":"info","message":"Se recibió un evento para eliminar el producto con ID: 66aea3af4212993743b75cf7","timestamp":"2024-08-03T22:37:18.843Z"}
+{"level":"info","message":"Producto con ID 66aea3af4212993743b75cf7 eliminado correctamente","timestamp":"2024-08-03T22:37:19.356Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:37:19.369Z"}
+{"level":"info","message":"Se recibió un evento para eliminar el producto con ID: 66aeaae72b32e89b8d98a7d5","timestamp":"2024-08-03T22:37:27.619Z"}
+{"level":"info","message":"Producto con ID 66aeaae72b32e89b8d98a7d5 eliminado correctamente","timestamp":"2024-08-03T22:37:28.151Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:37:28.161Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:37:30.629Z","usuario":"juanbalugano@gmail.com"}
+{"category":"herramientas","code":"as21sssss","description":"A bateria","level":"info","message":"Datos del nuevo producto:","owner":"juanbalugano@gmail.com","price":65,"status":true,"stock":30,"timestamp":"2024-08-03T22:37:33.668Z","title":"cuchillos de cocina"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:37:36.155Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:37:37.540Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:37:37.870Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T22:45:17.054Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T22:45:19.649Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:45:19.927Z"}
+{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","level":"info","message":"Datos del nuevo producto:","owner":"juanbalugano@gmail.com","price":100,"status":true,"stock":10,"timestamp":"2024-08-03T22:48:51.981Z","title":"Producto de ejemplo"}
+{"level":"error","message":"Error en el servidor: Ya hay un producto igual","timestamp":"2024-08-03T22:49:00.992Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T22:54:19.050Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T22:54:21.592Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:54:21.953Z"}
+{"level":"error","message":"Error al intentar buscar producto por título: Producto de ejemplo: Ya hay un producto igual","timestamp":"2024-08-03T22:54:25.456Z"}
+{"level":"error","message":"Error al intentar buscar producto por título: Producto de ejemplo: Ya hay un producto igual","timestamp":"2024-08-03T22:54:30.457Z"}
+{"level":"error","message":"Error al intentar buscar producto por título: Producto de ejemplo: Ya hay un producto igual","timestamp":"2024-08-03T22:54:32.313Z"}
+{"level":"info","message":"Se recibió un evento para eliminar el producto con ID: 66aeb3d3b6af7d501c2ea536","timestamp":"2024-08-03T22:58:36.748Z"}
+{"level":"info","message":"Producto con ID 66aeb3d3b6af7d501c2ea536 eliminado correctamente","timestamp":"2024-08-03T22:58:37.243Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T22:58:37.250Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T22:58:44.595Z","usuario":"juanbalugano@gmail.com"}
+{"body":{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","owner":"owner@example.com","price":100,"status":true,"stock":10,"title":""},"level":"warn","message":"Falta el título del producto","timestamp":"2024-08-03T22:59:44.734Z"}
+{"level":"error","message":"Error en el servidor: [object Object]","timestamp":"2024-08-03T22:59:44.735Z"}
+{"body":{"category":"herramientas","code":"as21sssss","description":"A bateria","price":65,"status":true,"stock":30,"thumbnail":"https://ibb.co/gjekxd","title":""},"level":"warn","message":"Falta el título del producto","timestamp":"2024-08-03T23:00:24.369Z"}
+{"level":"error","message":"Error en el servidor: [object Object]","timestamp":"2024-08-03T23:00:24.370Z"}
+{"level":"error","message":"Error al intentar buscar producto por título: cuchillos de cocina: Ya hay un producto igual","timestamp":"2024-08-03T23:00:33.512Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T23:00:43.843Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T23:00:43.914Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-03T23:00:43.998Z"}
+{"level":"error","message":"Error al intentar buscar producto por título: cuchillos de cocina: Ya hay un producto igual","timestamp":"2024-08-03T23:00:48.677Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:05:48.828Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:05:51.262Z"}
+{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","level":"info","message":"Datos del nuevo producto0o0o0:","owner":"juanbalugano@gmail.com","price":100,"status":true,"stock":10,"timestamp":"2024-08-03T23:06:07.581Z","title":"Producto de ejemplo"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-03T23:06:12.146Z","title":"Producto de ejemplo"}
+{"body":{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","owner":"owner@example.com","price":100,"status":true,"stock":10,"title":""},"level":"warn","message":"Falta el título del producto","timestamp":"2024-08-03T23:09:12.468Z"}
+{"level":"error","message":"Error en el servidor: [object Object]","timestamp":"2024-08-03T23:09:12.471Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:09:45.057Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:09:47.609Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:09:57.416Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:09:59.850Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:10:20.103Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:10:22.507Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:10:31.640Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:10:34.032Z"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-03T23:11:45.776Z","title":"Producto de ejemplo"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:12:08.861Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:12:11.377Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:24:34.748Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:24:38.122Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-03T23:25:19.229Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T23:26:19.832Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-03T23:26:20.354Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-03T23:26:20.413Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-03T23:26:23.959Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-03T23:26:33.831Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-03T23:26:34.349Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-03T23:26:34.408Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T23:26:34.678Z","usuario":"juanbalugano@gmail.com"}
+{"body":{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","owner":"owner@example.com","price":100,"status":true,"stock":10,"title":""},"level":"warn","message":"Falta el título del producto","timestamp":"2024-08-03T23:26:40.862Z"}
+{"level":"error","message":"Error en el servidor: [object Object]","timestamp":"2024-08-03T23:26:40.865Z"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-03T23:26:52.709Z","title":"Producto de ejemplo"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-03T23:27:03.801Z","title":"Producto de ejemplo"}
+{"body":{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","owner":"owner@example.com","price":100,"status":true,"stock":10,"title":""},"level":"warn","message":"Falta el título del producto","timestamp":"2024-08-03T23:29:16.498Z"}
+{"level":"error","message":"Error en el servidor: [object Object]","timestamp":"2024-08-03T23:29:16.499Z"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-03T23:29:27.902Z","title":"Producto de ejemplo"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:30:54.617Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:30:57.081Z"}
+{"level":"error","message":"Error al intentar buscar producto por título: Producto de ejemplo: Ya hay un producto igual","timestamp":"2024-08-03T23:31:00.642Z"}
+{"level":"error","message":"Error al intentar buscar producto por título: Producto de ejemplo: Ya hay un producto igual","timestamp":"2024-08-03T23:43:12.369Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:43:33.018Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:43:35.525Z"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-03T23:45:48.263Z","title":"Producto de ejemplo"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:48:35.558Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:48:38.053Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:48:44.108Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:48:46.521Z"}
+{"level":"error","message":"Error al intentar buscar producto por título: Producto de ejemplo: Ya hay un producto igual","timestamp":"2024-08-03T23:48:46.773Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:50:50.583Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:50:53.057Z"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-03T23:51:12.311Z","title":"Producto de ejemplo"}
+{"body":{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","owner":"owner@example.com","price":100,"status":true,"stock":10,"title":""},"level":"warn","message":"Falta el título del producto","timestamp":"2024-08-03T23:51:19.854Z"}
+{"level":"error","message":"Error en el servidor: [object Object]","timestamp":"2024-08-03T23:51:19.857Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:53:31.569Z"}
+{"body":{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","owner":"owner@example.com","price":100,"status":true,"stock":10,"title":""},"level":"warn","message":"Falta el título del producto","timestamp":"2024-08-03T23:53:32.738Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:53:34.094Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-03T23:53:56.979Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-03T23:53:59.461Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-03T23:54:36.052Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-08-03T23:54:46.107Z"}
+{"level":"info","message":"Usuario encontrado: lili@lili, password almacenada: $2b$10$Xp6HIFKsmYPIxkoc1yjp7.2EwVrrqhFFoQ631FAjumHrJYs6aFx3O","timestamp":"2024-08-03T23:54:46.622Z"}
+{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-08-03T23:54:46.680Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T23:54:46.950Z","usuario":"lili@lili"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-08-03T23:54:49.659Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-08-03T23:55:22.799Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T23:55:27.281Z","usuario":"lili@lili"}
+{"cid":"667df4fce16135a87bb44e43","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-03T23:55:28.320Z"}
+{"cid":"667df4fce16135a87bb44e43","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-03T23:55:28.832Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T23:55:32.611Z","usuario":"lili@lili"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-08-03T23:55:47.134Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-08-03T23:55:48.684Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-08-03T23:55:49.611Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-08-03T23:55:50.193Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T23:55:51.396Z","usuario":"lili@lili"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-08-03T23:55:52.104Z"}
+{"body":{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","owner":"owner@example.com","price":100,"status":true,"stock":10,"title":""},"level":"warn","message":"Falta el título del producto","timestamp":"2024-08-03T23:56:01.009Z"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-03T23:56:10.602Z","title":"Producto de ejemplo"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-03T23:56:22.046Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-08-03T23:56:26.133Z"}
+{"level":"info","message":"Usuario encontrado: lili@lili, password almacenada: $2b$10$Xp6HIFKsmYPIxkoc1yjp7.2EwVrrqhFFoQ631FAjumHrJYs6aFx3O","timestamp":"2024-08-03T23:56:26.642Z"}
+{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-08-03T23:56:26.699Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T23:56:26.965Z","usuario":"lili@lili"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-08-03T23:58:58.542Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-03T23:59:06.246Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-03T23:59:10.986Z","usuario":"lili@lili"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:05:52.504Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:05:54.983Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:06:01.145Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:06:03.650Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:06:19.609Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:06:22.079Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:06:27.593Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:06:30.042Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:06:40.343Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:06:42.832Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:06:47.202Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:06:49.623Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:07:16.084Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:07:18.594Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:08:36.169Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:08:38.668Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:09:01.757Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:09:04.242Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:09:17.534Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:09:19.936Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T00:09:59.275Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T00:10:01.756Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:28:02.967Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:28:05.472Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-04T11:28:21.931Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-04T11:28:35.684Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-04T11:28:36.190Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-04T11:28:36.248Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:32:11.753Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:32:14.193Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:33:37.694Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:33:40.137Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:33:42.557Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:33:44.966Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:34:07.886Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:34:10.293Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:34:45.682Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:34:48.117Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:35:06.810Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:35:09.243Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:35:23.896Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:35:26.370Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:38:58.251Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:39:00.638Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:42:13.497Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:42:15.995Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T11:42:36.622Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T11:42:39.010Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-04T11:43:47.440Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-04T11:43:47.974Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-04T11:43:48.033Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T12:02:06.912Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T12:02:09.823Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T12:02:12.280Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T12:02:14.661Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T12:02:17.783Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T12:02:20.161Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T12:06:47.591Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T12:06:50.023Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T12:08:44.048Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T12:08:46.551Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T12:09:15.562Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T12:09:18.010Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-04T12:10:37.699Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-04T12:10:47.190Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-04T12:10:47.712Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-04T12:10:47.770Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-04T12:10:48.040Z","usuario":"juanbalugano@gmail.com"}
+{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","level":"info","message":"Datos del nuevo producto0o0o0:","owner":"juanbalugano@gmail.com","price":100,"status":true,"stock":10,"timestamp":"2024-08-04T12:10:52.582Z","title":"Producto de ejemplo"}
+{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","level":"info","message":"Datos del nuevo producto0o0o0:","owner":"juanbalugano@gmail.com","price":100,"status":true,"stock":10,"timestamp":"2024-08-04T12:11:35.001Z","title":"Producto de ejemplo"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:11:30.628Z"}
+{"error":"querySrv ESERVFAIL _mongodb._tcp.cluster.s4bt3ui.mongodb.net","level":"error","message":"Error al conectar a la base de datos de MongoDB","timestamp":"2024-08-04T23:11:42.631Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-04T23:11:43.849Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-04T23:11:55.072Z"}
+{"error":"Error al buscar el usuario con carrito","level":"error","message":"Error durante el inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-04T23:12:05.091Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:12:32.999Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:12:36.081Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-04T23:12:42.718Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-04T23:12:43.250Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-04T23:12:43.308Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-04T23:12:43.982Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-04T23:16:41.314Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-04T23:29:39.233Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario adminCoder@coder.com","timestamp":"2024-08-04T23:29:53.328Z"}
+{"level":"info","message":"Usuario encontrado: adminCoder@coder.com, password almacenada: $2b$10$MbhLtSweCRo8fY/WSRg3IuEybwr4osZ9wfpFwkOPe2N2mZN7Z22Ce","timestamp":"2024-08-04T23:29:54.485Z"}
+{"level":"info","message":"Usuario adminCoder@coder.com autenticado con éxito","timestamp":"2024-08-04T23:29:54.545Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-04T23:29:54.813Z","usuario":"adminCoder@coder.com"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario adminCoder@coder.com","timestamp":"2024-08-04T23:29:56.464Z"}
+{"category":"Categoría de ejemplo","code":"PROD1234","description":"Descripción del producto de ejemplo","level":"info","message":"Datos del nuevo producto0o0o0:","owner":"admin","price":100,"status":true,"stock":10,"timestamp":"2024-08-04T23:30:13.433Z","title":"Producto de ejemplo"}
+{"level":"warn","message":"ID de producto inválido","pid":"66b00f0572d715ff37dj5d62","timestamp":"2024-08-04T23:31:44.016Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:33:25.685Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:33:28.281Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:33:32.747Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:33:35.848Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:43:24.450Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:43:27.025Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:44:13.186Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:44:15.709Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:45:27.808Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:45:30.349Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:45:40.537Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:45:43.209Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:45:56.396Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:45:59.110Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:46:06.055Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:46:08.552Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:46:28.448Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:46:31.023Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:47:04.519Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:47:07.133Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:48:14.346Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:48:16.947Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:49:11.840Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:49:14.450Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:49:33.918Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:49:36.502Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:51:26.395Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:51:29.013Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:51:35.528Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:51:38.079Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:51:49.067Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:51:51.637Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:54:41.838Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:54:45.018Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:55:30.332Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:55:32.859Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:56:49.596Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:56:52.182Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:58:08.776Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:58:11.379Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:58:30.283Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:58:32.852Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-04T23:58:47.606Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-04T23:58:50.093Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:03:04.843Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:03:07.477Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:03:16.417Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:03:19.019Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:05:53.897Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:05:57.569Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:08:35.544Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:08:38.183Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario adminCoder@coder.com","timestamp":"2024-08-05T00:09:02.372Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-05T00:09:04.367Z","usuario":"adminCoder@coder.com"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:10:06.573Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:10:09.282Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:12:02.187Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:12:04.756Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:12:14.768Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:12:17.986Z"}
+{"level":"error","message":"Error al intentar obtener el carrito con ID 667df4fce16135a87bb44e53","timestamp":"2024-08-05T00:12:28.875Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:12:54.808Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:12:57.287Z"}
+{"level":"error","message":"Error al intentar obtener el carrito con ID 667df4fce16135a87bb44e53","timestamp":"2024-08-05T00:12:57.550Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:13:49.854Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:13:52.310Z"}
+{"level":"error","message":"Error al intentar obtener el carrito con ID 667df4fce16135a87bb44e53","timestamp":"2024-08-05T00:13:52.568Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:14:45.201Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:14:47.998Z"}
+{"level":"info","message":"Nuevo carrito creado: 66b019f611cb0ed896eca4d5","timestamp":"2024-08-05T00:16:54.664Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:22:02.902Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:22:04.687Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:22:07.903Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:22:10.415Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:23:20.611Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:23:23.079Z"}
+{"level":"info","message":"Nuevo carrito creado: 66b01b8034249c82e6d85c74","timestamp":"2024-08-05T00:23:28.672Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:26:45.852Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:26:48.303Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:27:43.717Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:27:46.188Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:28:02.732Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:28:05.206Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario adminCoder@coder.com","timestamp":"2024-08-05T00:28:16.188Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-05T00:28:22.843Z","usuario":"adminCoder@coder.com"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:28:30.700Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:28:31.239Z"}
+{"level":"info","message":"Producto añadido al carrito: 667f1b3a877f4172e11e00e0","timestamp":"2024-08-05T00:28:56.022Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario adminCoder@coder.com","timestamp":"2024-08-05T00:28:59.560Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-05T00:29:01.260Z","usuario":"adminCoder@coder.com"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:29:01.948Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-08-05T00:29:02.476Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-05T00:29:04.258Z","usuario":"adminCoder@coder.com"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario adminCoder@coder.com","timestamp":"2024-08-05T00:29:46.376Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario adminCoder@coder.com","timestamp":"2024-08-05T00:30:08.516Z"}
+{"level":"info","message":"Usuario encontrado: adminCoder@coder.com, password almacenada: $2b$10$MbhLtSweCRo8fY/WSRg3IuEybwr4osZ9wfpFwkOPe2N2mZN7Z22Ce","timestamp":"2024-08-05T00:30:09.020Z"}
+{"level":"info","message":"Usuario adminCoder@coder.com autenticado con éxito","timestamp":"2024-08-05T00:30:09.079Z"}
+{"level":"info","message":"Producto añadido al carrito: 667f1b3a877f4172e11e00e0","timestamp":"2024-08-05T00:30:11.899Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-05T00:30:31.084Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario adminCoder@coder.com","timestamp":"2024-08-05T00:30:45.512Z"}
+{"level":"info","message":"Usuario encontrado: adminCoder@coder.com, password almacenada: $2b$10$MbhLtSweCRo8fY/WSRg3IuEybwr4osZ9wfpFwkOPe2N2mZN7Z22Ce","timestamp":"2024-08-05T00:30:46.054Z"}
+{"level":"info","message":"Usuario adminCoder@coder.com autenticado con éxito","timestamp":"2024-08-05T00:30:46.112Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-05T00:30:46.395Z","usuario":"adminCoder@coder.com"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:30:48.140Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-08-05T00:30:48.702Z"}
+{"level":"info","message":"Producto añadido al carrito: 667f1b3a877f4172e11e00e0","timestamp":"2024-08-05T00:30:51.975Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:30:54.057Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-08-05T00:30:54.598Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:31:38.913Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:31:41.523Z"}
+{"level":"info","message":"Producto añadido al carrito: 667f1b3a877f4172e11e00e0","timestamp":"2024-08-05T00:32:01.430Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:32:06.547Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-08-05T00:32:07.071Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:32:25.131Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:32:27.715Z"}
+{"level":"info","message":"Producto añadido al carrito: 667f1b3a877f4172e11e00e0","timestamp":"2024-08-05T00:32:46.050Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:34:47.302Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-08-05T00:34:47.849Z"}
+{"level":"info","message":"Cantidad del producto con ID 667f1b3a877f4172e11e00e0 reducida en el carrito con ID 667df517e16135a87bb44e48","timestamp":"2024-08-05T00:36:46.704Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:36:48.721Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-08-05T00:36:49.263Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:38:32.706Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:38:35.501Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:39:05.436Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:39:07.973Z"}
+{"level":"info","message":"Cantidad del producto con ID 667b5e018f0a2f2166ffc478 reducida en el carrito con ID 667df517e16135a87bb44e48","timestamp":"2024-08-05T00:40:50.824Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:40:54.535Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:40:55.074Z"}
+{"level":"info","message":"Producto añadido al carrito: 667f1b3a877f4172e11e00e0","timestamp":"2024-08-05T00:42:16.364Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:42:21.420Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:42:22.284Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:48:52.909Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:48:56.399Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:51:38.178Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:51:38.735Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-05T00:51:40.580Z","usuario":"adminCoder@coder.com"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:51:41.311Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:51:41.863Z"}
+{"level":"info","message":"Producto en el carrito actualizado: cId=667df517e16135a87bb44e48, pId=667f1b3a877f4172e11e00e0","timestamp":"2024-08-05T00:52:25.615Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:52:27.998Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:52:28.552Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:52:35.254Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:52:35.809Z"}
+{"level":"info","message":"Producto en el carrito actualizado: cId=667df517e16135a87bb44e48, pId=667f1b3a877f4172e11e00e0","timestamp":"2024-08-05T00:53:01.584Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:53:04.585Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:53:05.191Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-05T00:53:19.077Z","usuario":"adminCoder@coder.com"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:53:21.230Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:53:21.788Z"}
+{"level":"info","message":"Producto en el carrito actualizado: cId=667df517e16135a87bb44e48, pId=667f1b3a877f4172e11e00e0","timestamp":"2024-08-05T00:55:09.575Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T00:55:11.544Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T00:55:12.098Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T00:57:32.145Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T00:57:35.321Z"}
+{"level":"warn","message":"Producto sin stock suficiente añadido: id=667f1b3a877f4172e11e00e0, cantidad=undefined","timestamp":"2024-08-05T00:57:45.711Z"}
+{"level":"info","message":"Productos para facturar: []","timestamp":"2024-08-05T00:57:45.711Z"}
+{"level":"info","message":"Productos sin stock restantes: [{\"product\":{\"owner\":\"admin\",\"_id\":\"667f1b3a877f4172e11e00e0\",\"title\":\"Camara Logic\",\"description\":\"HD 1080p\",\"price\":50430,\"stock\":23,\"thumbnail\":\"https://i.ibb.co/wJpjZ94/camaraHD.png\",\"code\":\"asc3\",\"category\":\"Accesorios PC\",\"status\":true,\"__v\":0},\"_id\":\"66b01cc8cd75dc2b8dfc4bad\"}]","timestamp":"2024-08-05T00:57:45.712Z"}
+{"level":"info","message":"Total a pagar: 0","timestamp":"2024-08-05T00:57:45.713Z"}
+{"level":"info","message":"Cantidades por unidad: {}","timestamp":"2024-08-05T00:57:45.713Z"}
+{"level":"info","message":"Datos de compra: {\"purchaser\":\"adminCoder@coder.com\",\"code\":67907,\"amount\":0,\"products\":[],\"purchase_datetime\":1722819466009}","timestamp":"2024-08-05T00:57:49.383Z"}
+{"level":"info","message":"Ticket creado: {\"code\":\"67907\",\"amount\":0,\"purchaser\":\"adminCoder@coder.com\",\"products\":[],\"_id\":\"66b0238de4f3be4d31dfa3a6\",\"purchase_dateTime\":\"2024-08-05T00:57:49.385Z\",\"createdAt\":\"2024-08-05T00:57:49.388Z\",\"updatedAt\":\"2024-08-05T00:57:49.388Z\",\"__v\":0}","timestamp":"2024-08-05T00:57:49.678Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:01:04.335Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:01:07.259Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:01:09.463Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:01:12.039Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:01:14.808Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:01:16.638Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:01:19.150Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:01:21.441Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:01:24.002Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:01:33.948Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:01:36.472Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:05:01.850Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:05:04.432Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-05T01:05:07.527Z","usuario":"adminCoder@coder.com"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T01:05:09.078Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T01:05:09.625Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T01:06:25.456Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-05T01:06:25.717Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T01:06:41.272Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":0,"timestamp":"2024-08-05T01:06:41.534Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-05T01:06:45.099Z","usuario":"adminCoder@coder.com"}
+{"level":"info","message":"Producto añadido al carrito: 667b5e018f0a2f2166ffc478","timestamp":"2024-08-05T01:06:46.795Z"}
+{"level":"info","message":"Producto añadido al carrito: 66806d4017f0cfa2181474e1","timestamp":"2024-08-05T01:06:49.207Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-05T01:06:50.948Z"}
+{"cid":"667df517e16135a87bb44e48","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-08-05T01:06:51.468Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:07:34.216Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:07:36.858Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:07:51.590Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:07:54.096Z"}
+{"level":"info","message":"Producto con stock suficiente añadido: id=667b5e018f0a2f2166ffc478, cantidad=1","timestamp":"2024-08-05T01:08:17.261Z"}
+{"level":"info","message":"Producto con stock suficiente añadido: id=66806d4017f0cfa2181474e1, cantidad=1","timestamp":"2024-08-05T01:08:17.798Z"}
+{"level":"info","message":"Productos para facturar: [{\"product\":{\"owner\":\"admin\",\"_id\":\"667b5e018f0a2f2166ffc478\",\"title\":\"Silla\",\"description\":\"de madera\",\"price\":80000,\"stock\":292,\"thumbnail\":\"https://i.ibb.co/8rCP6JH/sillas.png\",\"code\":\"dd2fnb\",\"category\":\"muebles\",\"status\":true,\"__v\":0},\"quantity\":1,\"_id\":\"66b025a64c6ff34840c79231\"},{\"product\":{\"owner\":\"admin\",\"_id\":\"66806d4017f0cfa2181474e1\",\"title\":\"Taladro\",\"description\":\"A bateria\",\"price\":33300,\"stock\":25,\"thumbnail\":\"https://i.ibb.co/c8tFm9y/taladro.png\",\"code\":\"as21a\",\"category\":\"herramientas\",\"status\":true,\"__v\":0},\"quantity\":1,\"_id\":\"66b025a94c6ff34840c79236\"}]","timestamp":"2024-08-05T01:08:17.800Z"}
+{"level":"info","message":"Productos sin stock restantes: []","timestamp":"2024-08-05T01:08:17.801Z"}
+{"level":"info","message":"Total a pagar: 113300","timestamp":"2024-08-05T01:08:17.801Z"}
+{"level":"info","message":"Cantidades por unidad: {\"667b5e018f0a2f2166ffc478\":1,\"66806d4017f0cfa2181474e1\":1}","timestamp":"2024-08-05T01:08:17.802Z"}
+{"level":"info","message":"Datos de compra: {\"purchaser\":\"adminCoder@coder.com\",\"code\":34447,\"amount\":113300,\"products\":[{\"product\":\"667b5e018f0a2f2166ffc478\",\"quantity\":1},{\"product\":\"66806d4017f0cfa2181474e1\",\"quantity\":1}],\"purchase_datetime\":1722820098069}","timestamp":"2024-08-05T01:08:21.519Z"}
+{"level":"info","message":"Ticket creado: {\"code\":\"34447\",\"amount\":113300,\"purchaser\":\"adminCoder@coder.com\",\"products\":[{\"product\":\"667b5e018f0a2f2166ffc478\",\"quantity\":1},{\"product\":\"66806d4017f0cfa2181474e1\",\"quantity\":1}],\"_id\":\"66b0260558c2309c0b0e248a\",\"purchase_dateTime\":\"2024-08-05T01:08:21.524Z\",\"createdAt\":\"2024-08-05T01:08:21.526Z\",\"updatedAt\":\"2024-08-05T01:08:21.526Z\",\"__v\":0}","timestamp":"2024-08-05T01:08:21.797Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:11:35.904Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:11:38.546Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:12:27.939Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:12:57.126Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:13:08.189Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-05T01:13:21.139Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-05T01:13:23.675Z"}
+{"level":"info","message":"Carrito con ID 66b01b8034249c82e6d85c74 eliminado correctamente","timestamp":"2024-08-05T01:13:38.292Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:24:28.177Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-06T19:24:28.337Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:24:30.711Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:25:15.020Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:25:17.415Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:25:33.612Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:25:36.129Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:26:04.404Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:26:06.812Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:26:12.692Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:26:15.130Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-06T19:26:17.421Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juan@juan","timestamp":"2024-08-06T19:26:23.050Z"}
+{"level":"info","message":"Usuario encontrado: juan@juan, password almacenada: $2b$10$OOOhBwjiqwedHn3qVybs7ex3gSgHVHe9KFtQuBejtZgRf0uH/oVrW","timestamp":"2024-08-06T19:26:23.557Z"}
+{"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-08-06T19:26:23.619Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:26:23.885Z","usuario":"juan@juan"}
+{"level":"info","message":"Producto añadido al carrito: 667f1d7a877f4172e11e0105","timestamp":"2024-08-06T19:26:27.920Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:26:31.757Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:26:32.291Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:26:36.810Z","usuario":"juan@juan"}
+{"level":"info","message":"Producto añadido al carrito: 667f1d7a877f4172e11e0105","timestamp":"2024-08-06T19:26:38.857Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:26:41.421Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:26:41.940Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:26:48.788Z","usuario":"juan@juan"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-06T19:26:50.081Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:26:52.576Z","usuario":"juan@juan"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:26:53.286Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-06T19:26:54.488Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-06T19:27:05.563Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:27:10.852Z","usuario":"juan@juan"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:27:36.097Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:27:38.608Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:28:35.274Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:28:37.706Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:30:36.566Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:30:39.101Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:30:57.396Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:30:59.862Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:31:18.228Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:31:20.603Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:32:52.336Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:32:54.819Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-06T19:33:00.208Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:40:53.113Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:40:56.636Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:41:16.625Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:41:19.096Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:41:26.751Z","usuario":"juan@juan"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:42:01.404Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:42:03.908Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:42:05.477Z","usuario":"juan@juan"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:42:37.763Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:42:40.306Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:42:43.382Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:42:45.816Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:42:59.277Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:43:01.733Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:43:19.896Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:43:22.410Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:43:43.212Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:43:45.666Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:43:53.467Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:43:55.878Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:44:16.742Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:45:05.211Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-06T19:45:20.596Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juan@juan","timestamp":"2024-08-06T19:45:24.007Z"}
+{"level":"info","message":"Usuario encontrado: juan@juan, password almacenada: $2b$10$OOOhBwjiqwedHn3qVybs7ex3gSgHVHe9KFtQuBejtZgRf0uH/oVrW","timestamp":"2024-08-06T19:45:24.529Z"}
+{"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-08-06T19:45:24.590Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:45:24.874Z","usuario":"juan@juan"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:45:27.855Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:47:45.104Z"}
+{"level":"warn","message":"Acceso denegado por rol insuficiente: usuario","timestamp":"2024-08-06T19:47:46.422Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-06T19:47:50.505Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-06T19:47:57.186Z"}
+{"level":"info","message":"Usuario encontrado: juanbalugano@gmail.com, password almacenada: $2b$10$TCwHURcaz78BhUJepJnjZe/R6Vo.MwCsok9XtmAN7862q7.AhXn6m","timestamp":"2024-08-06T19:47:57.728Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-06T19:47:57.789Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:47:58.054Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juanbalugano@gmail.com","timestamp":"2024-08-06T19:48:09.540Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:48:11.050Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juanbalugano@gmail.com","timestamp":"2024-08-06T19:48:20.836Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:48:24.470Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-06T19:48:48.023Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-06T19:48:48.412Z"}
+{"level":"info","message":"Se recibió un evento para eliminar el producto con ID: 66abe7a0878eb25e8bfd375d","timestamp":"2024-08-06T19:48:56.862Z"}
+{"level":"info","message":"Producto con ID 66abe7a0878eb25e8bfd375d eliminado correctamente","timestamp":"2024-08-06T19:48:57.393Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-06T19:48:57.405Z"}
+{"level":"info","message":"Se recibió un evento para eliminar el producto con ID: 66a8101e5dea4322bec64c6c","timestamp":"2024-08-06T19:49:05.214Z"}
+{"level":"info","message":"Producto con ID 66a8101e5dea4322bec64c6c eliminado correctamente","timestamp":"2024-08-06T19:49:05.741Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-06T19:49:05.754Z"}
+{"level":"info","message":"Se recibió un evento para eliminar el producto con ID: 66a1af5a31723001f3c4cf78","timestamp":"2024-08-06T19:49:12.197Z"}
+{"level":"info","message":"Producto con ID 66a1af5a31723001f3c4cf78 eliminado correctamente","timestamp":"2024-08-06T19:49:12.746Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-08-06T19:49:12.757Z"}
+{"level":"info","message":"Se recibió un evento para eliminar el producto con ID: 66a80b22a5bc7fd7fb8c5c17","timestamp":"2024-08-06T19:49:20.164Z"}
+{"level":"info","message":"Producto con ID 66a80b22a5bc7fd7fb8c5c17 eliminado correctamente","timestamp":"2024-08-06T19:49:20.696Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:49:27.311Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juanbalugano@gmail.com","timestamp":"2024-08-06T19:49:28.378Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:50:49.162Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:50:50.641Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juanbalugano@gmail.com","timestamp":"2024-08-06T19:50:51.083Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:50:52.242Z","usuario":"juanbalugano@gmail.com"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juanbalugano@gmail.com","timestamp":"2024-08-06T19:51:41.027Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-06T19:51:47.094Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-06T19:51:47.107Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-08-06T19:51:51.240Z"}
+{"level":"info","message":"Usuario encontrado: lili@lili, password almacenada: $2b$10$Xp6HIFKsmYPIxkoc1yjp7.2EwVrrqhFFoQ631FAjumHrJYs6aFx3O","timestamp":"2024-08-06T19:51:51.782Z"}
+{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-08-06T19:51:51.841Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:51:52.107Z","usuario":"lili@lili"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-08-06T19:51:54.191Z"}
+{"level":"warn","message":"Acceso denegado por rol insuficiente: usuario","timestamp":"2024-08-06T19:51:58.815Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:52:00.952Z","usuario":"lili@lili"}
+{"cid":"667df4fce16135a87bb44e43","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:52:01.478Z"}
+{"cid":"667df4fce16135a87bb44e43","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:52:01.988Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:52:03.961Z","usuario":"lili@lili"}
+{"cid":"667df4fce16135a87bb44e43","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:52:04.840Z"}
+{"cid":"667df4fce16135a87bb44e43","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:52:05.386Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-06T19:52:08.342Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juan@juan","timestamp":"2024-08-06T19:52:17.765Z"}
+{"level":"info","message":"Usuario encontrado: juan@juan, password almacenada: $2b$10$OOOhBwjiqwedHn3qVybs7ex3gSgHVHe9KFtQuBejtZgRf0uH/oVrW","timestamp":"2024-08-06T19:52:18.309Z"}
+{"level":"info","message":"Usuario juan@juan autenticado con éxito","timestamp":"2024-08-06T19:52:18.371Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:52:18.643Z","usuario":"juan@juan"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:52:21.240Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:52:30.174Z","usuario":"juan@juan"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:52:30.921Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:52:31.442Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:52:48.426Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:52:50.620Z","usuario":"juan@juan"}
+{"level":"warn","message":"Acceso denegado por rol insuficiente: usuario","timestamp":"2024-08-06T19:52:56.385Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:52:58.207Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:52:58.731Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:53:00.641Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:53:02.002Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:53:17.696Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:54:26.076Z","usuario":"juan@juan"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:55:07.609Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:55:08.154Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:55:09.323Z","usuario":"juan@juan"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:55:10.193Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:55:18.273Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:55:24.304Z"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:55:31.294Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:55:35.615Z","usuario":"juan@juan"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:55:36.321Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:55:36.837Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:55:37.965Z","usuario":"juan@juan"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:56:06.554Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:56:07.108Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-06T19:56:08.542Z"}
+{"cid":"667df539e16135a87bb44e4d","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-06T19:56:09.070Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:56:09.928Z","usuario":"juan@juan"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-06T19:56:11.360Z","usuario":"juan@juan"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario juan@juan","timestamp":"2024-08-06T19:56:11.670Z"}
+{"level":"warn","message":"Acceso denegado por rol insuficiente: usuario","timestamp":"2024-08-06T19:56:16.732Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-06T19:56:22.724Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:58:29.559Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:58:37.958Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:58:40.427Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:58:47.788Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:58:50.209Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T19:59:53.283Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T19:59:55.783Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T20:03:01.787Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T20:03:04.335Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T21:04:22.018Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T21:04:24.549Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T23:20:30.474Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T23:20:33.019Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario adminCoder@coder.com","timestamp":"2024-08-06T23:20:39.950Z"}
+{"level":"info","message":"Usuario encontrado: adminCoder@coder.com, password almacenada: $2b$10$MbhLtSweCRo8fY/WSRg3IuEybwr4osZ9wfpFwkOPe2N2mZN7Z22Ce","timestamp":"2024-08-06T23:20:40.519Z"}
+{"level":"info","message":"Usuario adminCoder@coder.com autenticado con éxito","timestamp":"2024-08-06T23:20:40.579Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-06T23:21:52.604Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-06T23:21:55.129Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:24:52.907Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:24:55.469Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-08T21:30:43.217Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-08-08T21:30:45.617Z"}
+{"level":"info","message":"Nuevo usuario registrado: dario@dario","timestamp":"2024-08-08T21:32:08.464Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:33:06.478Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:33:08.949Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:36:01.560Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:36:03.939Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:37:51.223Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:37:53.646Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:37:56.143Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:38:24.018Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:38:26.463Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:40:04.545Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:40:07.048Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:40:22.513Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:40:24.905Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:40:47.184Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:40:49.627Z"}
+{"level":"info","message":"Nuevo usuario registrado: m@m","timestamp":"2024-08-08T21:41:18.726Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:42:57.473Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:43:00.075Z"}
+{"level":"info","message":"Nuevo usuario registrado: m@m","timestamp":"2024-08-08T21:43:19.218Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario adminCoder@coder.com","timestamp":"2024-08-08T21:45:35.199Z"}
+{"level":"info","message":"Usuario encontrado: adminCoder@coder.com, password almacenada: $2b$10$MbhLtSweCRo8fY/WSRg3IuEybwr4osZ9wfpFwkOPe2N2mZN7Z22Ce","timestamp":"2024-08-08T21:45:35.750Z"}
+{"level":"info","message":"Usuario adminCoder@coder.com autenticado con éxito","timestamp":"2024-08-08T21:45:35.809Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario adminCoder@coder.com","timestamp":"2024-08-08T21:48:48.792Z"}
+{"level":"info","message":"Usuario encontrado: adminCoder@coder.com, password almacenada: $2b$10$MbhLtSweCRo8fY/WSRg3IuEybwr4osZ9wfpFwkOPe2N2mZN7Z22Ce","timestamp":"2024-08-08T21:48:49.348Z"}
+{"level":"info","message":"Usuario adminCoder@coder.com autenticado con éxito","timestamp":"2024-08-08T21:48:49.406Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:50:12.977Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:50:15.402Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:50:36.884Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-08T21:50:38.507Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-08T21:50:40.982Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-08T21:51:00.650Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario m@m","timestamp":"2024-08-08T21:54:00.110Z"}
+{"level":"warn","message":"Contraseña incorrecta para el usuario m@m","timestamp":"2024-08-08T21:54:00.708Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario m@w","timestamp":"2024-08-08T21:54:15.553Z"}
+{"level":"warn","message":"Usuario m@w no encontrado","timestamp":"2024-08-08T21:54:15.833Z"}

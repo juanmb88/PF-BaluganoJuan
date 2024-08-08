@@ -1,0 +1,375 @@
+paths:
+  /api/carts:
+    get:
+      summary: Obtener todos los carritos
+      tags:
+        - Carrito
+      responses:
+        '200':
+          description: Lista de carritos obtenida con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  carts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cart'
+        '404':
+          description: No se encontraron carritos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: No se encontraron carritos
+        '500':
+          description: Error al intentar obtener todos los carritos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Error al intentar obtener todos los carritos
+
+    post:
+      summary: Crear un nuevo carrito
+      tags:
+        - Carrito
+      responses:
+        '201':
+          description: Carrito creado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  cart:
+                    $ref: '#/components/schemas/Cart'
+        '400':
+          description: No se pudo crear el carrito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: No se pudo crear el carrito
+        '500':
+          description: Error al intentar crear un nuevo carrito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Error al intentar crear un nuevo carrito
+
+
+  /api/carts/{cid}:
+    get:
+      summary: Obtiene Carrito por ID | Valida que llegue ID correcto
+      tags:
+        - Carrito
+      parameters:
+      - name: cid
+        in: path
+        required: true
+        description: MongoDB id del carrito        
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Carrito obtenido OK desde la DB
+        "500":
+          description: Error interno del servidor
+       
+    post:
+      summary: Crea un carrito al registrarse un nuevo usuario y lo asocia al mismo
+      tags:
+        - Carrito
+      responses:
+        "201":
+          description: Carrito creado Ok en la DB
+        "500":
+          description: Error interno del servidor
+
+    delete:
+      summary: Eliminar un carrito por ID
+      tags:
+        - Carrito
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Carrito eliminado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Carrito eliminado exitosamente
+        '400':
+          description: ID de carrito inválido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Carrito no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error inesperado en el servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'             
+
+  /api/carts/{cid}/products/{pid}:
+
+    post:
+      summary: Agregar un producto al carrito
+      tags:
+        - Carrito
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Carrito actualizado, se agregó producto exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: Carrito actualizado, se agregó producto exitosamente
+        '400':
+          description: Error en la solicitud
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: No puedes agregar tus propios productos al carrito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error inesperado en el servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      summary: "Reducir la cantidad de un producto en el carrito"
+      tags:
+        - Carrito
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Cantidad del producto reducida exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: "Se redujo la cantidad del producto con ID: {pid} en el carrito con ID: {cid}"
+        '400':
+          description: Error en la solicitud
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error inesperado en el servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/carts/{cid}/purchase:
+    post:
+      summary: Finalizar la compra en carrito
+      tags:
+        - Carrito
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Compra procesada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ticket:
+                    type: object
+                    description: Información del ticket de compra
+                    properties:
+                      purchaser:
+                        type: string
+                        description: Email del comprador
+                      code:
+                        type: number
+                        description: Código de la compra
+                      amount:
+                        type: number
+                        description: Monto total de la compra
+                      products:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            product:
+                              type: string
+                              description: ID del producto
+                            quantity:
+                              type: number
+                              description: Cantidad del producto
+                      purchase_datetime:
+                        type: string
+                        format: date-time
+                        description: Fecha y hora de la compra
+        '400':
+          description: Carrito no encontrado o producto no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error inesperado en el servidor al procesar la compra
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: CookiePrueba
+  schemas:
+    Cart:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Identificador del carrito
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: string
+                description: Identificador del producto
+              quantity:
+                type: number
+                description: Cantidad del producto
+        createdAt:
+          type: string
+          format: date-time
+          description: Fecha de creación del carrito
+        updatedAt:
+          type: string
+          format: date-time
+          description: Fecha de última actualización del carrito
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+    PurchaseResponse:
+      type: object
+      properties:
+        purchaser:
+          type: string
+          description: Correo del comprador
+        code:
+          type: integer
+          description: Código de la compra
+        amount:
+          type: number
+          description: Monto total de la compra
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: string
+                description: Identificador del producto
+              quantity:
+                type: number
+                description: Cantidad del producto
+        purchase_datetime:
+          type: string
+          format: date-time
+          description: Fecha y hora de la compra

@@ -37,7 +37,7 @@ export const authToken = (req, res, next) => {
 
 	jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
         if (err) {
-            return res.status(401).json({ message: 'Fallo al autenticar token' });
+            return res.status(403).json({ message: 'Fallo al autenticar token' });
         }
         req.user = decoded; // Aquí se guarda el usuario decodificado en req.user
         next();

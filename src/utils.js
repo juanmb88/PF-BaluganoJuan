@@ -8,10 +8,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 export default __dirname;
 import { TIPOS_ERROR } from "./utils/EnumeraErrores.js";
-
+import swaggerJsdoc from "swagger-jsdoc";
 
 //funcion para admitir imganes  y archivos de texto
-const storage = multer.diskStorage({
+/* const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './src/uploads')
     },
@@ -22,14 +22,14 @@ const storage = multer.diskStorage({
         } 
         cb( null, Date.now() + "-" + file.originalname )
      }
-});
+}); */
 
 //PASSPORT 
 export const passportCall=(estrategia)=>{
         return function (req, res, next) {
             passport.authenticate(estrategia, function (err, user, info, status) {
-                if (err) { return next(err) }  // desde passport.config devuelvo return done(error)
-                if (!user) { // desde passport.config devuelvo return done(null, false, {message:"valor..."})
+                if (err) { return next(err) }  
+                if (!user) { 
                     res.setHeader('Content-Type','application/json');
                 return res.status(401).json({error:info.message?info.message:info.toString()})
             } 
@@ -39,7 +39,7 @@ export const passportCall=(estrategia)=>{
     }
 };
 
-export const upload = multer({ storage: storage });
+//export const upload = multer({ storage: storage });
 export const SECRET = "CoderCoder123";
 export const generaHash = password => bcrypt.hashSync( password, bcrypt.genSaltSync(10) );
 export const validaPassword = (password, hash) => bcrypt.compareSync( password, hash );
@@ -47,8 +47,6 @@ export const validaPassword = (password, hash) => bcrypt.compareSync( password, 
 export const isValidObjectId = (id) => {
     return mongoose.Types.ObjectId.isValid(id) && (new mongoose.Types.ObjectId(id)).toString() === id;
 };
-
-
 export class CustomError{
     static createError(name="Error", cause, message, code=TIPOS_ERROR.INTERNAL_SERVER_ERROR){
         const error=new Error(message, {cause:cause})
@@ -58,3 +56,17 @@ export class CustomError{
         throw error
     }
 }
+//SWAGGER
+const options = {
+    definition:{
+        openapi: "3.0.0",
+        info:{
+            title:"Documentación Ecommerce con Swagger",
+            version: "1.0.0",
+            description:"Documentación Ecommerce"
+        },
+    },
+ apis: ["./src/docs/Carrito.yaml","./src/docs/Productos.yaml"],
+}
+
+export const especificacionSwagger=swaggerJsdoc(options)

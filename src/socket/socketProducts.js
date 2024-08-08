@@ -41,7 +41,7 @@ const socketProducts = (socketServer) => {
                 }
             });
 
-             /* socket.on("updateProduct", async (data) => {
+             socket.on("updateProduct", async (data) => {
                 try {
                     const { id, updatedProduct } = data;
                     logger.info(`Se recibió un evento para actualizar el producto con ID: ${id}`);
@@ -52,7 +52,7 @@ const socketProducts = (socketServer) => {
                 } catch (error) {
                     logger.error(`Error al actualizar producto con ID: ${id}`, error);
                 }
-            });  */
+            });  
         } catch (error) {
             logger.error("Error en conexión de socket", error);
         }

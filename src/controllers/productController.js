@@ -4,20 +4,25 @@ import { TIPOS_ERROR } from "../utils/EnumeraErrores.js";
 import { productoExistente, tituloObligatorioProduct } from "../utils/erroresProducts.js";
 import { logger } from "../helper/Logger.js"; // Importa tu logger aquí
 import { faker } from "@faker-js/faker";
-import { SECRET } from "../utils.js";
-import jwt from "jsonwebtoken"
+/* import { SECRET } from "../utils.js";
+import jwt from "jsonwebtoken" */
 
 
 export class ProductController {
 
     static getProduct = async (req, res) => {
-          try {
+        try {
             const products = await productService.getProducts();
+
+            if (!products || products.length === 0) {
+                return res.status(404).json({ message: 'No se encontraron productos' });
+            }
+
             res.json({ products });
         } catch (error) {
             logger.error(`Error al intentar obtener productos: ${error.message}`);
-            res.status(500).json({ error: `Error al intentar obtener productos` });
-        } 
+            res.status(500).json({ error: 'Error al intentar obtener productos' });
+        }
     };
 
      static getProductById = async (req, res) => {
@@ -116,15 +121,18 @@ export class ProductController {
             // Validar que se proporcionen los datos necesarios del producto
             if (!title) {
                 logger.warn('Falta el título del producto', { body: req.body });
-                CustomError.createError("Argumento nombre faltante",
-                    tituloObligatorioProduct(req.body), TIPOS_ERROR.ARGUMENTOS_INVALIDOS);
                 return res.status(400).json({ error: 'Falta el título del producto' });
+                CustomError.createError("Argumento nombre faltante", tituloObligatorioProduct(req.body), TIPOS_ERROR.ARGUMENTOS_INVALIDOS);
             }
     
             // Verificar si el producto ya existe por título
-            let existe;
             try {
-                existe = await productService.getOneBy({ title });
+                const existe = await productService.getOneBy({ title });
+                if (existe) {
+                    logger.warn('Ya existe un producto con el mismo título', { title });
+                    return res.status(409).json({ error: 'Ya existe un producto con el mismo título' });
+                    CustomError.createError("Error", productoExistente(req.body), "Ya hay un producto igual", TIPOS_ERROR.CONFLICT);
+                }
             } catch (error) {
                 logger.error(`Error al intentar buscar producto por título: ${title}: ${error.message}`);
                 return res.status(500).json({
@@ -133,13 +141,7 @@ export class ProductController {
                 });
             }
     
-            if (existe) {
-                CustomError.createError("Error", productoExistente(req.body), "Ya hay un producto igual", TIPOS_ERROR.CONFLICT);
-                logger.warn('Ya existe un producto con el mismo título', { title });
-                return res.status(409).json({ error: 'Ya existe un producto con el mismo título' });
-            }
-    
-            try {
+            
                 console.log("Usuario autenticado:", req.user); // Para depuración
     
                 // Crear el objeto del nuevo producto
@@ -154,8 +156,8 @@ export class ProductController {
                     owner
                 };
     
-                logger.info("Datos del nuevo producto:", newProductData); // Para depuración
-    
+                logger.info("Datos del nuevo producto0o0o0:", newProductData); // Para depuración
+            try {
                 let newProduct = await productService.create(newProductData);
                 res.setHeader('Content-Type', 'application/json');
                 return res.status(201).json({ newProduct });
@@ -164,9 +166,12 @@ export class ProductController {
                 return res.status(400).json({ error: 'Error al crear el producto' });
             }
         } catch (error) {
-            res.status(401).json({ error: "Token inválido o no proporcionado" });
+            logger.error(`Error en el servidor: ${error.message}`); // Añadir más detalles de depuración
+            return res.status(500).json({ error: "Error inesperado en el servidor" });
         }
     }
+    
+    
     
       
     static mockProducts = async (req, res) => {

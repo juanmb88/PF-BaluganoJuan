@@ -69,7 +69,7 @@ export class UserController {
                  await userService.updatePassword(id, hashedPassword);
                  logger.info(`Contraseña actualizada para el usuario ${usuario.email}: ${hashedPassword}`); // Log para verificar la contraseña hasheada
                 res.clearCookie("usercookie");
-               return res.redirect('/login'); 
+              // return res.redirect('/login'); 
                 res.setHeader("Content-Type", "text/html")
                 res.status(400).json("<b>contraseña nueva confirmada con exito, ve al inicio de sesion</b>")
             } else {
@@ -83,7 +83,6 @@ export class UserController {
         }
     };
     
-
     static getPremium = async (req, res) => {
         const id = req.params.uid;
         
@@ -111,5 +110,5 @@ export class UserController {
             res.setHeader("Content-Type", "application/json");
             return res.status(500).json({ error: "Error en el Servidor al querer modificar el rol del usuario" });
         }
-    }
+    };
 }

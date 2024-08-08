@@ -1,0 +1,363 @@
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Product:
+      type: object
+      required:
+        - title
+        - description
+        - price
+        - stock
+        - code
+        - category
+      properties:
+        title:
+          type: string
+          example: "Producto de ejemplo"
+        description:
+          type: string
+          example: "Descripción del producto de ejemplo"
+        price:
+          type: number
+          example: 100
+        stock:
+          type: number
+          example: 10
+        code:
+          type: string
+          example: "PROD1234"
+        category:
+          type: string
+          example: "Categoría de ejemplo"
+        status:
+          type: boolean
+          example: true
+        owner:
+          type: string
+          example: "owner@example.com"
+
+security:
+  - bearerAuth: []
+
+paths:  
+  /api/products:
+   
+    get:
+      summary: Obtener todos los productos | Validar que existan | Validar que no hay un arreglo vacio
+      tags:
+        - Productos
+      responses:
+        '200':
+          description: Lista de productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '404':
+          description: No se encontraron productos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: No se encontraron productos
+        '500':
+          description: Error al intentar obtener productos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Error al intentar obtener productos
+  
+    post:
+      summary: Crea un producto | limitacion de crear para rol user  | validar repetido | validar que venga por titulo
+      tags:
+        - Productos
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        "201":
+          description: Producto creado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  newProduct:
+                    $ref: '#/components/schemas/Product'
+        "400":
+          description: Error en la solicitud del cliente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Falta el título del producto
+        "401":
+          description: Token inválido o no proporcionado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Token inválido o no proporcionado
+        "403":
+          description: Acceso denegado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Acceso denegado: solo usuarios premium o administradores pueden agregar productos"
+        "409":
+          description: Conflicto
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Ya existe un producto con el mismo título
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Error inesperado en el servidor - Intente más tarde, o contacte a su administrador
+
+  /api/products/{pid}:
+  
+    get:
+      summary: Obtener producto por ID
+      tags:
+        - Productos
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Producto obtenido con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  productfind:
+                    $ref: '#/components/schemas/Product'
+        '400':
+          description: ID de producto inválido
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: ID de producto inválido
+        '500':
+          description: Error al intentar obtener producto por ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Error al intentar obtener producto por ID
+
+    put:
+      summary: Actualiza un producto pasando ID | verifica Id correcto | Acceso a modificar depende el rol (premium  los solo propios)
+      tags:
+        - Productos
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: El ID del producto a actualizar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        "200":
+          description: Producto actualizado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  updatedProduct:
+                    $ref: '#/components/schemas/Product'
+        "400":
+          description: ID de producto inválido
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: ID de producto inválido
+        "401":
+          description: Usuario no autenticado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Usuario no autenticado
+        "403":
+          description: "Acceso denegado: solo puedes modificar tus propios productos"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Acceso denegado: solo puedes modificar tus propios productos"
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Producto no encontrado
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Error al intentar actualizar producto con ID: {pid}"
+
+    delete:
+      summary: Elimina un producto por ID | owner solo elimina los de su propiedad | validación de Id correcto | validar producto existente
+      tags:
+        - Productos
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: El ID del producto a eliminar
+      responses:
+        "200":
+          description: Producto eliminado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: Producto eliminado correctamente
+        "400":
+          description: ID de producto inválido
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: ID de producto inválido
+        "401":
+          description: Usuario no autenticado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Usuario no autenticado
+        "403":
+          description: "Acceso denegado: solo puedes eliminar tus propios productos"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Acceso denegado: solo puedes eliminar tus propios productos"
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Producto no encontrado
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Error al intentar eliminar producto con ID: {pid}"

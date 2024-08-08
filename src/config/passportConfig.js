@@ -103,7 +103,6 @@ export const initPassport =()=>{
                             logger.warn(`Usuario ${username} no encontrado`);
                            return done(null, false);
                         }
-                        logger.info(`Usuario encontrado: ${username}, password almacenada: ${usuario.password}`);
 
                         if(!validaPassword(password, usuario.password )){//si no  llega clave  con el hash
                            logger.warn(`Contraseña incorrecta para el usuario ${username}`);

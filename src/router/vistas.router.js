@@ -198,42 +198,11 @@ router.get('/profile', passportCall("current"), (req, res) => {
 router.get('/olvideClave', (req, res) => {
     try {
         res.setHeader("Content-Type", "text/html");
-        res.status(200).render('login'); 
+        res.status(200).render('profile'); 
     } catch (error) {
         res.status(500).send('Error interno del servidor');
     }
 });
-
-/* router.get("/crearNuevaClave/:token", async (req, res) => {
-    // 1) Extraer token del req.params
-    let token = req.params.token;
-    
-    // 2) Verificar la validez del token
-    let decoded;
-    try {
-        decoded = jwt.verify(token, SECRET);
-        console.log('Token válido y aún en vigencia:', decoded);
-    } catch (err) {
-        if (err.name === 'TokenExpiredError') {
-            console.error('El token ha expirado.');
-        } else if (err.name === 'JsonWebTokenError') {
-            console.error('El token no es válido.');
-        } else {
-            console.error('Error al verificar el token:', err);
-        }
-    }
-
-    // 3) Redirigir la vista según la validez del token
-    if (decoded) {
-        res.setHeader("Content-Type", "text/html");
-        return res.status(200).render("crearNuevaClave", decoded);
-    } else {
-        res.setHeader("Content-Type", "text/html");
-        return res.status(200).render("login", {
-            message: "Lo siento, el token expiró o es incorrecto, deberá repetir el procedimiento para restablecer la contraseña."
-        });
-    }
-}); */
 
 
 router.get("/crearNuevaClave/:token", async (req, res) => {

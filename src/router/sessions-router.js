@@ -9,7 +9,6 @@ dotenv.config();
 export const router = Router();
 
 router.post('/register', (req, res, next) => {
-    console.log("Solicitud de registro recibida:", req.body);
 
     passport.authenticate('register', { session: false, failureRedirect: "/api/sessions/error" }, async (err, usuario) => {
         try {
@@ -17,13 +16,14 @@ router.post('/register', (req, res, next) => {
                 console.error("Error en la autenticación:", err);
                 return next(err);
             }
-            if (!usuario) {
-                console.log("Autenticación fallida, usuario no encontrado.");
+             if (!usuario) {
+                console.log("ya existe un usuario registrado con estos datos.");
+                //console.log("Autenticación fallida, usuario no encontrado.");
                 return res.redirect("/api/sessions/error");
-            }
+            } 
             const { first_name, password, last_name } = req.body;
             await sendEmail(first_name, password, last_name); // Enviar el correo
-            console.log("Usuario registrado con éxitoooo:", usuario);
+            console.log("Usuario registrado con éxito:", usuario);
             res.redirect('/login'); // Redirigir al login
         } catch (error) {
             console.error("Error al registrar el usuario:", error);
@@ -108,6 +108,7 @@ router.post('/restablecerContraseña',
       } catch (error) {
         next(error);
       }
-    });
+});
+
 
 export default router;

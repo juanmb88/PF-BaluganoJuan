@@ -16,12 +16,8 @@ router.post("/", CartController.createNewCart);
 //AGREGAR PRODUCTOS AL CARRITO
 router.post('/:cid/products/:pid',authToken,  CartController.addProductToCart )
 
-
 //ELIMINAR PRODUCTO DEL CARRITO POR UNIDAD (QUANTITY)
 router.delete("/:cid/products/:pid", CartController.deleteProductByCart );
-
-//router.delete("/:cid/products/:pid", CartController.deleteProductFromCart);
-
 
 //ELIMINAR CARRITO POR ID
 router.delete("/:cid", CartController.deleteCartById);

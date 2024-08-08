@@ -8,22 +8,27 @@ import { logger } from '../helper/Logger.js';
 
 export class CartController{
 
-    static getAll = async (req, res) => {
-          try {
-              const response = await cartManager.getAllCarts();
-              res.json(response);
-          } catch (error) {
-              logger.error(`Error al intentar obtener todos los carritos: ${error.message}`);
-              res.status(500).json({ error: `Error al intentar obtener todos los carritos` });
+  static getAll = async (req, res) => {
+      try {
+          const response = await cartService.getAllCarts();
+
+          if (!response || response.length === 0) {
+              return res.status(404).json({ message: 'No se encontraron carritos' });
           }
+
+          res.json({ status: 'success', carts: response });
+      } catch (error) {
+          logger.error(`Error al intentar obtener todos los carritos: ${error.message}`);
+          res.status(500).json({ error: 'Error al intentar obtener todos los carritos' });
       }
+}
     
     static getById = async (req, res) => {
         const { cid } = req.params;
         try {
           if (!isValidObjectId(cid)) {
             res.setHeader("Content-Type", "application/json");
-            return res.status(400).json({ error: `Enter valid cid/pid` });
+            return res.status(400).json({ error: `Ingresa un ID valido` });
           }
       
           const carrito = await cartService.getOneByPopulate({ _id: cid });
@@ -31,27 +36,33 @@ export class CartController{
           if (!carrito) {
             res.setHeader("Content-Type", "application/json");
             logger.error(`Carrito con ID ${cid} inexistente: ${error.message}`);
-            return res.status(400).json({ error: `No-existent cart: id ${cid}` });
+            return res.status(400).json({ error: `No existe cart: id ${cid}` });
           }
       
           res.setHeader("Content-Type", "application/json");
           return res.status(200).json({ carrito });
         } catch (error) {
           logger.error(`Error al intentar obtener el carrito con ID ${cid}`);
-          res.status(500).json({ error: `Error al intentar obtener el carrito, carrito con ID ${cid} es inexistente` });
+          res.status(500).json({ error: `Error al intentar obtener el carrito con ID ${cid}, es inexistente` });
       }
       }
 
-    static createNewCart = async (req, res) => {
+      static createNewCart = async (req, res) => {
         try {
             const response = await cartService.createCart();
+
+            if (!response) {
+                logger.warn('No se pudo crear el carrito');
+                return res.status(400).json({ error: 'No se pudo crear el carrito' });
+            }
+
             logger.info(`Nuevo carrito creado: ${response._id}`);
-            res.json(response);
+            res.status(201).json({ status: 'success', cart: response });
         } catch (error) {
             logger.error(`Error al intentar crear un nuevo carrito: ${error.message}`);
-            res.status(500).send("Error when trying to create cart");
+            res.status(500).json({ error: 'Error al intentar crear un nuevo carrito' });
         }
-      }
+    }
     
     static addProductToCart = async (req, res) => {
         let { cid, pid } = req.params;
@@ -132,30 +143,32 @@ export class CartController{
         }   
       }
      
-    static deleteCartById = async (req, res) => {
+      static deleteCartById = async (req, res) => {
         let { cid } = req.params;
+
         if (!isValidObjectId(cid)) {
             logger.error(`Ingrese un ID de MongoDB válido: cid=${cid}`);
             return res.status(400).json({
                 error: `Ingrese un ID de MongoDB válido`,
             });
         }
-      
-        if (!cid) {
-            logger.warn(`Campos no llenados correctamente: cid=${cid}`);
-            return res.status(300).json({ error: "Campos no llenados correctamente" });
-        }
-      
+
         try {
+            const cart = await cartService.getCartById(cid);
+            if (!cart) {
+                logger.warn(`Carrito no encontrado: ID ${cid}`);
+                return res.status(404).json({ error: `Carrito no encontrado` });
+            }
+
             await cartService.deleteCartById(cid);
             logger.info(`Carrito con ID ${cid} eliminado correctamente`);
             res.setHeader("Content-Type", "application/json");
-            return res.json({ payload: `Carrito con ID :${cid} fue eliminado con éxito` });
+            return res.status(200).json({ payload: `Carrito con ID: ${cid} fue eliminado con éxito` });
         } catch (error) {
             logger.error(`Error al eliminar carrito: ${error.message}`);
             return res.status(500).json({ error: `${error.message}` });
         }
-      }  
+    }
 
     static updateProduct = async (req, res) => {
         const { cId, pId } = req.params;
@@ -214,79 +227,76 @@ export class CartController{
         let usuario = req.user;
         let productosConStock = [];
         let productosSinStock = [];
-
+    
         try {
-        
             const cart = await cartService.getCartById(cid); 
-
+    
             if (!cart) {
+                logger.warn(`Carrito no encontrado: id=${cid}`);
                 return res.status(404).json({ message: "Carrito no encontrado" });
             }
-            // Verifico stock del producto
-             for (let i = 0; i < cart.products.length; i++) { 
+    
+            for (let i = 0; i < cart.products.length; i++) { 
                 let product = await productService.getProductsByFiltro(cart.products[i].product._id); 
                 if (!product) {
+                    logger.warn(`Producto no encontrado: id=${cart.products[i].product._id}`);
                     return res.status(404).json({ message: `Id de producto : ${cart.products[i].product._id} no encontrado` });
                 }
-
+    
                 if (cart.products[i].quantity <= product.stock) {
                     let nuevoStock = { stock: product.stock - cart.products[i].quantity };
                     await productService.updateProduct(cart.products[i].product._id, nuevoStock);
-                    productosConStock.push(cart.products[i])//agrego a la lista creada
-                    logger.info("Producto añadido:", cart.products[i]);
+                    productosConStock.push(cart.products[i]);
+                    logger.info(`Producto con stock suficiente añadido: id=${cart.products[i].product._id}, cantidad=${cart.products[i].quantity}`);
                 } else {
                     productosSinStock.push(cart.products[i]);
-                    logger.warn("Producto no facturable añadido:", cart.products[i]);
+                    logger.warn(`Producto sin stock suficiente añadido: id=${cart.products[i].product._id}, cantidad=${cart.products[i].quantity}`);
                 }
             }
-            //FIN Verifico stock del producto
-            logger.info("Productos para facturar:", productosConStock);
-            logger.info("Productos sin stock restantes:", productosSinStock);
-
-            // Obtengo el precio total de la compra, se agraga cantidad de item en el calculo
+    
+            logger.info(`Productos para facturar: ${JSON.stringify(productosConStock)}`);
+            logger.info(`Productos sin stock restantes: ${JSON.stringify(productosSinStock)}`);
+    
             const precioTotal = productosConStock.map(item => ({
-              price: item.product.price * item.quantity,
-              quantity: item.quantity,
-              product: item.product._id
-          }));
-  
-          const total = precioTotal.reduce((acumulador, valorActual) => acumulador + valorActual.price, 0);
-  
-          const cantidadesPorUnidad = precioTotal.reduce((acumulador, valorActual) => {
-              acumulador[valorActual.product] = valorActual.quantity;
-              return acumulador;
-          }, {});
-  
-          logger.info("Total a pagar:", total);
-          logger.info("Cantidades por unidad:", cantidadesPorUnidad);
-
-            //actualizo carrito
+                price: item.product.price * item.quantity,
+                quantity: item.quantity,
+                product: item.product._id
+            }));
+    
+            const total = precioTotal.reduce((acumulador, valorActual) => acumulador + valorActual.price, 0);
+            const cantidadesPorUnidad = precioTotal.reduce((acumulador, valorActual) => {
+                acumulador[valorActual.product] = valorActual.quantity;
+                return acumulador;
+            }, {});
+    
+            logger.info(`Total a pagar: ${total}`);
+            logger.info(`Cantidades por unidad: ${JSON.stringify(cantidadesPorUnidad)}`);
+    
             await cartService.update(cart._id, { products: productosSinStock });
-
-           //ticket a dar...
+    
             const compraFinal = {
                 purchaser: usuario.email,
                 code: Math.floor(Math.random() * 100000),
                 amount: total,
                 products: productosConStock.map(item => ({
-                  product: item.product._id, 
-                  quantity: item.quantity 
+                    product: item.product._id, 
+                    quantity: item.quantity 
                 })),
                 purchase_datetime: Date.now(),
             };
+    
             await sendTicketDeCompraEmail(usuario.email, compraFinal.code, compraFinal.amount);
-            logger.info("Datos de compra:", compraFinal);
-
+            logger.info(`Datos de compra: ${JSON.stringify(compraFinal)}`);
+    
             let ticket = await ticketService.create(compraFinal);
-
-            logger.info("Ticket creado:", ticket);
-
+            logger.info(`Ticket creado: ${JSON.stringify(ticket)}`);
+    
             res.setHeader("Content-Type", "application/json");
             return res.status(201).json(ticket);
         } catch (error) {
-            logger.error("Error procesando compra:", error);
+            logger.error(`Error procesando compra: ${error.message}`);
             res.setHeader("Content-Type", "application/json");
             return res.status(500).json("Error inesperado en el servidor al procesar la compra");
         }
-      }
+    }
 }
