@@ -4,13 +4,17 @@ import jwt from "jsonwebtoken";
 import { UsuariosDTO } from "../DTO/UsuarioDTO.js";
 import dotenv from 'dotenv';
 import { sendEmail } from '../helper/nodeMailer.js'; // Importa la función de envío de correo
+import { UsersManager } from '../dao/userManager.js';
+
+const usersManager = new UsersManager();
 
 dotenv.config();
 export const router = Router();
 
+
 router.post('/register', (req, res, next) => {
 
-    passport.authenticate('register', { session: false, failureRedirect: "/api/sessions/error" }, async (err, usuario) => {
+    passport.authenticate('register', { session: false, failureRedirect: "/api/sessions/error",failureMessage: true }, async (err, usuario) => {
         try {
             if (err) {
                 console.error("Error en la autenticación:", err);
@@ -23,7 +27,7 @@ router.post('/register', (req, res, next) => {
             } 
             const { first_name, password, last_name } = req.body;
             await sendEmail(first_name, password, last_name); // Enviar el correo
-            console.log("Usuario registrado con éxito:", usuario);
+            //return res.json({ message: `Usuario creado con éxito`});// Redirigir al response de thunder
             res.redirect('/login'); // Redirigir al login
         } catch (error) {
             console.error("Error al registrar el usuario:", error);
@@ -41,17 +45,29 @@ router.post("/login", passport.authenticate("login", { session: false, failureRe
         let token = jwt.sign(usuario, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" });
         res.cookie("CookiePrueba", token, { httpOnly: true }); // Enviamos desde el servidor la cookie
 
-        if (web) {
+         // Siempre devuelve JSON en lugar de redirigir
+         res.setHeader('Content-Type', 'application/json');
+         return res.status(200).json({ payload: "Login correcto", usuario, token });
+         if (web) {
          return  res.redirect("/");
-        } else {
+        } else { 
             res.setHeader('Content-Type', 'application/json');
             return res.status(200).json({ payload: "Login correcto", usuario, token });
-        }
+         } 
     } catch (error) {
         next(error);
     }
 });
 
+router.get('/', async (req, res) => {
+    try {
+        const users = await usersManager.getAllUsers();
+        res.status(200).json(users);
+    } catch (error) {
+        console.error('Error en GET "/":', error);
+        res.status(500).json({ message: 'Error al obtener los usuarios', error: error.message });
+    }
+});
 router.get('/github', passport.authenticate('github', { session: false, scope: ['user:email'] }));
 
 router.get("/devolucionGithub", passport.authenticate("github", { session: false, failureRedirect: "/api/sessions/error" }), async (req, res, next) => {
@@ -78,7 +94,6 @@ router.get("/logout", (req, res, next) => {
 router.get("/error", (req, res, next) => {
     try {
         res.setHeader('Content-Type', 'application/json');
-        //res.status(500).render('error', { message: "Error interno del servidor" });
 
         return res.status(500).json({
             error: `Error inesperado en el servidor - Intente más tarde, o contacte a su administrador`,

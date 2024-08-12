@@ -69,8 +69,7 @@ export class ProductController {
             res.status(500).json({ error: `Error al intentar actualizar producto con ID: ${pid}` });
         }
     };
-    
-
+  
     static deleteById = async (req, res) => {
         const { pid } = req.params;
         try {
@@ -102,7 +101,6 @@ export class ProductController {
         }
     };
     
-
     static addProduct = async (req, res) => {
         let { title, description, price, code, stock, category, status } = req.body;
         let owner = "admin";
@@ -169,11 +167,8 @@ export class ProductController {
             logger.error(`Error en el servidor: ${error.message}`); // Añadir más detalles de depuración
             return res.status(500).json({ error: "Error inesperado en el servidor" });
         }
-    }
-    
-    
-    
-      
+    };
+         
     static mockProducts = async (req, res) => {
         logger.info('Iniciando generación de productos simulados');
         const mockProducts = [];

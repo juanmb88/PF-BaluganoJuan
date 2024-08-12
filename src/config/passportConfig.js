@@ -60,7 +60,7 @@ export const initPassport =()=>{
                         return done(null, false,{ message: 'Nombre es requerido' });
                         }
                     
-                        let existe = await usuariosManager.getBy({ email : username });
+                        let existe = await usuariosManager.getByOne({ email : username });
 
                         if(existe){
                             return done(null,false,{ message: 'El email ya está registrado' });

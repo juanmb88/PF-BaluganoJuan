@@ -10,13 +10,29 @@ export class UsersManager {
             throw new Error('Error al crear el usuario');
         }
     }
+    async getAllUsers() {
+        try{
+            const usuarios = await usuarioModelo.find().lean();
+            return usuarios;
+
+        }catch(error){
+            console.error("Error en UsersManager.getAllUsers:", error);
+        }
+    }
 
     async getBy(filter) {
         try {
-            return await usuarioModelo.findOne(filter).lean();
+            return await usuarioModelo.find(filter).lean();
         } catch (error) {
             console.error("Error en UsersManager.getBy:", error);
-            throw new Error('Error al buscar el usuario');
+        }
+    }
+
+    async getByOne(filter){
+        try{
+            return await usuarioModelo.findOne(filter).lean();
+        }catch(error){
+            console.error("Error en UsersManager.getByOne:", error);
         }
     }
 
