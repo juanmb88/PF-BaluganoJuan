@@ -5,6 +5,7 @@ import { UsuariosDTO } from "../DTO/UsuarioDTO.js";
 import dotenv from 'dotenv';
 import { sendEmail } from '../helper/nodeMailer.js'; // Importa la función de envío de correo
 import { UsersManager } from '../dao/userManager.js';
+import { logger } from '../helper/Logger.js';
 
 const usersManager = new UsersManager();
 
@@ -17,18 +18,29 @@ router.post('/register', (req, res, next) => {
     passport.authenticate('register', { session: false, failureRedirect: "/api/sessions/error",failureMessage: true }, async (err, usuario) => {
         try {
             if (err) {
-                console.error("Error en la autenticación:", err);
+                logger.error("Error en la autenticación:", err);
                 return next(err);
             }
              if (!usuario) {
-                console.log("ya existe un usuario registrado con estos datos.");
-                //console.log("Autenticación fallida, usuario no encontrado.");
+                logger.warn("ya existe un usuario registrado con estos datos.");
                 return res.redirect("/api/sessions/error");
             } 
-            const { first_name, password, last_name } = req.body;
-            await sendEmail(first_name, password, last_name); // Enviar el correo
-            //return res.json({ message: `Usuario creado con éxito`});// Redirigir al response de thunder
-            res.redirect('/login'); // Redirigir al login
+            const { first_name, password, last_name, email, web } = req.body;
+             await sendEmail(first_name, password, last_name ); 
+            if (web) {
+                return res.redirect('/login');
+              } else {
+                logger.info(`Usuario creado con éxito: ${first_name} ${last_name} - Email: ${email}`);
+                
+                return res.json({ 
+                    message: `Usuario creado con éxito`,
+                    user: {
+                        firstName: first_name,
+                        lastName: last_name,
+                        email: email
+                    },
+                });
+            }
         } catch (error) {
             console.error("Error al registrar el usuario:", error);
             next(error);
@@ -46,8 +58,8 @@ router.post("/login", passport.authenticate("login", { session: false, failureRe
         res.cookie("CookiePrueba", token, { httpOnly: true }); // Enviamos desde el servidor la cookie
 
          // Siempre devuelve JSON en lugar de redirigir
-         res.setHeader('Content-Type', 'application/json');
-         return res.status(200).json({ payload: "Login correcto", usuario, token });
+        // res.setHeader('Content-Type', 'application/json');
+       //  return res.status(200).json({ payload: "Login correcto", usuario, token });
          if (web) {
          return  res.redirect("/");
         } else { 
@@ -68,15 +80,16 @@ router.get('/', async (req, res) => {
         res.status(500).json({ message: 'Error al obtener los usuarios', error: error.message });
     }
 });
-router.get('/github', passport.authenticate('github', { session: false, scope: ['user:email'] }));
+
+router.get('/github', passport.authenticate('github', { session: false, scope: ['user:email'] }))
 
 router.get("/devolucionGithub", passport.authenticate("github", { session: false, failureRedirect: "/api/sessions/error" }), async (req, res, next) => {
     try {
         const usuario = { ...req.user };
-        const token = jwt.sign({ id: usuario._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" }); // Generar el token JWT
+        const token = jwt.sign({ id: usuario._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" }); 
 
-        res.cookie("CookiePrueba", token, { httpOnly: true }); // Enviar el token en una cookie
-        return res.redirect('/'); // Redirigir al usuario a la página principal
+        res.cookie("CookiePrueba", token, { httpOnly: true }); 
+        return res.redirect('/'); 
     } catch (error) {
         next(error);
     }
@@ -84,8 +97,9 @@ router.get("/devolucionGithub", passport.authenticate("github", { session: false
 
 router.get("/logout", (req, res, next) => {
     try {
-        res.clearCookie("CookiePrueba");
-        res.redirect('/login');
+        res.clearCookie("CookiePrueba",{ httpOnly: true});
+        logger.info("LA SESION A SIDO CERRADA.")
+        return res.redirect("/login")
     } catch (error) {
         next(error);
     }

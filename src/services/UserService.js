@@ -25,7 +25,7 @@ class UserService {
     }
 
     getUserById = async (id) => {
-        return this.dao.getBy({ _id: id });
+        return this.dao.getByOne({ _id: id });
     }
 }
 export const userService = new UserService(new UsersManager()) 

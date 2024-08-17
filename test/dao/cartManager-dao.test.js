@@ -28,7 +28,7 @@ afterEach(async function () {
 before(async function(){
     this.dao = new CartManager()
 })
-describe("Pruebas rutas de carrito", function () { 
+describe("Pruebas sobre carrito", function () { 
    
     //Traer carrito por id
     it("Debería traer un carrito por ID, verifica si carrito tiene un _id, Verifica que 'carrito' tiene un '_id' que coincide con el cartId, carrito cuenta con propiedad products, y verifica fecha de creacion", async function () {

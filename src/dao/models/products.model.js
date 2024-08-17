@@ -26,7 +26,6 @@ const productsSchema= new mongoose.Schema({
     },
     code: {
         type: String,
-        unique: true, // Se asegura que el código sea único
         required: true
     },
     category: {

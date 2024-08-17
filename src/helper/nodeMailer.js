@@ -1,12 +1,14 @@
 import nodemailer from "nodemailer";
+import dotenv from 'dotenv';
 
+dotenv.config();
 // Configura el transportador de nodemailer
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     port: 587,
     auth: {
-        user: 'juanbalugano@gmail.com',
-        pass: 'qfvneshnviqswnuv'
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 

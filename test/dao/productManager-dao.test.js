@@ -5,7 +5,7 @@ import supertest from "supertest";
 
 const requester = supertest("http://localhost:8080");
 
-describe("Pruebas rutas de productos", function () {
+describe("Pruebas sobre productos", function () {
     let token;
 
     before(async function () {

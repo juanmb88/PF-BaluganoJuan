@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     age: { type : Number},
     password: { type : String },
     carrito: { type : mongoose.Schema.Types.ObjectId, ref: 'carts' },
-    role: { type : String, default : "user" },
+    role: { type : String, default : "usuario" },
     /* timestamps: true, strict:false */
 
 });

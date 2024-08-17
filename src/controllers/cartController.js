@@ -130,15 +130,22 @@ export class CartController{
           return res.status(400).json({ error: `Ingrese cid / pid válidos` });
         }
         try {
+          const cart = await cartService.getCartById(cid);
+          if (!cart || cart.products.length === 0) {
+              logger.warn(`El carrito con ID ${cid} está vacío. No hay productos para borrar.`);
+              res.setHeader("Content-Type", "application/json");
+              return res.status(400).json({ error: `El carrito está vacío. No hay productos para borrar.` });
+            }
           await cartService.decreaseProductQuantity(cid, pid);
 
           logger.info(`Cantidad del producto con ID ${pid} reducida en el carrito con ID ${cid}`);
-          res.json({
+          res.setHeader("Content-Type", "application/json");
+          return res.status(200).json({
             payload: `Se redujo la cantidad del producto con ID: ${pid} en el carrito con ID: ${cid}`,
-          });
+        });
         } catch (error) {
-          
           logger.error(`Error al reducir cantidad del producto en carrito: ${error.message}`);
+          res.setHeader("Content-Type", "application/json");
           return res.status(500).json({ error: `${error.message}` });
         }   
       }

@@ -85,6 +85,51 @@ export class UserController {
     
     static getPremium = async (req, res) => {
         const id = req.params.uid;
+    
+        if (!isValidObjectId(id)) {
+            return res.status(400).json({
+                message: "Error, el id requerido no tiene un formato válido de MongoDB"
+            });
+        }
+    
+        try {
+            const usuario = await userService.getUserById(id);
+            if (!usuario) {
+                return res.status(400).json({
+                    message: "No hay ningún usuario registrado con el id proporcionado"
+                });
+            }
+    
+            // Log para ver el rol actual
+            console.log(`Rol actual del usuario: ${usuario.role}`);
+    
+            const nuevoRol = usuario.role === "usuario" ? "premium" : "usuario";
+            console.log(`Nuevo rol asignado: ${nuevoRol}`);
+    
+            const nuevoUsuario = await userService.updateRol(id, nuevoRol);
+            console.log('Usuario después de actualizar el rol:', nuevoUsuario);
+    
+            if (!nuevoUsuario) {
+                return res.status(500).json({ message: "Error al actualizar el rol del usuario" });
+            }
+    
+            let nuevoUsuarioSinPassword = { ...nuevoUsuario };
+            delete nuevoUsuarioSinPassword.password;
+    
+            res.clearCookie("codercookie", { httpOnly: true });
+    
+            let token = jwt.sign(nuevoUsuarioSinPassword, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" });
+            res.cookie("codercookie", token, { httpOnly: true });
+    
+            return res.status(200).json(nuevoUsuarioSinPassword);
+        } catch (error) {
+            logger.error("Error al modificar el rol del usuario:", error);
+            return res.status(500).json({ error: "Error en el Servidor al querer modificar el rol del usuario" });
+        }
+    };
+    
+    /* static getPremium = async (req, res) => {
+        const id = req.params.uid;
         
         if (!isValidObjectId(id)) {
             res.setHeader("Content-Type", "application/json");
@@ -110,5 +155,6 @@ export class UserController {
             res.setHeader("Content-Type", "application/json");
             return res.status(500).json({ error: "Error en el Servidor al querer modificar el rol del usuario" });
         }
-    };
+    } */
+    
 }

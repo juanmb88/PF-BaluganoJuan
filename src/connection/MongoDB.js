@@ -9,7 +9,7 @@ const connectDB = async () => {
     } catch (error) {
         logger.error("Error al conectar a la base de datos de MongoDB", { error: error.message });
     }
-}
+};
 
 export default connectDB;
 

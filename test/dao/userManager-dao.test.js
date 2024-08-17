@@ -20,7 +20,7 @@ connDB()
 const requester = supertest("http://localhost:8080")
 
 let {body,status,ok,headers} = await requester.get("/api/sessions")
-describe("Pruebas DAO Users ", function(){
+describe("Pruebas sobre usuarios", function(){
      this.timeout(10000)
      
     before(async function(){
