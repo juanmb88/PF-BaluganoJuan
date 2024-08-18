@@ -1,4 +1,3 @@
-//En este archivo se encuentra la logica manejada desde el front-end
 //LOGICA BOTONES DE AGREGAR PRODUCTO A CARRITO 
 const comprar = async (pid)=>{
     let inputCarrito = document.getElementById("inputCarrito");
@@ -7,11 +6,16 @@ const comprar = async (pid)=>{
     let respuesta = await fetch(`/api/carts/${cid}/products/${pid}`,{
         method:"post"
     });
-    
+    let datos = await respuesta.json();
+
     if (respuesta.status === 200) {
-        let datos = await respuesta.json()
-        console.log(datos)
-        alert("Producto agregado...!!!")
+        console.log(datos);
+        alert("Producto agregado al carrito con éxito.");
+    } else if (respuesta.status === 400 && datos.error.includes("stock")) {
+        alert(`No se pudo agregar el producto al carrito: ${datos.error}`);
+    } else {
+        console.error("Error al agregar el producto al carrito:", datos);
+        alert(`Hubo un error al agregar el producto al carrito: ${datos.error}`);
     }
 };
 //LOGICA MENSAJE DE BIENVENIDA
@@ -66,23 +70,6 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
 });
 
 //LOGICA DE FINALIZAR COMPRA
-/*   const finalizarCompra = async (cid)=>{
-    let inputCarrito = document.getElementById("inputCarrito");
-    let cid = inputCarrito.value;
-    console.log( "asdasdsdasd",cid)
-
-    let respuesta = await fetch(`/api/carts/${cid}/purchase`,{
-        method:"POST"
-    });
-    
-    if (respuesta.status === 200) {
-        let datos = await respuesta.json()
-        console.log(datos)
-        alert("Producto agregado...!!!")
-    }
-};  
- */
-
 const finalizarCompra = async () => {
     console.log("finalizarCompra function called"); // Agrega este mensaje para depuración
 

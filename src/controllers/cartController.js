@@ -92,7 +92,12 @@ export class CartController{
               if (req.user.role === 'premium' && product.owner === req.user.email) {
                 return res.status(403).json({ error: 'No puedes agregar tus propios productos al carrito' });
             }
-
+            // Verificar si el producto tiene stock disponible
+            if (product.stock < 1) {
+              logger.warn(`El producto con id ${pid} no tiene stock disponible`);
+              res.setHeader('Content-Type', 'application/json');
+              return res.status(400).json({ error: `El producto con id ${pid} no tiene stock disponible` });
+            }
             let indiceProducto = carrito.products.findIndex(p => p.product == pid);
             if (indiceProducto === -1) {
                 carrito.products.push({ product: pid, quantity: 1 });
@@ -260,7 +265,15 @@ export class CartController{
                     logger.warn(`Producto sin stock suficiente añadido: id=${cart.products[i].product._id}, cantidad=${cart.products[i].quantity}`);
                 }
             }
-    
+     // Si no hay productos con stock suficiente, abortar la compra
+     if (productosConStock.length === 0) {
+      logger.warn('Compra abortada: no hay productos con stock suficiente');
+      return res.status(400).json({
+          message: "No se puede completar la compra. Los siguientes productos no tienen stock suficiente.",
+          productosSinStock
+      });
+  }
+
             logger.info(`Productos para facturar: ${JSON.stringify(productosConStock)}`);
             logger.info(`Productos sin stock restantes: ${JSON.stringify(productosSinStock)}`);
     
@@ -271,14 +284,14 @@ export class CartController{
             }));
     
             const total = precioTotal.reduce((acumulador, valorActual) => acumulador + valorActual.price, 0);
-            const cantidadesPorUnidad = precioTotal.reduce((acumulador, valorActual) => {
+          /*   const cantidadesPorUnidad = precioTotal.reduce((acumulador, valorActual) => {
                 acumulador[valorActual.product] = valorActual.quantity;
                 return acumulador;
             }, {});
     
             logger.info(`Total a pagar: ${total}`);
             logger.info(`Cantidades por unidad: ${JSON.stringify(cantidadesPorUnidad)}`);
-    
+     */
             await cartService.update(cart._id, { products: productosSinStock });
     
             const compraFinal = {
@@ -299,7 +312,13 @@ export class CartController{
             logger.info(`Ticket creado: ${JSON.stringify(ticket)}`);
     
             res.setHeader("Content-Type", "application/json");
-            return res.status(201).json(ticket);
+            return res.status(201).json({
+              ticket,
+              message: productosSinStock.length > 0
+                  ? "La compra se completó con los productos en stock disponibles. Los productos sin stock fueron eliminados del carrito."
+                  : "Compra completada con éxito."
+          }  
+            );
         } catch (error) {
             logger.error(`Error procesando compra: ${error.message}`);
             res.setHeader("Content-Type", "application/json");

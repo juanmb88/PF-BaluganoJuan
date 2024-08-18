@@ -5,9 +5,9 @@ import passportJWT from "passport-jwt";
 import github from "passport-github2";
 import { UsersManager as UsuariosManager } from '../dao/userManager.js';
 import {CartManager} from '../dao/cartManager.js'
-import  {generaHash, validaPassword}  from "../utils.js";
 import dotenv from 'dotenv';
 import { logger } from "../helper/Logger.js";
+import { generaHash, validaPassword } from "../utils.js";
 
 dotenv.config();
 const usuariosManager = new UsuariosManager();

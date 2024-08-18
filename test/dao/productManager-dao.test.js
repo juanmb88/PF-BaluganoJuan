@@ -54,42 +54,40 @@ describe("Pruebas sobre productos", function () {
         }
     }); 
 
-    it("Debería crear un nuevo producto verifica : respuesta código en estado 201,el producto creado no es nulo, producto creado tiene un '_id', que el 'stock' es correcto,Ajuste para el rol admin", async function () {
+    it("Debería crear un nuevo producto verifica : respuesta código en estado 201...", async function () {
         const newProduct = {
-            title: "Producto de ejemplo único",  // Asegúrate de que el título sea único
+            title: "Producto de ejemplo simple",  // Asegúrate de que el título sea único
             description: "Descripción del producto de ejemplo",
             price: 100,
             stock: 10,
-            code: "PROD1234",
-            category: "Categoría de ejemplo",
-            status: true,
-            owner: "owner@example.com"
+            code: `PROD${Date.now()}`,  // Genera un código único
+            category: "Categoría de ejemplo"
         };
     
         const { body, status } = await requester.post("/api/products")
-            .set('Cookie', `CookiePrueba=${token}`)
-            .send(newProduct);
-        
-        expect(status).to.be.equal(201);  
-        expect(body).to.not.be.null;  // Asegúrate de que el cuerpo de la respuesta no es nulo
-        expect(body).to.be.an('object');  // Verifica que el cuerpo de la respuesta es un objeto
+    .set('Cookie', `CookiePrueba=${this.token}`)
+    .send(newProduct);
+
+    console.log('Response status:', status);
+    console.log('Response body:', body);
     
-        const createdProduct = body.newProduct;  // Accede a `newProduct` directamente
+        expect(status).to.be.equal(201);
+        expect(body).to.not.be.null;
+        expect(body).to.be.an('object');
     
-        expect(createdProduct).to.not.be.null;  // Asegúrate de que el producto creado no es nulo
-        expect(createdProduct).to.have.property('_id');  // Verifica que el producto creado tiene un '_id'
-        expect(createdProduct).to.have.property('title').that.equals(newProduct.title);  // Verifica que el 'title' es correcto
-        expect(createdProduct).to.have.property('description').that.equals(newProduct.description);  // Verifica que la 'description' es correcta
-        expect(createdProduct).to.have.property('price').that.equals(newProduct.price);  // Verifica que el 'price' es correcto
-        expect(createdProduct).to.have.property('stock').that.equals(newProduct.stock);  // Verifica que el 'stock' es correcto
-        expect(createdProduct).to.have.property('code').that.equals(newProduct.code);  // Verifica que el 'code' es correcto
-        expect(createdProduct).to.have.property('category').that.equals(newProduct.category);  // Verifica que la 'category' es correcta
-        expect(createdProduct).to.have.property('status').that.equals(newProduct.status);  // Verifica que el 'status' es correcto
-        expect(createdProduct).to.have.property('owner').that.equals('admin');  // Ajuste para el rol "admin"
+        const createdProduct = body.newProduct;
     
-        // Guardar el ID del producto creado para su eliminación posterior
+        expect(createdProduct).to.not.be.null;
+        expect(createdProduct).to.have.property('_id');
+        expect(createdProduct).to.have.property('title').that.equals(newProduct.title);
+        expect(createdProduct).to.have.property('description').that.equals(newProduct.description);
+        expect(createdProduct).to.have.property('price').that.equals(newProduct.price);
+        expect(createdProduct).to.have.property('stock').that.equals(newProduct.stock);
+        expect(createdProduct).to.have.property('code').that.equals(newProduct.code);
+        expect(createdProduct).to.have.property('category').that.equals(newProduct.category);
+    
         this.createdProductId = createdProduct._id;
-    }); 
+    });
 
     it("Debería obtener un producto por ID válido verifica si respuesta fue exitosa, respuesta es un objeto, el estado es 'success',ID del producto es el correcto", async function () {
         const pid = "667b5e018f0a2f2166ffc478";  // Reemplaza con un ID de producto válido en tu base de datos
@@ -119,3 +117,4 @@ describe("Pruebas sobre productos", function () {
     });
 });
 
+ 

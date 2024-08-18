@@ -64,6 +64,7 @@ const serverHTTP = app.listen(port, () =>{
      logger.info(`Server corriendo en http://localhost:${port}`)
      serverHTTP.on('error', (err) => console.log(err));
     });
+    console.log('Views directory:', app.get('views'));
 
 const socketServer = new Server(serverHTTP);// Socket
 socketProducts(socketServer);

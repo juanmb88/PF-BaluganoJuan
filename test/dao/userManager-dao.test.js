@@ -34,7 +34,7 @@ describe("Pruebas sobre usuarios", function(){
  
 
      it("El dao, con su método get, retorna un array de usuarios", async function(){
-        let resultado=await this.dao.getBy()//ejecuto el componente!!!
+        let resultado=await this.dao.getBy()
          expect(Array.isArray(resultado)).to.be.equal(true)
          expect(Array.isArray(resultado)).to.be.true
          expect(Array.isArray(resultado)).not.to.be.false
@@ -60,4 +60,4 @@ describe("Pruebas sobre usuarios", function(){
     
     })    
 
-})
+}) 
