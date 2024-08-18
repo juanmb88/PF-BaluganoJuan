@@ -9,16 +9,16 @@ const productsDiv = document.getElementById("list-products");
 let productsHTML = "";
 
 productList.forEach( product => {
-    productsHTML += `  <div class="border border-dark card h-90 mx-4 my-3" style="max-width:20rem">
+    productsHTML += `  <div class="border border-dark card h-80 mx-4 my-1" style="max-width:18rem">
     
-                           <div class="card-body bg-light border border-dark">
+                           <div class="card-body bg-success border border-dark">
                            <i class="bi bi-tag  fw-normal fw-bold">ID Producto:</i> ${product._id}
 
                            </div>
 
                            
 
-                            <div class="card-body bg-secondary">
+                            <div class="card-body bg-light border border-dark">
 
                                 <h5 class="card-title px-4 text-dark fw-bold">${product.title}</h5>
 

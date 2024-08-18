@@ -644,3 +644,114 @@
 {"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-18T21:25:59.277Z","title":"Producto de ejemplo simple"}
 {"level":"warn","message":"ID de producto inválido","pid":"1234","timestamp":"2024-08-18T21:25:59.590Z"}
 {"level":"info","message":"Carrito con ID 66c266e311586e42c8eaf345 eliminado correctamente","timestamp":"2024-08-18T21:26:01.746Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario adminCoder@coder.com","timestamp":"2024-08-18T21:26:22.864Z"}
+{"level":"info","message":"Usuario adminCoder@coder.com autenticado con éxito","timestamp":"2024-08-18T21:26:23.447Z"}
+{"level":"info","message":"Nuevo carrito creado: 66c266ff11586e42c8eaf35e","timestamp":"2024-08-18T21:26:23.723Z"}
+{"level":"info","message":"Producto añadido al carrito: 667f1b3a877f4172e11e00e0","timestamp":"2024-08-18T21:26:24.817Z"}
+{"level":"info","message":"Nuevo carrito creado: 66c2670111586e42c8eaf368","timestamp":"2024-08-18T21:26:25.895Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario adminCoder@coder.com","timestamp":"2024-08-18T21:26:25.901Z"}
+{"level":"info","message":"Usuario adminCoder@coder.com autenticado con éxito","timestamp":"2024-08-18T21:26:26.510Z"}
+{"category":"Categoría de ejemplo","code":"PROD1724016386780","description":"Descripción del producto de ejemplo","level":"info","message":"Datos del nuevo producto0o0o0:","owner":"admin","price":100,"stock":10,"timestamp":"2024-08-18T21:26:27.050Z","title":"Producto de ejemplo simple"}
+{"level":"warn","message":"ID de producto inválido","pid":"1234","timestamp":"2024-08-18T21:26:28.421Z"}
+{"level":"info","message":"Carrito con ID 66c266ff11586e42c8eaf35e eliminado correctamente","timestamp":"2024-08-18T21:26:30.864Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-18T21:27:38.278Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-08-18T21:27:46.212Z"}
+{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-08-18T21:27:46.824Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:27:47.107Z","usuario":"lili@lili"}
+{"level":"info","message":"Producto añadido al carrito: 667f1d7a877f4172e11e0105","timestamp":"2024-08-18T21:27:50.619Z"}
+{"cid":"667df4fce16135a87bb44e43","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-18T21:27:52.310Z"}
+{"cid":"667df4fce16135a87bb44e43","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-18T21:27:52.843Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:27:54.409Z","usuario":"lili@lili"}
+{"level":"info","message":"LA SESION A SIDO CERRADA.","timestamp":"2024-08-18T21:27:57.102Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-18T21:27:57.116Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T21:45:19.540Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T21:45:22.151Z"}
+{"level":"error","message":"Error al intentar obtener el carrito con ID 667df517e16135a87bb44e48","timestamp":"2024-08-18T21:45:24.723Z"}
+{"level":"warn","message":"Carrito no encontrado: ID 66bd0cbcdfe53d391cd9744e","timestamp":"2024-08-18T21:45:25.302Z"}
+{"level":"info","message":"Cantidad del producto con ID 667f1b3a877f4172e11e00e0 reducida en el carrito con ID 667df4fce16135a87bb44e43","timestamp":"2024-08-18T21:45:26.399Z"}
+{"level":"info","message":"Nuevo carrito creado: 66c26b76e7dd463490561a82","timestamp":"2024-08-18T21:45:26.705Z"}
+{"level":"warn","message":"Carrito no encontrado: ID 66bd0cbcdfe53d391cd9744e","timestamp":"2024-08-18T21:46:19.824Z"}
+{"level":"info","message":"Cantidad del producto con ID 667f1b3a877f4172e11e00e0 reducida en el carrito con ID 667df4fce16135a87bb44e43","timestamp":"2024-08-18T21:46:20.618Z"}
+{"level":"info","message":"Nuevo carrito creado: 66c26bace7dd463490561a8f","timestamp":"2024-08-18T21:46:20.919Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-08-18T21:46:59.654Z"}
+{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-08-18T21:47:00.288Z"}
+{"level":"info","message":"Producto añadido al carrito: 667f1b3a877f4172e11e00e0","timestamp":"2024-08-18T21:47:04.749Z"}
+{"level":"warn","message":"Carrito no encontrado: ID 66bd0cbcdfe53d391cd9744e","timestamp":"2024-08-18T21:47:05.311Z"}
+{"level":"info","message":"Cantidad del producto con ID 667f1b3a877f4172e11e00e0 reducida en el carrito con ID 667df4fce16135a87bb44e43","timestamp":"2024-08-18T21:47:06.368Z"}
+{"level":"info","message":"Producto con stock suficiente añadido: id=667f1d7a877f4172e11e0105, cantidad=1","timestamp":"2024-08-18T21:47:07.398Z"}
+{"level":"info","message":"Productos para facturar: [{\"product\":{\"owner\":\"admin\",\"_id\":\"667f1d7a877f4172e11e0105\",\"title\":\"Notebook Samsung\",\"description\":\"15\\\" pulgadas, 16RAM, 250GB SSD\",\"price\":1220000,\"stock\":4993,\"thumbnail\":\"https://i.ibb.co/Np2B6Sy/nootbook.png\",\"code\":\"tec1\",\"category\":\"Tecnologia\",\"status\":true,\"__v\":0},\"quantity\":1,\"_id\":\"66c2675611586e42c8eaf380\"}]","timestamp":"2024-08-18T21:47:07.399Z"}
+{"level":"info","message":"Productos sin stock restantes: []","timestamp":"2024-08-18T21:47:07.399Z"}
+{"level":"info","message":"Datos de compra: {\"purchaser\":\"lili@lili\",\"code\":18991,\"amount\":1220000,\"products\":[{\"product\":\"667f1d7a877f4172e11e0105\",\"quantity\":1}],\"purchase_datetime\":1724017627657}","timestamp":"2024-08-18T21:47:10.528Z"}
+{"level":"info","message":"Ticket creado: {\"code\":\"18991\",\"amount\":1220000,\"purchaser\":\"lili@lili\",\"products\":[{\"product\":\"667f1d7a877f4172e11e0105\",\"quantity\":1}],\"_id\":\"66c26bdee7dd463490561aaa\",\"purchase_dateTime\":\"2024-08-18T21:47:10.530Z\",\"createdAt\":\"2024-08-18T21:47:10.531Z\",\"updatedAt\":\"2024-08-18T21:47:10.531Z\",\"__v\":0}","timestamp":"2024-08-18T21:47:10.807Z"}
+{"level":"info","message":"Nuevo carrito creado: 66c26bdee7dd463490561aac","timestamp":"2024-08-18T21:47:11.089Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:16.643Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:16.946Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:17.253Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:17.534Z","usuario":"lili@lili"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-18T21:48:17.815Z","title":"Collar de Perro"}
+{"level":"info","message":"Iniciando generación de productos simulados","timestamp":"2024-08-18T21:48:18.119Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:36.855Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:37.136Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:37.409Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:37.707Z","usuario":"lili@lili"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-18T21:48:37.980Z","title":"Collar de Perro"}
+{"level":"info","message":"Iniciando generación de productos simulados","timestamp":"2024-08-18T21:48:38.280Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:39.927Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:40.231Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:40.524Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:48:40.802Z","usuario":"lili@lili"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-18T21:48:41.074Z","title":"Collar de Perro"}
+{"level":"info","message":"Iniciando generación de productos simulados","timestamp":"2024-08-18T21:48:41.389Z"}
+{"level":"info","message":"LA SESION A SIDO CERRADA.","timestamp":"2024-08-18T21:54:13.444Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-18T21:54:13.462Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-08-18T21:54:15.621Z"}
+{"level":"info","message":"Nuevo usuario registrado: admincoder@coder.com","timestamp":"2024-08-18T21:54:50.535Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-18T21:54:52.711Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario admincoder@coder.com","timestamp":"2024-08-18T21:56:54.774Z"}
+{"level":"info","message":"Usuario admincoder@coder.com autenticado con éxito","timestamp":"2024-08-18T21:56:55.354Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T21:56:55.621Z","usuario":"admincoder@coder.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T21:56:57.100Z"}
+{"level":"info","message":"Producto agregado correctamente","timestamp":"2024-08-18T22:00:21.903Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:03:36.377Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T22:07:56.628Z","usuario":"admincoder@coder.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:08:42.518Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:08:53.899Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T22:09:12.317Z","usuario":"admincoder@coder.com"}
+{"cid":"66c26da9e7dd463490561ad6","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-18T22:09:14.402Z"}
+{"cid":"66c26da9e7dd463490561ad6","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":0,"timestamp":"2024-08-18T22:09:14.658Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T22:09:16.519Z","usuario":"admincoder@coder.com"}
+{"level":"info","message":"Producto añadido al carrito: 66806d4017f0cfa2181474e1","timestamp":"2024-08-18T22:09:18.492Z"}
+{"cid":"66c26da9e7dd463490561ad6","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-18T22:09:20.408Z"}
+{"cid":"66c26da9e7dd463490561ad6","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-18T22:09:20.927Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T22:09:22.700Z","usuario":"admincoder@coder.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:09:23.919Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T22:10:33.986Z","usuario":"admincoder@coder.com"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:11:05.981Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:11:24.507Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T22:13:12.962Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:13:13.055Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T22:13:15.602Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T22:13:22.928Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T22:13:25.391Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T22:13:46.653Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:13:46.669Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T22:13:49.221Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T22:14:41.409Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:14:41.474Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T22:14:44.054Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T22:15:04.586Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:15:05.000Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T22:15:07.091Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T22:15:25.119Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:15:25.237Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T22:15:27.644Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T22:15:35.160Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:15:35.246Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T22:15:37.628Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T22:15:52.401Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:15:52.556Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T22:15:55.033Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-18T22:16:12.869Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: admin","timestamp":"2024-08-18T22:16:12.926Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-18T22:16:15.340Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-18T22:16:44.664Z","usuario":"admincoder@coder.com"}
