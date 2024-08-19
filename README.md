@@ -2,5 +2,5 @@
 
     git clone ( URL REPO )    
     cd (nombre de carpeta)   
-     npm install   
+    npm install   
     npm start    
