@@ -22,39 +22,37 @@ import { errorHandler } from "./middleware/manejadorErrores.js";
 import { middLogger } from "./middleware/MidlewareLogger.js";
 import { logger } from "./helper/Logger.js";
 import swaggerUI from "swagger-ui-express";
-import cors from "cors"
+import cors from "cors";
 
 dotenv.config();
 const app = express();
 const port = configVarEntorno.PORT;
 
-// Middlewares 
 app.use(express.json());
 app.use(middLogger)
 app.use(compression({}))
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser("CoderBack"));
-app.use(cors());//para correr Swagger
-initPassport();// Passport
+app.use(cors());
+initPassport();
 app.use(passport.initialize());
-connectDB();// Conexión a MongoDB
 
-// Handlebars
+connectDB();
+
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, '/views'));
 
-app.use(express.static(path.join(__dirname, '/public')));// Contenido estático
+app.use(express.static(path.join(__dirname, '/public')));
  
-// Rutas
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter); 
 app.use('/api/sessions', sessionsRouter);
 app.use('/api/error', errorRouter);
 app.use("/api/users", usersRouter);  
-app.use('/', vistasRouter); // Ruta de las vistas con handlebars
+app.use('/', vistasRouter); 
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(especificacionSwagger))
-app.use(errorHandler)// Ruta por defecto (Debe estar al final)
+app.use(errorHandler)
 app.use((req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     res.status(200).send("Todo Oook");
@@ -63,9 +61,8 @@ app.use((req, res) => {
 const serverHTTP = app.listen(port, () =>{
      logger.info(`Server corriendo en http://localhost:${port}`)
      serverHTTP.on('error', (err) => console.log(err));
-    });
-    console.log('Views directory:', app.get('views'));
+});
 
-const socketServer = new Server(serverHTTP);// Socket
+const socketServer = new Server(serverHTTP);
 socketProducts(socketServer);
 socketChat(socketServer);

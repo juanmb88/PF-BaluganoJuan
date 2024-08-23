@@ -10,21 +10,47 @@ export default __dirname;
 import { TIPOS_ERROR } from "./utils/EnumeraErrores.js";
 import swaggerJsdoc from "swagger-jsdoc";
 
-//funcion para admitir imganes  y archivos de texto
-/* const storage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './src/uploads')
+      req.fileDoc = file.fieldname
+      if(file.fieldname==="profile"){
+        cb(null, './src/profiles')
+        req.fileSavedPath = './src/profiles';
+        req.fileSavedDoc = 'profile'
+      } else {
+        if(file.fieldname==="product"){
+          cb(null, './src/products')
+          req.fileSavedPath = './src/products';
+          req.fileSavedDoc = 'product'
+        } else {
+          if(file.fieldname==="identificacion" || file.fieldname==="comprobanteProducto" || file.fieldname==="estadoDeCuenta"){
+            cb(null, './src/documents')
+            req.fileSavedPath = './src/documents';
+                    req.fileSavedDoc = ''
+          } 
+          else {
+            cb(null, './src/uploads')
+            req.fileSavedPath = './src/uploads';
+          }
+        }
+      }
     },
     filename: function (req, file, cb) {
-        let tipo=file.mimetype.split("/")[0];
-        if(tipo!=="image"){
-            return cb(new Error("Solo se admiten imagenes...!"))
-        } 
-        cb( null, Date.now() + "-" + file.originalname )
-     }
-}); */
+        let type=file.mimetype.split("/")[0]
+        if(type!=="image" && type!=="application"){
+            return cb(new Error("Only images or documents admitted...!"))
+        }
+        const fileSavedName = Date.now()+"-"+file.originalname;
+        cb(null, fileSavedName )
+        req.fileSavedName = fileSavedName;
+    }
+    
+  })
+  
+export const upload = multer({ storage })
 
-//PASSPORT 
+
+
 export const passportCall=(estrategia)=>{
         return function (req, res, next) {
             passport.authenticate(estrategia, function (err, user, info, status) {
@@ -33,13 +59,12 @@ export const passportCall=(estrategia)=>{
                     res.setHeader('Content-Type','application/json');
                 return res.status(401).json({error:info.message?info.message:info.toString()})
             } 
-            req.user=user; // desde passport.config devuelvo return done(null, usuario)
+            req.user=user; 
             return next()
         })(req, res, next);
     }
 };
 
-//export const upload = multer({ storage: storage });
 export const SECRET = "CoderCoder123";
 export const generaHash = password => bcrypt.hashSync( password, bcrypt.genSaltSync(10) );
 export const validaPassword = (password, hash) => bcrypt.compareSync( password, hash );
@@ -56,6 +81,7 @@ export class CustomError{
         throw error
     }
 }
+
 //SWAGGER
 const options = {
     definition:{

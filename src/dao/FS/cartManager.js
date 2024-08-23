@@ -8,7 +8,6 @@ export class CartManager {
             this.carts = [];
         }; 
 
-//--------------------FUNCION AGREGAR NUEVO CARRITO ---------------------//
    newCart= async () => { 
         const id = uuidv4()
 
@@ -23,7 +22,6 @@ export class CartManager {
         
     }
 
- //-------------------FUNCION OBTENER LISTA DE CARRITOS---------------------//
     getCarts = async  ()=> {
         try {
             const response = await fs.promises.readFile(this.PATH, 'utf-8');
@@ -37,7 +35,6 @@ export class CartManager {
         
     };
 
-//-------------------FUNCION OBTENER LISTA DE PRODUCTOS DE CARRITO ---------------------//
     getCartProducts = async(id) =>{
         const carts = await this.getCarts();
         const cart = carts.find(cart => cart.id === id);
@@ -47,8 +44,8 @@ export class CartManager {
         }else{
             console.log("No se encontró el carrito")
         }
+    };
 
-    }
     addProductToCart = async (cId,pId) =>{
         const carts = await this.getCarts();
         const findIndexCart = carts.findIndex(cart => cart.id === cId);
@@ -63,9 +60,9 @@ export class CartManager {
                         cartProducts.push({id:pId, quantity:1})
                     }
                     
-                    carts[findIndexCart].products = cartProducts//sobreescribo  los productos del carrito de compras con la nueva lista de productos
-                    await fs.promises.writeFile(this.PATH, JSON.stringify(carts));// se guarda en el archivo la lista de  carritos actualizada
-                    console.log("producto agregado con exito") //  para ver si funciona
+                    carts[findIndexCart].products = cartProducts
+                    await fs.promises.writeFile(this.PATH, JSON.stringify(carts));
+                    console.log("producto agregado con exito")
                 } else {
                         throw new Error("Carrito no encontrado, producto no agregado");
                     }
@@ -77,12 +74,10 @@ export class CartManager {
           const productIndex = cart.products.findIndex(product => product.product == pid);
   
           if (productIndex !== -1) {
-              // Si el producto existe en el carrito, disminuir su cantidad
               if (cart.products[productIndex].quantity > 1) {
                   cart.products[productIndex].quantity -= 1;
                   await cart.save();
               } else {
-                  // Si la cantidad es 1, eliminar el producto del carrito
                   cart.products.splice(productIndex, 1);
                   await cart.save();
               }

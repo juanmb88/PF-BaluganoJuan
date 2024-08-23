@@ -1,5 +1,5 @@
 import { productService } from "../services/ProductService.js";
-import { logger } from "../helper/Logger.js"; // Asegúrate de importar tu logger
+import { logger } from "../helper/Logger.js";
 
 const socketProducts = (socketServer) => {
     socketServer.on("connection", async (socket) => {

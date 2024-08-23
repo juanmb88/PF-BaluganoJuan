@@ -3,9 +3,10 @@ import passport from 'passport';
 import jwt from "jsonwebtoken";
 import { UsuariosDTO } from "../DTO/UsuarioDTO.js";
 import dotenv from 'dotenv';
-import { sendEmail } from '../helper/nodeMailer.js'; // Importa la función de envío de correo
+import { sendEmail } from '../helper/nodeMailer.js';
 import { UsersManager } from '../dao/userManager.js';
 import { logger } from '../helper/Logger.js';
+import { usuarioModelo } from '../dao/models/usuarioModelo.js';
 
 const usersManager = new UsersManager();
 
@@ -52,14 +53,14 @@ router.post("/login", passport.authenticate("login", { session: false, failureRe
     try {
         let { web } = req.body;
         let usuario = { ...req.user };
-        delete usuario.password; // Evitamos que la contraseña quede guardada
+        delete usuario.password; 
+
+       const last_connectionActualizado = await usuarioModelo.findByIdAndUpdate(usuario._id, { last_connection: new Date() });
+        console.log("Usuario actualizado en login:", last_connectionActualizado);
 
         let token = jwt.sign(usuario, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" });
-        res.cookie("CookiePrueba", token, { httpOnly: true }); // Enviamos desde el servidor la cookie
+        res.cookie("CookiePrueba", token, { httpOnly: true }); 
 
-         // Siempre devuelve JSON en lugar de redirigir
-        // res.setHeader('Content-Type', 'application/json');
-       //  return res.status(200).json({ payload: "Login correcto", usuario, token });
          if (web) {
          return  res.redirect("/");
         } else { 
@@ -95,11 +96,25 @@ router.get("/devolucionGithub", passport.authenticate("github", { session: false
     }
 });
 
-router.get("/logout", (req, res, next) => {
+router.get("/logout", async (req, res, next) => {
     try {
-        res.clearCookie("CookiePrueba",{ httpOnly: true});
-        logger.info("LA SESION A SIDO CERRADA.")
-        return res.redirect("/login")
+        const token = req.cookies.CookiePrueba;
+        if (token) {
+            const decodificarToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+            
+            const last_connectionActualizado = await usuarioModelo.findByIdAndUpdate(
+                decodificarToken._id, 
+                { last_connection: new Date() }, 
+                { new: true }
+            );
+            logger.info(`se cerro sesion de: ${last_connectionActualizado.first_name} ${last_connectionActualizado.last_name}`);
+        } else {
+            logger.info("No se encontró token en las cookies");
+        }
+
+        res.clearCookie("CookiePrueba", { httpOnly: true });
+        logger.info("LA SESION HA SIDO CERRADA.");
+        return res.redirect("/login");
     } catch (error) {
         next(error);
     }
@@ -132,7 +147,6 @@ router.post('/restablecerContraseña',
     passport.authenticate('restablecerContraseña'), 
     async (req, res, next) => {
       try {
-        // Redirige a la página de login con un mensaje de éxito
         res.redirect('/login?mensaje=Contraseña+restablecida+correctamente');
       } catch (error) {
         next(error);

@@ -18,28 +18,36 @@ const comprar = async (pid)=>{
         alert(`Hubo un error al agregar el producto al carrito: ${datos.error}`);
     }
 };
-//LOGICA MENSAJE DE BIENVENIDA
-const mensajeBienvenida = document.getElementById('mensajeBienvenida');
-if (mensajeBienvenida) {
-    setTimeout(() => {
-        mensajeBienvenida.remove(); 
-    }, 2000); 
-}
 
-//LOGICA DE ELIMINAR PRODUCTO DEL CARRITO
-const eliminar = async (cid, pid) => {
+
+const eliminar = async ( pid) => {
     try {
-        console.log(`Carrito ID: ${cid}, Producto ID: ${pid}`); // Verifica si esta línea se imprime en la consola del navegador
+        let inputCarrito = document.getElementById("inputCarrito");
+        let cid = inputCarrito.value;
+       
 
-        let respuesta = await fetch(`/api/carts/${cid}/products/${pid}`, {
+         if (!cid || !pid) {
+            console.error("CID o PID están vacíos o indefinidos:", { cid, pid });
+            alert("Error: No se pudo obtener el ID del carrito o del producto.");
+            return;
+        } 
+
+        console.log(`Intentando eliminar el producto con PID: ${pid} del carrito con CID: ${cid}`);
+
+        // Construir la URL y hacer una depuración de la URL generada
+        const url = `/api/carts/${cid}/products/${pid}`;
+        console.log("URL construida:", url);
+
+        let respuesta = await fetch(url, {
             method: "DELETE"
         });
 
+        console.log(`Respuesta recibida:`, respuesta);
+
         if (respuesta.status === 200) {
-            let datos = await respuesta.json();
-            console.log(datos);
+            let datos = await respuesta.json(); // Esto lanzará un error si la respuesta no es JSON válido
+            console.log("Datos de respuesta:", datos);
             alert("Producto eliminado con éxito.");
-            // Actualiza la vista del carrito
             window.location.reload();
         } else {
             console.error("Error al eliminar el producto:", respuesta.status, respuesta.statusText);
@@ -50,8 +58,6 @@ const eliminar = async (cid, pid) => {
         alert(`Hubo un error al procesar la solicitud: ${error.message}`);
     }
 };
-
-
 
 //LOGICA DE CERRAR SESION 
 document.getElementById('logoutBtn').addEventListener('click', function() {
@@ -69,7 +75,6 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
     } 
 });
 
-//LOGICA DE FINALIZAR COMPRA
 const finalizarCompra = async () => {
     console.log("finalizarCompra function called"); // Agrega este mensaje para depuración
 
@@ -100,8 +105,6 @@ const finalizarCompra = async () => {
             let datos = await respuesta.json();
             console.log(datos);
             alert("Compra finalizada exitosamente!");
-            // Redirigir o actualizar la página después de la compra
-            window.location.href = "/"; // Redirige a la página principal, por ejemplo
         } else {
             console.error("Error en la respuesta:", respuesta.statusText);
             alert("Error al finalizar la compra. Inténtalo de nuevo.");

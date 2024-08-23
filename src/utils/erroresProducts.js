@@ -46,15 +46,15 @@ Terminal: ${os.hostname()}`;
 
 export function argumentosRepetidosProduct(product) {
     let { title, description, price,code, ...otros } = product;
-    return `Se han detectado argumentos repetidos de manera exacta eso es inválido:
-Argumentos obligatorios:
-    - title: ${title},
-    - description:  ${description}
-    - price: ${price}
-Otros argumentos opcionales:
-    - stock, thumbnail, code, category, status. Se recibió: ${JSON.stringify(otros)}
-    verificar campos por favor 
-Fecha: ${new Date().toUTCString()}
-Usuario: ${os.userInfo().username}
-Terminal: ${os.hostname()}`;
+        return `Se han detectado argumentos repetidos de manera exacta eso es inválido:
+        Argumentos obligatorios:
+            - title: ${title},
+            - description:  ${description}
+            - price: ${price}
+        Otros argumentos opcionales:
+            - stock, thumbnail, code, category, status. Se recibió: ${JSON.stringify(otros)}
+            verificar campos por favor 
+        Fecha: ${new Date().toUTCString()}
+        Usuario: ${os.userInfo().username}
+        Terminal: ${os.hostname()}`;
 }

@@ -9,14 +9,12 @@ const productsDiv = document.getElementById("list-products");
 let productsHTML = "";
 
 productList.forEach( product => {
-    productsHTML += `  <div class="border border-dark card h-80 mx-4 my-1" style="max-width:18rem">
+    productsHTML += `   <div class="border border-dark card h-80 mx-4 my-1" style="max-width:18rem">
     
                            <div class="card-body bg-success border border-dark">
-                           <i class="bi bi-tag  fw-normal fw-bold">ID Producto:</i> ${product._id}
-
+                              <i class="bi bi-tag  fw-normal fw-bold">ID Producto:</i> ${product._id}
                            </div>
 
-                           
 
                             <div class="card-body bg-light border border-dark">
 
@@ -37,18 +35,17 @@ productList.forEach( product => {
                             </div>
                         </div>
                  `
-    
                 });
 
-        productsDiv.innerHTML = productsHTML;
+    productsDiv.innerHTML = productsHTML;
 };
 
-////////agregar un producto///////////
+
 let form = document.getElementById("formProduct");
     form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-        let title = form.elements.title.value;//esto vienen del name del formulario
+        let title = form.elements.title.value;
         let description = form.elements.description.value;
         let stock = form.elements.stock.value;
         let thumbnail = form.elements.thumbnail.value;
@@ -68,11 +65,10 @@ let form = document.getElementById("formProduct");
             status
         });
 
-    form.reset();//esto es para que quede el formulario vacio
+    form.reset();
 });
 
-////////eliminar  un producto///////////
-//elimino por ID
+
 document.getElementById("delete-id-btn").addEventListener('click', function(){
     const inputTheId = document.getElementById("id-prod");//esto viene del form en realTimePrioducts.handlebars
    const deleteId = (inputTheId.value).toString();
@@ -80,20 +76,3 @@ document.getElementById("delete-id-btn").addEventListener('click', function(){
    inputTheId.value = ""; 
 });
 
-////////actualizar   un producto///////////
-/* 
-document.getElementById("update-id-btn").addEventListener('click', function(){
-    const inputTheId = document.getElementById("id-prod");
-    const updateId = (inputTheId.value).toString();
-    // Aquí puedes agregar lógica para obtener los nuevos valores de los campos del producto que deseas actualizar
-    const updatedProduct = {
-        // Aquí asigna los nuevos valores de los campos del producto
-        // Por ejemplo:
-        name: document.getElementById("name").value,
-        price: parseFloat(document.getElementById("price").value),
-        // Agrega los demás campos según sea necesario
-    };
-    socketClient.emit("updateProduct", { id: updateId, updatedProduct });
-    inputTheId.value = ""; */
-/* });
- */

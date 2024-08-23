@@ -10,7 +10,7 @@ export class TicketManager {
             console.error("Error creating ticket:", error);
             throw error;
         }
-    }
+    };
 
     async getTicketById(id) {
         try {
@@ -23,7 +23,7 @@ export class TicketManager {
             console.error("Error getting ticket by ID:", error);
             throw error;
         }
-    }
+    };
 
     async getAllTickets() {
         try {
@@ -33,7 +33,7 @@ export class TicketManager {
             console.error("Error getting all tickets:", error);
             throw error;
         }
-    }
+    };
 
     async updateTicketById(id, updateObj) {
         try {
@@ -46,7 +46,7 @@ export class TicketManager {
             console.error("Error updating ticket:", error);
             throw error;
         }
-    }
+    };
 
     async deleteTicketById(id) {
         try {
@@ -59,5 +59,5 @@ export class TicketManager {
             console.error("Error deleting ticket:", error);
             throw error;
         }
-    }
+    };
 }

@@ -21,19 +21,20 @@ const requester = supertest("http://localhost:8080")
 
 let {body,status,ok,headers} = await requester.get("/api/sessions")
 describe("Pruebas sobre usuarios", function(){
-     this.timeout(10000)
-     
-    before(async function(){
-        this.dao = new UsersManager()
+  this.timeout(10000)
+  
+  before(async function(){
+    this.timeout(8000);
+    this.dao = new UsersManager()
     }) 
 
-     afterEach(async function () {
+      afterEach(async function () {
         // Limpia la base de datos después de cada prueba eliminando el usuario de prueba
-        await mongoose.connection.collection("users").deleteOne({ email: "test20240801@test.com" });
-    });
- 
+        await mongoose.connection.collection("users").deleteOne({ email: "test20@test.com" });
+    }); 
+  
 
-     it("El dao, con su método get, retorna un array de usuarios", async function(){
+     it("El dao con su método get, retorna un array de usuarios", async function(){
         let resultado=await this.dao.getBy()
          expect(Array.isArray(resultado)).to.be.equal(true)
          expect(Array.isArray(resultado)).to.be.true
@@ -49,10 +50,10 @@ describe("Pruebas sobre usuarios", function(){
         }  
     }) 
 
-      it("El dao, con su método save, crea un user en la DB", async function(){
-        let resultado = await mongoose.connection.collection("users").findOne({email:"test20240801@test.com"})
+      it("Del dao se debe crear un user en la DB", async function(){
+        let resultado = await mongoose.connection.collection("users").findOne({email:"test20@test.com"})
       
-        let mockUser = { first_name:"test", last_name:"test", email:"test20240801@test.com", age: "99", password:"123" }
+        let mockUser = { first_name:"test", last_name:"test", email:"test20@test.com", age: "99", password:"123" }
         resultado = await this.dao.create(mockUser)
 
         expect(resultado._id).to.be.exists

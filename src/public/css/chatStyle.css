@@ -1,4 +1,3 @@
-/* Estilos para el encabezado del chat */
 #chat-header {
     display: flex;
     align-items: center;
@@ -8,20 +7,18 @@
     padding: 10px 20px;
   }
   
-  /* Estilos para el nombre de usuario en el encabezado */
   #nombreusuario {
     font-size: 24px;
     font-weight: bold;
     margin: 0;
   }
   
-  /* Estilos para el logotipo en el encabezado */
+
   #customer-service-logo {
-    max-width: 50px; /* Ajusta el tamaño según tus necesidades */
-    margin-left: 20px; /* Espacio entre el texto y el logotipo */
+    max-width: 50px; 
+    margin-left: 20px;
   }
   
-  /* Estilos para el contenedor del chat */
   #chat-container {
     max-width: 600px;
     margin: 0 auto;
@@ -30,16 +27,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  /* Estilos para el contenedor del chat */
   #chat-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f0f0f0; /* Cambiado a un color más suave */
+    background-color: #f0f0f0; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  /* Estilos para el nombre de usuario */
   #nombreusuario {
     font-size: 24px;
     font-weight: bold;
@@ -47,39 +42,34 @@
     text-align: center;
   }
   
-  /* Estilos para el contenedor de mensajes */
   #chat-messages {
-    max-height: 400px; /* Reducido el alto para un mejor aspecto */
+    max-height: 400px; 
     overflow-y: scroll;
     border: 1px solid #cccccc;
     padding: 10px;
-    margin-bottom: 20px; /* Aumentado el espacio inferior */
+    margin-bottom: 20px; 
   }
   
-  /* Estilos para los mensajes */
   .message {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinea los mensajes a la izquierda */
-    max-width: 70%; /* Limita el ancho de las burbujas de mensajes */
+    align-items: flex-start; 
+    max-width: 70%;
     background-color: #f0f0f0;
     border-radius: 15px;
     padding: 10px;
   }
   
-  /* Estilos para el nombre de usuario en los mensajes */
   .message .sender-name {
     font-weight: bold;
     margin-bottom: 5px;
   }
   
-  /* Estilos para el mensaje de conexión */
   .message.connect {
     text-align: center;
   }
   
-  /* Estilos para el formulario de chat */
   #formulario {
     display: flex;
     align-items: center;
@@ -88,7 +78,6 @@
     border-top: 1px solid #ccc;
   }
   
-  /* Estilos para el campo de entrada de mensaje */
   #mensaje {
     flex: 1;
     padding: 10px;
@@ -98,7 +87,6 @@
     margin-right: 10px;
   }
   
-  /* Estilos para el botón de enviar */
   #formulario button {
     background-color: #4CAF50;
     color: #fff;

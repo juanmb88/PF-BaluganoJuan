@@ -1,8 +1,8 @@
 import nodemailer from "nodemailer";
 import dotenv from 'dotenv';
-
+import { logger } from '../helper/Logger.js';
 dotenv.config();
-// Configura el transportador de nodemailer
+
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     port: 587,
@@ -12,7 +12,6 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Función para enviar un correo de prueba
 export const sendEmail = async (first_name, password, last_name) => {
 
     const mailOptions = {
@@ -33,13 +32,13 @@ export const sendEmail = async (first_name, password, last_name) => {
 
     try {
         const resultado = await transporter.sendMail(mailOptions);
-        console.log(resultado);
+        logger.info('Correo de bienvenida enviado exitosamente', { resultado });
     } catch (error) {
-        console.error('Error al enviar el correo:', error);
+        logger.error('Error al enviar el correo de bienvenida:', { error });
     }
 };
 
-// Otras funciones para enviar diferentes tipos de correos
+
 export const sendTicketDeCompraEmail = async (to, code, amount) => {
     const mailOptions = {
         from: 'JUAN <juanbalugano@gmail.com>',
@@ -50,12 +49,12 @@ export const sendTicketDeCompraEmail = async (to, code, amount) => {
 
     try {
         const resultado = await transporter.sendMail(mailOptions);
-        console.log(resultado);
+        logger.info('Correo de ticket de compra enviado exitosamente', { resultado });
     } catch (error) {
-        console.error('Error al enviar el correo de bienvenida:', error);
+        logger.error('Error al enviar el correo de ticket de compra:', { error });
     }
 };
-//Creo una funcion modelo para enviar emails sin adjuntos
+
 export const enviarEmail = async (para, asunto, mensaje) => {
     return await transporter.sendMail(
       {

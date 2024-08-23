@@ -1,8 +1,5 @@
 import  messageModel  from "./models/messages.model.js"
-
-
 export default class MessageManager{
-
     getMessages = async () => {
         try {
             return await messageModel.find().lean();
@@ -13,9 +10,8 @@ export default class MessageManager{
 
     createMessage = async (m) => {
         if(m.user.trim() === "" || m.message.trim() === ''){
-            return null;//evita mjs vacios
+            return null;
         }
-
         try{
             return await messageModel.create(m);
         }catch(err){

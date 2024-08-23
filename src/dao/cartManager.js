@@ -4,7 +4,7 @@ class CartManager {
 
   ID_FIELD = "_id";
 
-  async createCart() {//CREAR CARRITO
+  async createCart() {
     try {
      let carrito = await cartsModel.create({products:[]});
      return carrito.toJSON()
@@ -12,35 +12,34 @@ class CartManager {
       console.log(error);
       return false;
     }
-  }
+  };
+
   async getAllCarts() {
     const carts = await cartsModel.find().lean();
     return carts;
   };
+
   async getCartById(id) {
     return await cartsModel.findOne({ _id: id }).populate("products.product");
   };
  
-  async getOneBy(filtro={}) { //manda un solo producto 
+  async getOneBy(filtro={}) {
     return await cartsModel.findOne(filtro).lean();
   };
  
-  async update(id, carrito){  //ACTUALIZAR 
+  async update(id, carrito){
     return await cartsModel.updateOne({_id:id}, carrito)
   };
   
-  async getOneByPopulate(filtro = {}) {//AGREGA PRODUCTO AL CARRITO
+  async getOneByPopulate(filtro = {}) {
     return await cartsModel.findOne(filtro).populate("products.product").lean();
   };
   
-  async deleteCartById(id) {//ELIMINAR
+  async deleteCartById(id) {
       return await cartsModel.findByIdAndDelete({[this.ID_FIELD]: id})
   }; 
   
-/*   async decreaseProductQuantity(cid,pid){
-    return await cartsModel.updateOne({_id:cid}, {$pull: {products: {product: pid}}})
-  }; */
-  async decreaseProductQuantity(cid, pid) {//ELIMINAR PRODUCTO POR CANTIDAD RESTANDO QUANTITY
+  async decreaseProductQuantity(cid, pid) {
     try {
       const cart = await cartsModel.findById(cid);
       const productIndex = cart.products.findIndex(product => product.product == pid);

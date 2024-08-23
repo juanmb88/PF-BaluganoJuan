@@ -1,10 +1,7 @@
-
-<h2 class="text-center">Carrito {{carrito._id}}</h2>
-
 <a href="/" class="btn btn-success flex flex-center m-5 border-warning">Seguir Comprando</a>
 
-<!-- Input oculto para almacenar el ID del carrito -->
 <input type="hidden" value="{{this.carrito._id}}" id="inputCarrito">
+<h2 class="text-center">Carrito {{carrito._id}}</h2>
 
 <div class="container bg-light border border-dark">
     <div class="row row-cols-md-4 row-cols-md-6 m-5 mt-4">
@@ -12,6 +9,7 @@
         <div class="col mb-4 mt-3">
             <div class="card h-90 bg-light">
                 <div class="card-header bg-secondary text-white">
+                  
                     <i class="bi bi-info-circle"></i> ID: {{this.product._id}}
                 </div>
                 <div class="card-body">
@@ -27,13 +25,14 @@
                             <img src="{{this.product.thumbnail}}" alt="{{this.product.title}}" class="img-fluid mt-2">
                         </li>
                     </ul>
-                    <button class="btn btn-danger mx-4" onclick="eliminar('{{this.carrito._id}}', '{{this.product._id}}')">Eliminar</button>
+                    
+                    <button class="btn btn-danger mx-4" onclick="eliminar ('{{product._id}}')">Eliminar</button>
                 </div>
             </div>
         </div>
         {{/each}}
     </div>
-<a onclick="finalizarCompra()" class="btn btn-success flex flex-center mx-5 my-2 border-warning">Finalizar compra</a>
+<button  class="btn btn-success flex flex-center mx-5 my-2 border-warning" onclick="finalizarCompra()">Finalizar compra</button>
 </div>
 
 <script src="/js/productos.js"></script>

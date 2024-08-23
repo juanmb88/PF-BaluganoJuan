@@ -34,7 +34,7 @@ const transporteDesarrollo = new winston.transports.Console(
 const transporteProduccion = new winston.transports.File(
     {
       level: "info",
-      filename: "./ErrorLog.log",
+      filename: "./src/ErrorLog.log",
       format: winston.format.combine( 
         winston.format.timestamp(),
         winston.format.json()

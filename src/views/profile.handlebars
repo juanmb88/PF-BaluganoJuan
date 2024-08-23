@@ -1,16 +1,40 @@
 {{>menu}}
 <input type="hidden" value="{{this.carrito._id}}" id="inputCarrito">
 
-<h2 class="text-black  text-center m-4">Datos del Usuario :  {{usuario.first_name}}</h2>
+<h2 class="text-black text-center m-4">Datos del Usuario :  {{usuario.first_name}}</h2>
 <div class="d-flex justify-content-center fw-bolder bg-light">
    <hr>
-   <p class=" text-secondary m-4">Nombre: <strong class="text-dark m-4">{{usuario.first_name}}</strong></p>
-   <p class=" text-secondary m-4">Correo electrónico: <strong class="text-dark m-4">{{usuario.email}}</strong></p>
-   <p class=" text-secondary m-4">Numero de Carrito: <strong class="text-dark m-4">{{usuario.carrito._id}}</strong></p>
-   <p class=" text-secondary m-4">Perfil usuario : <strong class="text-dark m-4">{{usuario.role}}</strong></p>
-   <p class=" text-secondary m-4">ID usuario : <strong class="text-dark m-4">{{usuario._id}}</strong></p>
-
-   <br>
-
+   <p class="text-secondary m-4">Nombre: <strong class="text-dark m-4">{{usuario.first_name}}</strong></p>
+   <p class="text-secondary m-4">Correo electrónico: <strong class="text-dark m-4">{{usuario.email}}</strong></p>
+   <p class="text-secondary m-4">Numero de Carrito: <strong class="text-dark m-4">{{usuario.carrito._id}}</strong></p>
+   <p class="text-secondary m-4">Perfil usuario : <strong class="text-dark m-4">{{usuario.role}}</strong></p>
+   <p class="text-secondary m-4">ID usuario : <strong class="text-dark m-4">{{usuario._id}}</strong></p>
 </div>
+
+<div class="container mt-5">
+  <h2>Subir Documentos</h2>
+<input type="hidden" value="{{this.carrito._id}}"  id="inputCarrito">
+
+  <form action="/users/{{usuario._id}}/documents" method="POST" enctype="multipart/form-data">
+    <p>ID usuario: {{usuario._id}}</p>
+
+    <div class="mb-3">
+      <label for="identificacion" class="form-label">Subir Identificación</label>
+      <input type="file" class="form-control" id="identificacion" name="identificacion" accept="image/*,application/pdf">
+    </div>
+
+    <div class="mb-3">
+      <label for="comprobanteProducto" class="form-label">Subir Comprobante de Producto</label>
+      <input type="file" class="form-control" id="comprobanteProducto" name="comprobanteProducto" accept="image/*,application/pdf">
+    </div>
+
+    <div class="mb-3">
+      <label for="comprobanteEstadoDeCuenta" class="form-label">Subir Comprobante de Estado de Cuenta</label>
+      <input type="file" class="form-control" id="comprobanteEstadoDeCuenta" name="comprobanteEstadoDeCuenta" accept="image/*,application/pdf">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Subir Documentos</button>
+  </form>
+</div>
+
 <script src="/js/productos.js"></script>
