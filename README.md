@@ -158,9 +158,9 @@ Est archivo está diseñado para proporcionar funcionalidades de utilidad que so
 
 
     
-###  Testing
+##  Testing
     
-   ###  Pruebas de Integración para CartManager
+   ##  Pruebas de Integración para CartManager
 Este archivo (cartManager-dao.test.js) contiene pruebas de integración para verificar la funcionalidad del CartManager, que maneja la lógica relacionada con los carritos de compras en la aplicación.
 
 ##### Descripción General
@@ -261,3 +261,21 @@ Las pruebas aseguran que las operaciones CRUD (Crear, Leer) sobre los usuarios s
 - **Crear un Nuevo Usuario:** 
   - Asegura que se pueda crear un nuevo usuario en la base de datos y que el usuario creado tenga un ID válido (`_id`) y que las propiedades principales (`first_name`, `last_name`, `email`, etc.) se guarden correctamente.
   - 
+  ***
+
+## SOLO CON MOTIVO DE ESTA ENTREGA SE AGREGA CARPETA - Collecciones de rutas a probar -
+## Colecciones de Thunder_Client
+
+Para facilitar las pruebas de las rutas de la API, he incluido las siguientes colecciones de Postman y un archivo de referencia para usuarios y productos ya registrados:
+
+- **UsersYProducts_ya_registrados.txt**: Contiene una lista de usuarios y productos pre-registrados para realizar pruebas.
+- **thunder-collection_EndPoints USERS.json**: Colección  para los endpoints relacionados con usuarios.
+- **thunder-collection_EndPoints SESSION.json**: Colección  para los endpoints de gestión de sesiones.
+- **thunder-collection_EndPoints PRODUCTOS.json**: Colección para los endpoints relacionados con productos.
+- **thunder-collection_EndPoints Errores-Logger.json**: Colección para los endpoints de registro de errores.
+- **thunder-collection_EndPoints CARRITO.json**: Colección para los endpoints relacionados con el carrito de compras.
+
+### Uso
+1. Descarga las colecciones y el archivo de texto desde el repositorio.
+2. Importa los archivos JSON en THUNDER_CLIENT.
+3. Utiliza el archivo `UsersYProducts_ya_registrados.txt` como referencia para probar con usuarios y productos pre-registrados.
