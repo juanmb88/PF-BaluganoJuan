@@ -1,0 +1,35 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "EndPoints Users",
+    "collectionId": "9477b316-3ed9-4e99-a167-6fd66e4b9d21",
+    "dateExported": "2024-08-23T10:39:43.592Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "96309c85-c075-4e98-958e-2db65d1c79b6",
+            "colId": "9477b316-3ed9-4e99-a167-6fd66e4b9d21",
+            "containerId": "",
+            "name": "Ususrio Cambia de ROL",
+            "url": "http://localhost:8080/api/users/premium/66c7d8c1301cfedea1b2dc94",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-07-25T02:27:58.917Z",
+            "modified": "2024-08-23T00:33:32.005Z",
+            "headers": []
+        },
+        {
+            "_id": "7dea98d7-1f70-48bc-ba83-a12e28253f45",
+            "colId": "9477b316-3ed9-4e99-a167-6fd66e4b9d21",
+            "containerId": "",
+            "name": "MANDAR DOCUMENTACION ",
+            "url": "http://localhost:8080/api/users/667df4fce16135a87bb44e45/documents",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-08-20T02:44:43.854Z",
+            "modified": "2024-08-20T02:45:10.004Z",
+            "headers": []
+        }
+    ],
+    "ref": "7_OSPhaP5N_8lCeGo6nEKgnB4Wfvq0mVga300dMfaUI46Gh9EJRMlMDPkcHp3fdjQVCiefm7nz4vecJKyVGTcQ"
+}

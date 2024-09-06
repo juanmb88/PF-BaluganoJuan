@@ -1,0 +1,175 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "EndPoints PRODUCTOS",
+    "collectionId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+    "dateExported": "2024-08-23T10:38:34.670Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "27ecb184-8c95-42d7-be7e-5b111a5fe66d",
+            "colId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+            "containerId": "",
+            "name": "ObtenerListaProductos",
+            "url": "http://localhost:8080/api/products",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-02T22:39:45.788Z",
+            "modified": "2024-07-24T23:33:17.317Z",
+            "headers": []
+        },
+        {
+            "_id": "658a42bf-0593-4060-80d7-e9776c128a1e",
+            "colId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+            "containerId": "",
+            "name": "ObtenerPrimeraPagProductos",
+            "url": "http://localhost:8080/?pagina=1&sort=asc",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-05-05T20:21:45.161Z",
+            "modified": "2024-08-12T19:25:48.617Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "pagina",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "sort",
+                    "value": "asc",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "18e045e4-cd21-4a3d-b849-d806fdcf0e99",
+            "colId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+            "containerId": "",
+            "name": "ObtenerPaginaDeFormaAscendenteEmTítulo",
+            "url": "http://localhost:8080/?pagina=2&sort=asc",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-05-05T20:25:28.587Z",
+            "modified": "2024-06-11T22:25:05.433Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "pagina",
+                    "value": "2",
+                    "isPath": false
+                },
+                {
+                    "name": "sort",
+                    "value": "asc",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "78c3df14-3061-485f-a1a2-e48680f3357a",
+            "colId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+            "containerId": "",
+            "name": "BuscarProductosConTitulo \"Camara Logic\"",
+            "url": "http://localhost:8080/?query=Camara Logic",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-05-05T20:26:34.933Z",
+            "modified": "2024-08-15T10:34:56.868Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "query",
+                    "value": "Camara Logic",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "f5dc43f9-1da2-4f24-87b4-fd94577e0b53",
+            "colId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+            "containerId": "",
+            "name": "OrdenProudctosDescendente",
+            "url": "http://localhost:8080/?pagina=1&sort=desc",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-05-05T20:27:45.627Z",
+            "modified": "2024-07-09T17:15:07.181Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "pagina",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "sort",
+                    "value": "desc",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "ab90cc96-8b5a-4ebf-8d2c-6df8670f282f",
+            "colId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+            "containerId": "",
+            "name": "crear producto",
+            "url": "http://localhost:8080/api/products",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2024-05-05T22:44:50.164Z",
+            "modified": "2024-08-23T02:09:48.514Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": " {\n    \"title\": \"Flauta Dulce\",\n    \"description\": \"Flauta dulce de plástico, ideal para principiantes.\",\n    \"price\": 150,\n    \"stock\": 50,\n    \"code\": \"mus04\",\n    \"category\": \"Instrumentos Musicales\",\n    \"status\": true,\n    \"thumbnail\": \"https://i.ibb.co/SNctqBx/fluta.jpg\"\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "835fa9fa-2891-4141-8f5a-a58069d112f6",
+            "colId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+            "containerId": "",
+            "name": "Borrar Producto por ID",
+            "url": "http://localhost:8080/api/products/66c7cb9b911aaf7ce889586e",
+            "method": "DELETE",
+            "sortNum": 180000,
+            "created": "2024-05-09T20:23:31.607Z",
+            "modified": "2024-08-22T23:37:41.029Z",
+            "headers": []
+        },
+        {
+            "_id": "a17ab2be-1062-48b8-962d-0a39ea7eb43d",
+            "colId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+            "containerId": "",
+            "name": "INSERCION DE 100 PRODUCTOS",
+            "url": "http://localhost:8080/api/products/mockingProducts",
+            "method": "GET",
+            "sortNum": 190000,
+            "created": "2024-06-30T14:52:42.341Z",
+            "modified": "2024-06-30T14:53:02.871Z",
+            "headers": []
+        },
+        {
+            "_id": "915b97ae-45ce-4be8-91fa-4aac2ef4f936",
+            "colId": "4815caf3-7251-4566-8cbb-f4991034b36b",
+            "containerId": "",
+            "name": "Modificar Producto desde la Base de datos ( Premiuim )",
+            "url": "http://localhost:8080/api/products/66c7ee5da700a410cac81247",
+            "method": "PUT",
+            "sortNum": 200000,
+            "created": "2024-07-29T22:07:08.505Z",
+            "modified": "2024-08-23T02:06:04.086Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": " {\n    \"title\": \"Clarinete\",\n    \"description\": \"incluye boquilla y estuche.\",\n    \"price\": 3800,\n    \"stock\": 8,\n    \"code\": \"mus10\",\n    \"category\": \"Instrumentos Musicales\",\n    \"status\": true,\n    \"thumbnail\": \"https://i.ibb.co/9ZdhM45/clarinete.jpg\"\n  }",
+                "form": []
+            }
+        }
+    ],
+    "settings": {
+        "docs": "# End Points de Productos"
+    },
+    "ref": "ltOnLlZaMbyTaUfeUy7XbFzTbGHfUaEgVhdlc7dIwUS3AGZTwXR05EFCX3Ycri9Ek6Qw73kYMKoJXBo12jh2Lg"
+}

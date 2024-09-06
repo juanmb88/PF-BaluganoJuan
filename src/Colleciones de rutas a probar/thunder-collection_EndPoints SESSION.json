@@ -1,0 +1,112 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "EndPoints de SESSION",
+    "collectionId": "d8c501b3-37be-413a-a59f-ecaa7fc59a74",
+    "dateExported": "2024-08-23T10:38:59.343Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "417e911c-6bde-4ffc-9729-023977af2469",
+            "colId": "d8c501b3-37be-413a-a59f-ecaa7fc59a74",
+            "containerId": "",
+            "name": "LOGIN DE USUARIO",
+            "url": "http://localhost:8080/api/sessions/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-15T00:58:28.490Z",
+            "modified": "2024-08-23T10:31:42.731Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjYyMWRlNmVjOWYxNzVkNjFjNjhlZTAiLCJmaXJzdF9uYW1lIjoibGlsaSIsImxhc3RfbmFtZSI6IlBlcmV6IiwiZW1haWwiOiJsaWxpQGxpbGkiLCJhZ2UiOjI5LCJjYXJyaXRvIjp7Il9pZCI6IjY2NjIxZGU2ZWM5ZjE3NWQ2MWM2OGVkZSIsInByb2R1Y3RzIjpbeyJwcm9kdWN0IjoiNjYzODA0Njk5ODRiNjI0ZTFhZTBmZWY0IiwicXVhbnRpdHkiOjEsIl9pZCI6IjY2NjIyNGMzYjQxOGEyYTZjMWY3OTk3MCJ9LHsicHJvZHVjdCI6IjY2MzdmNDBmODMyYjhiNzEyZDU2M2UwMyIsInF1YW50aXR5IjozLCJfaWQiOiI2NjYyMjRjNmI0MThhMmE2YzFmNzk5NzUifSx7InByb2R1Y3QiOiI2NjM3ZjJmYzgzMmI4YjcxMmQ1NjNkZWIiLCJxdWFudGl0eSI6NSwiX2lkIjoiNjY2MjI2OWViNDE4YTJhNmMxZjc5OThkIn0seyJwcm9kdWN0IjoiNjYzN2YyMmM2M2Q5MmVhNDlkMGFlMmMyIiwicXVhbnRpdHkiOjEsIl9pZCI6IjY2NjIyNmEwYjQxOGEyYTZjMWY3OTk5NCJ9LHsicHJvZHVjdCI6IjY2MzdmMzBmODMyYjhiNzEyZDU2M2RlZiIsInF1YW50aXR5IjoyLCJfaWQiOiI2NjZiNjcyMTcwMTEzM2U0Y2UyYjk4NjcifV0sImNyZWF0ZWRBdCI6IjIwMjQtMDYtMDZUMjA6MzY6NTQuNDY2WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDYtMTVUMjM6MzM6MTkuNjYwWiIsIl9fdiI6MH0sInJvbGUiOiJ1c2VyIiwiX192IjowLCJpYXQiOjE3MTg2MzI0MjIsImV4cCI6MTcxODYzNjAyMn0.LEdmah-SgmXRJiQBJ8nQCuWBKCUmkxTmx9tFE036Sq4"
+                },
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"email\":\"lili@lili\",\r\n  \"password\" : \"lili\"\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "7a5bdc31-c80b-4ad4-82c1-748204e18f6b",
+            "colId": "d8c501b3-37be-413a-a59f-ecaa7fc59a74",
+            "containerId": "",
+            "name": "REGISTRO DE USUARIO",
+            "url": "http://localhost:8080/api/sessions/register",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-05-15T23:57:50.171Z",
+            "modified": "2024-08-23T00:34:11.348Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \"first_name\":\"juan\", \r\n\"last_name\":\"Balugano\",\r\n\"email\":\"juanbalugano@gmail.com\",\r\n\"age\": 22 ,\r\n \"password\":\"111\"\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "6460c6f0-4479-441e-b0bf-7398b64d0036",
+            "colId": "d8c501b3-37be-413a-a59f-ecaa7fc59a74",
+            "containerId": "",
+            "name": "LOGOUT DE SESION",
+            "url": "http://localhost:8080/api/sessions/logout",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-05-16T00:06:57.235Z",
+            "modified": "2024-06-12T00:47:04.565Z",
+            "headers": []
+        },
+        {
+            "_id": "75cc1c20-2eaf-42f3-a9ab-49c8dc1fec56",
+            "colId": "d8c501b3-37be-413a-a59f-ecaa7fc59a74",
+            "containerId": "",
+            "name": " LOGIN CON TERCEROS  (GITHUB)",
+            "url": "http://localhost:8080/api/sessions/github",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-05-21T22:59:29.079Z",
+            "modified": "2024-05-22T21:19:03.906Z",
+            "headers": []
+        },
+        {
+            "_id": "982cdaf3-0f2e-4519-b1f3-b99b774e0f7d",
+            "colId": "d8c501b3-37be-413a-a59f-ecaa7fc59a74",
+            "containerId": "",
+            "name": "RUTA CURRENT DEVUELVE PERFIL USUARIO LOGUEADO",
+            "url": "http://localhost:8080/api/sessions/current",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-06-03T19:33:20.985Z",
+            "modified": "2024-06-03T19:34:30.313Z",
+            "headers": []
+        },
+        {
+            "_id": "9bcdbcc2-2883-47ae-8095-2ee1e2180505",
+            "colId": "d8c501b3-37be-413a-a59f-ecaa7fc59a74",
+            "containerId": "",
+            "name": "listar Todos los usuarios",
+            "url": "http://localhost:8080/api/sessions/",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-07-31T20:25:41.958Z",
+            "modified": "2024-07-31T20:27:46.524Z",
+            "headers": []
+        }
+    ],
+    "ref": "qQ7C0Xxq-j4Rvz5W_W7ih__8tomVevTmwBOTr1LisQbIkZqvc5SdwmRQcsWQn-L9VHlflYBMzGu64j30tUxZwg"
+}

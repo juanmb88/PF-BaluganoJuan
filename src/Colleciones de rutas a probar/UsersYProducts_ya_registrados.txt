@@ -1,0 +1,272 @@
+USUARIOS REGISTRADOS EN LA BD
+{
+  "email":"juanbalugano@gmail.com",
+  "password" : "111"
+}
+{
+  "email":"admincoder@coder.com",
+  "password" : "admin"
+}
+{
+  "email":"lili@lili",
+  "password" : "lili"
+}
+EJEMPLO DE REGISTRO DE USUARIO
+{ "first_name":"juan", 
+"last_name":"Balugano",
+"email":"juanbalugano@gmail.com",
+"age": 22 ,
+ "password":"111"
+}
+EJEMPLO DE CARGAR UN PRODUCTO 
+ {
+    "title": "Flauta Dulce",
+    "description": "Flauta dulce de plástico, ideal para principiantes.",
+    "price": 150,
+    "stock": 50,
+    "code": "mus04",
+    "category": "Instrumentos Musicales",
+    "status": true,
+    "thumbnail": "https://i.ibb.co/SNctqBx/fluta.jpg"
+  }
+PRODUCTOS REGISTRADOS EN LA BD  ( 20 AL MOMENTO DE LA ENTREGA )
+[{
+  "title": "mochila",
+  "description": "mochila escolar",
+  "price": 250,
+  "stock": 20,
+  "code": "moch20",
+  "category": "Escolar",
+  "status": true,
+  "owner": "lili@lili",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/Cv9QsZc/mochi.webp"
+},
+{
+  "title": "Collar de Perro",
+  "description": "Para perros hasta 30kg",
+  "price": 100,
+  "stock": 10,
+  "code": "PROD1234",
+  "category": "Indumentaria canina",
+  "status": true,
+  "owner": "lili@lili",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/V2qqcLX/collar-De-Perro.png"
+},
+{
+  "title": "estuche de geometría",
+  "description": "estuche completo de geometría",
+  "price": 350,
+  "stock": 20,
+  "code": "geo13",
+  "category": "Escolar",
+  "status": true,
+  "owner": "lili@lili",
+  "__v": 0,
+  "thumbnail": " https://i.ibb.co/s56qrmm/estuche-geometria.jpg"
+},
+{
+  "title": "grapadora",
+  "description": "grapadora metálica",
+  "price": 220,
+  "stock": 30,
+  "code": "grap12",
+  "category": "Papelería",
+  "status": true,
+  "owner": "lili@lili",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/m8SDYtS/engrapadora.jpg"
+},
+{
+  "title": "carpeta",
+  "description": "carpeta de cartón",
+  "price": 90,
+  "stock": 70,
+  "code": "carpeta11",
+  "category": "Papelería",
+  "status": true,
+  "owner": "lili@lili",
+  "__v": 0,
+  "thumbnail": " https://i.ibb.co/tDRDCN2/carpeta.jpg"
+},
+{
+  "title": "hojas A4",
+  "description": "paquete de 500 hojas A4",
+  "price": 550,
+  "stock": 50,
+  "code": "hoja10",
+  "category": "Papelería",
+  "status": true,
+  "owner": "lili@lili",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/ccCgXNn/images.jpg"
+},
+{
+  "title": "Martillo de Carpintero",
+  "description": "Martillo de acero.",
+  "price": 1200,
+  "stock": 15,
+  "code": "carp01",
+  "category": "Carpintería",
+  "status": true,
+  "owner": "lili@lili",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/B4pWx9v/martillo.jpg"
+},
+{
+  "title": "Sierra de Mano",
+  "description": "dientes endurecidos",
+  "price": 850,
+  "stock": 25,
+  "code": "carp02",
+  "category": "Carpintería",
+  "status": true,
+  "owner": "admin",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/B6HmmTX/cierrademano.jpg"
+},
+{
+  "title": "Cincel para Madera",
+  "description": "Cincel de acero de alta calidad",
+  "price": 450,
+  "stock": 30,
+  "code": "carp03",
+  "category": "Carpintería",
+  "status": true,
+  "owner": "admin",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/vxHJS4V/cincel.jpg"
+},
+{
+  "title": "Sargentos de Carpintero",
+  "description": "Juego de sargentos para asegurar piezas de madera durante el trabajo.",
+  "price": 700,
+  "stock": 20,
+  "code": "carp04",
+  "category": "Carpintería",
+  "status": true,
+  "owner": "admin",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/DpRCDkC/sargento.jpg"
+},
+{
+  "title": "Escuadra de Carpintero",
+  "description": "para medir y marcar ángulos en madera.",
+  "price": 500,
+  "stock": 40,
+  "code": "carp05",
+  "category": "Carpintería",
+  "status": true,
+  "owner": "admin",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/GnwnGKH/escuadra.jpg"
+},
+{
+  "title": "Guitarra Acústica",
+  "description": "Guitarra acústica de madera con cuerdas de acero.",
+  "price": 3500,
+  "stock": 10,
+  "code": "mus01",
+  "category": "Instrumentos Musicales",
+  "status": true,
+  "owner": "admin",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/FnWy1H3/guitarra.jpg"
+},
+{
+  "title": "Teclado Eléctrico",
+  "description": "Teclado eléctrico de 61 teclas con diferentes efectos de sonido.",
+  "price": 4500,
+  "stock": 5,
+  "code": "mus02",
+  "category": "Instrumentos Musicales",
+  "status": true,
+  "owner": "admin",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/MVRtsSg/teclado.jpg"
+},
+{
+  "title": "Batería Completa",
+  "description": "Set completo de batería con platillos y pedales.",
+  "price": 8000,
+  "stock": 33,
+  "code": "mus03",
+  "category": "Instrumentos Musicales",
+  "status": true,
+  "owner": "admin",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/C1504yk/bata.jpg"
+},
+{
+  "title": "Ukulele",
+  "description": "Ukulele soprano de madera, ideal para principiantes.",
+  "price": 1200,
+  "stock": 15,
+  "code": "mus09",
+  "category": "Instrumentos Musicales",
+  "status": true,
+  "owner": "admin",
+  "__v": 0,
+  "thumbnail": "https://i.ibb.co/nP2z7br/ukelele.jpg"
+},
+{
+  "title": "Saxofón Alto",
+  "description": "Saxofón alto de latón dorado, incluye boquilla y estuche.",
+  "price": 7500,
+  "stock": 4,
+  "thumbnail": "https://i.ibb.co/p3dC57M/saxo.jpg",
+  "code": "mus06",
+  "category": "Instrumentos Musicales",
+  "status": true,
+  "owner": "admin",
+  "__v": 0
+},
+{
+  "title": "Trompeta",
+  "description": "Trompeta en Bb con acabado en latón dorado, incluye estuche.",
+  "price": 4200,
+  "stock": 5,
+  "thumbnail": "https://i.ibb.co/W2ZkcHs/trompeta.jpg",
+  "code": "mus08",
+  "category": "Instrumentos Musicales",
+  "status": true,
+  "owner": "admin",
+  "__v": 0
+},
+{
+  "title": "Violín",
+  "description": "Violín de madera para estudiantes, incluye estuche y arco.",
+  "price": 2500,
+  "stock": 7,
+  "thumbnail": "https://i.ibb.co/6NbJfkK/violin.jpg",
+  "code": "mus05",
+  "category": "Instrumentos Musicales",
+  "status": true,
+  "owner": "admin",
+  "__v": 0
+},
+{
+  "title": "Clarinete",
+  "description": "incluye boquilla y estuche.",
+  "price": 3800,
+  "stock": 8,
+  "thumbnail": "https://i.ibb.co/9ZdhM45/clarinete.jpg",
+  "code": "mus10",
+  "category": "Instrumentos Musicales",
+  "status": true,
+  "owner": "admin",
+  "__v": 0
+},
+{
+  "title": "Flauta Dulce",
+  "description": "Flauta dulce de plástico, ideal para principiantes.",
+  "price": 150,
+  "stock": 50,
+  "thumbnail": "https://i.ibb.co/SNctqBx/fluta.jpg",
+  "code": "mus04",
+  "category": "Instrumentos Musicales",
+  "status": true,
+  "owner": "admin",
+  "__v": 0
+}]

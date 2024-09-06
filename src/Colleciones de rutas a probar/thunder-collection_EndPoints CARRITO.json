@@ -1,0 +1,114 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "EndPoints CARRITO",
+    "collectionId": "52d9e83d-65b4-416d-a9bd-ee394933bbac",
+    "dateExported": "2024-08-23T10:38:50.078Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f77d1f03-2397-413b-a442-04852cd42fdf",
+            "colId": "52d9e83d-65b4-416d-a9bd-ee394933bbac",
+            "containerId": "",
+            "name": "TRAER CARRITO POR ID",
+            "url": "http://localhost:8080/api/carts/667df4fce16135a87bb44e43",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-05T21:06:54.260Z",
+            "modified": "2024-08-18T21:46:10.810Z",
+            "headers": []
+        },
+        {
+            "_id": "46dc321b-6433-4d08-88a4-f41d1aab9314",
+            "colId": "52d9e83d-65b4-416d-a9bd-ee394933bbac",
+            "containerId": "",
+            "name": "TRAER TODOS LOS CARRITOS",
+            "url": "http://localhost:8080/api/carts",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-06T23:40:09.816Z",
+            "modified": "2024-05-06T23:40:28.379Z",
+            "headers": []
+        },
+        {
+            "_id": "192ce6dd-994b-4688-9c86-4379c6c28f17",
+            "colId": "52d9e83d-65b4-416d-a9bd-ee394933bbac",
+            "containerId": "",
+            "name": "AGREGAR PRODUCTO A CARRITO",
+            "url": "http://localhost:8080/api/carts/667df4fce16135a87bb44e43/products/667f1b3a877f4172e11e00e0",
+            "method": "POST",
+            "sortNum": 75000,
+            "created": "2024-05-07T10:15:59.066Z",
+            "modified": "2024-08-18T21:46:39.916Z",
+            "headers": []
+        },
+        {
+            "_id": "4f0f6cc5-2287-4904-b4cf-94bd9049f99c",
+            "colId": "52d9e83d-65b4-416d-a9bd-ee394933bbac",
+            "containerId": "",
+            "name": "BORRAR CARRITO POR ID",
+            "url": "http://localhost:8080/api/carts/66bd0cbcdfe53d391cd9744e",
+            "method": "DELETE",
+            "sortNum": 105000,
+            "created": "2024-05-06T23:40:59.699Z",
+            "modified": "2024-08-15T10:37:50.596Z",
+            "headers": []
+        },
+        {
+            "_id": "cd1b9860-0441-4dc1-8f84-b89b0e6f09c5",
+            "colId": "52d9e83d-65b4-416d-a9bd-ee394933bbac",
+            "containerId": "",
+            "name": "Borrar  Producto Por Unidad del carriito",
+            "url": "http://localhost:8080/api/carts/667df4fce16135a87bb44e43/products/66806d4017f0cfa2181474e1",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2024-05-08T23:39:11.554Z",
+            "modified": "2024-08-21T21:06:18.478Z",
+            "headers": []
+        },
+        {
+            "_id": "0f07a5b9-d554-4e6f-83f5-82a7d472d268",
+            "colId": "52d9e83d-65b4-416d-a9bd-ee394933bbac",
+            "containerId": "",
+            "name": "FINALIZAR COMPRA CARRITO",
+            "url": "localhost:8080/api/carts/667df4fce16135a87bb44e43/purchase",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2024-06-17T13:51:29.511Z",
+            "modified": "2024-08-17T00:48:16.614Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "\"application/json\""
+                },
+                {
+                    "name": "Authorization",
+                    "value": "bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjYyMWUwOGVjOWYxNzVkNjFjNjhlZTUiLCJmaXJzdF9uYW1lIjoianVhbiIsImxhc3RfbmFtZSI6IkRvbWluZ3VleiIsImVtYWlsIjoianVhbkBqdWFuIiwiYWdlIjoyOCwiY2Fycml0byI6eyJfaWQiOiI2NjYyMWUwOGVjOWYxNzVkNjFjNjhlZTMiLCJwcm9kdWN0cyI6W10sImNyZWF0ZWRBdCI6IjIwMjQtMDYtMDZUMjA6Mzc6MjguMDk3WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDYtMDZUMjA6Mzc6MjguMDk3WiIsIl9fdiI6MH0sInJvbGUiOiJ1c2VyIiwiX192IjowLCJpYXQiOjE3MTg2NjIyODgsImV4cCI6MTcxODY2NTg4OH0.4KA6EnSEA2a3QWQC8XbDGkZSb1znW-hLk902RQRQUp8"
+                },
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ]
+        },
+        {
+            "_id": "3c1433d9-54a7-4544-8146-7194c585bffa",
+            "colId": "52d9e83d-65b4-416d-a9bd-ee394933bbac",
+            "containerId": "",
+            "name": "Crea carrito",
+            "url": "http://localhost:8080/api/carts",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2024-08-05T00:16:46.295Z",
+            "modified": "2024-08-05T00:16:54.668Z",
+            "headers": []
+        }
+    ],
+    "ref": "lih4n7CX2FwAHPRmi7PYjflwIWicZOjxt_G_LZVmDALMrSSMDhafK09zD8ES1jNUHtSdneFgEtJzesMgnd_LFQ"
+}

@@ -2059,3 +2059,185 @@
 {"category":"Categoría de ejemplo","code":"PROD1724382590177","description":"Descripción del producto de ejemplo","level":"info","message":"Datos del nuevo producto0o0o0:","owner":"admin","price":100,"stock":10,"timestamp":"2024-08-23T03:09:50.417Z","title":"Producto de ejemplo simple"}
 {"level":"warn","message":"ID de producto inválido","pid":"1234","timestamp":"2024-08-23T03:09:51.637Z"}
 {"level":"info","message":"Carrito con ID 66c7fd7aec297a083494fa72 eliminado correctamente","timestamp":"2024-08-23T03:09:53.933Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-23T10:22:39.366Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-23T10:22:48.456Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-23T10:22:51.826Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-23T10:24:25.573Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario admincoder@coder.com","timestamp":"2024-08-23T10:25:32.092Z"}
+{"level":"info","message":"Usuario admincoder@coder.com autenticado con éxito","timestamp":"2024-08-23T10:25:32.669Z"}
+{"level":"warn","message":"ya existe un usuario registrado con estos datos.","timestamp":"2024-08-23T10:25:33.276Z"}
+{"level":"info","message":"se cerro sesion de: admincoder@coder.com admin","timestamp":"2024-08-23T10:25:33.564Z"}
+{"level":"info","message":"LA SESION HA SIDO CERRADA.","timestamp":"2024-08-23T10:25:33.565Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-23T10:25:33.570Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario admincoder@coder.com","timestamp":"2024-08-23T10:26:00.442Z"}
+{"level":"info","message":"Usuario admincoder@coder.com autenticado con éxito","timestamp":"2024-08-23T10:26:01.100Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-23T10:26:09.996Z","usuario":"admincoder@coder.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-23T10:26:10.295Z","usuario":"admincoder@coder.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-23T10:26:10.585Z","usuario":"admincoder@coder.com"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-23T10:26:10.864Z","usuario":"admincoder@coder.com"}
+{"level":"warn","message":"Ya existe un producto con el mismo título","timestamp":"2024-08-23T10:26:11.140Z","title":"Flauta Dulce"}
+{"level":"error","message":"Error al intentar buscar producto por título: Flauta Dulce: Ya hay un producto igual","timestamp":"2024-08-23T10:26:11.143Z"}
+{"level":"info","message":"Iniciando generación de productos simulados","timestamp":"2024-08-23T10:26:11.460Z"}
+{"level":"error","message":"Error al intentar obtener el carrito con ID 667df4fce16135a87bb44e43","timestamp":"2024-08-23T10:26:22.582Z"}
+{"level":"error","message":"Carrito inexistente: id 667df4fce16135a87bb44e43","timestamp":"2024-08-23T10:26:23.182Z"}
+{"level":"warn","message":"Carrito no encontrado: ID 66bd0cbcdfe53d391cd9744e","timestamp":"2024-08-23T10:26:23.457Z"}
+{"level":"warn","message":"El carrito con ID 667df4fce16135a87bb44e43 está vacío. No hay productos para borrar.","timestamp":"2024-08-23T10:26:23.727Z"}
+{"level":"warn","message":"Carrito no encontrado: id=667df4fce16135a87bb44e43","timestamp":"2024-08-23T10:26:24.003Z"}
+{"level":"info","message":"Nuevo carrito creado: 66c863d05ea8a0806478316d","timestamp":"2024-08-23T10:26:24.288Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario juanbalugano@gmail.com","timestamp":"2024-08-23T10:31:34.887Z"}
+{"level":"info","message":"Usuario juanbalugano@gmail.com autenticado con éxito","timestamp":"2024-08-23T10:31:35.463Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-08-23T10:31:41.883Z"}
+{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-08-23T10:31:42.452Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-30T10:33:13.868Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-30T10:33:23.288Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-08-30T10:33:57.032Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-08-30T10:34:09.412Z"}
+{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-08-30T10:34:10.059Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-30T10:34:10.850Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-30T10:34:15.600Z","usuario":"lili@lili"}
+{"level":"info","message":"Producto añadido al carrito: 66c7e5f1301cfedea1b2dd24","timestamp":"2024-08-30T10:34:21.014Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-30T10:34:23.324Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-08-30T10:34:24.373Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-30T10:34:24.373Z"}
+{"level":"info","message":"Cantidad del producto con ID 66c7e5f1301cfedea1b2dd24 reducida en el carrito con ID 66c7d8c0301cfedea1b2dc92","timestamp":"2024-08-30T10:34:32.571Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-30T10:34:33.600Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-08-30T10:34:33.860Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":0,"timestamp":"2024-08-30T10:34:33.860Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-30T10:34:36.794Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-08-30T10:34:39.089Z","usuario":"lili@lili"}
+{"level":"info","message":"Producto añadido al carrito: 66c7e5f1301cfedea1b2dd24","timestamp":"2024-08-30T10:34:40.887Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-30T10:34:43.753Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-08-30T10:34:44.247Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-30T10:34:44.248Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario admincoder@coder.com","timestamp":"2024-08-30T10:41:10.516Z"}
+{"level":"info","message":"Usuario admincoder@coder.com autenticado con éxito","timestamp":"2024-08-30T10:41:11.054Z"}
+{"level":"info","message":"Nuevo carrito creado: 66d1a1c72ba7624e0f376b6c","timestamp":"2024-08-30T10:41:11.558Z"}
+{"level":"info","message":"Nuevo carrito creado: 66d1a1c82ba7624e0f376b70","timestamp":"2024-08-30T10:41:12.297Z"}
+{"level":"info","message":"Producto añadido al carrito: 66c7d92c301cfedea1b2dcac","timestamp":"2024-08-30T10:41:12.793Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario admincoder@coder.com","timestamp":"2024-08-30T10:41:13.522Z"}
+{"level":"info","message":"Usuario admincoder@coder.com autenticado con éxito","timestamp":"2024-08-30T10:41:14.052Z"}
+{"category":"Categoría de ejemplo","code":"PROD1725014474557","description":"Descripción del producto de ejemplo","level":"info","message":"Datos del nuevo producto0o0o0:","owner":"admin","price":100,"stock":10,"timestamp":"2024-08-30T10:41:14.803Z","title":"Producto de ejemplo simple"}
+{"level":"warn","message":"ID de producto inválido","pid":"1234","timestamp":"2024-08-30T10:41:16.040Z"}
+{"level":"info","message":"Carrito con ID 66d1a1c72ba7624e0f376b6c eliminado correctamente","timestamp":"2024-08-30T10:41:18.271Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-08-30T10:42:27.203Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-08-30T10:42:27.687Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-08-30T10:42:27.688Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-08-30T10:44:42.546Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-08-30T10:44:44.903Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-09-02T22:45:20.684Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-09-02T22:45:23.247Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-09-02T23:26:25.928Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-09-02T23:26:37.955Z"}
+{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-09-02T23:26:38.540Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-02T23:26:39.102Z","usuario":"lili@lili"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lili@lili","timestamp":"2024-09-02T23:26:46.879Z"}
+{"level":"info","message":"Usuarios inactivos eliminados.","timestamp":"2024-09-02T23:26:50.012Z"}
+{"level":"info","message":"Acceso autorizado para usuario con rol: premium","timestamp":"2024-09-02T23:26:50.013Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-02T23:28:42.233Z","usuario":"lili@lili"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-09-02T23:28:43.807Z"}
+{"level":"info","message":"se cerro sesion de: lili rodriguez","timestamp":"2024-09-02T23:28:44.088Z"}
+{"level":"info","message":"LA SESION HA SIDO CERRADA.","timestamp":"2024-09-02T23:28:44.089Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-09-02T23:28:44.847Z"}
+{"level":"info","message":"Nuevo usuario registrado: lolo@lolo","timestamp":"2024-09-02T23:29:04.865Z"}
+{"level":"info","message":"Correo de bienvenida enviado exitosamente","resultado":{"accepted":["juanbalugano@gmail.com"],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelope":{"from":"juanbalugano@gmail.com","to":["juanbalugano@gmail.com"]},"envelopeTime":617,"messageId":"<4b0caee9-3c46-021b-0003-6bb7c3e66603@gmail.com>","messageSize":1286,"messageTime":675,"rejected":[],"response":"250 2.0.0 OK  1725319746 d9443c01a7336-205152b11dbsm70603865ad.50 - gsmtp"},"timestamp":"2024-09-02T23:29:07.143Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-09-02T23:29:07.148Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lolo@lolo","timestamp":"2024-09-02T23:29:13.393Z"}
+{"level":"info","message":"Usuario lolo@lolo autenticado con éxito","timestamp":"2024-09-02T23:29:13.993Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-02T23:29:14.531Z","usuario":"lolo@lolo"}
+{"level":"info","message":"Usuarios inactivos eliminados.","timestamp":"2024-09-02T23:29:17.245Z"}
+{"level":"warn","message":"Acceso denegado por rol insuficiente: user","timestamp":"2024-09-02T23:29:17.245Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-09-06T00:10:39.794Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-09-06T00:10:42.408Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-09-06T00:10:44.089Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lili@lili","timestamp":"2024-09-06T00:10:50.812Z"}
+{"level":"info","message":"Usuario lili@lili autenticado con éxito","timestamp":"2024-09-06T00:10:51.418Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:10:51.978Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:10:59.442Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:11:03.209Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:11:06.395Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:11:09.851Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:11:14.025Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:11:20.768Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:11:22.570Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:11:25.065Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:11:52.828Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:11:56.823Z","usuario":"lili@lili"}
+{"level":"info","message":"Producto añadido al carrito: 66c7ed5ba700a410cac81228","timestamp":"2024-09-06T00:12:00.777Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:12:03.100Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:12:03.615Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-09-06T00:12:03.616Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-09-06T00:13:13.306Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:13:14.925Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-09-06T00:13:15.833Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:13:17.169Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":2,"timestamp":"2024-09-06T00:13:17.170Z"}
+{"level":"info","message":"Cantidad del producto con ID 66c7ed5ba700a410cac81228 reducida en el carrito con ID 66c7d8c0301cfedea1b2dc92","timestamp":"2024-09-06T00:13:40.347Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:13:41.565Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:13:42.086Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-09-06T00:13:42.087Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:14:18.614Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:14:19.146Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-09-06T00:14:19.147Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-09-06T00:23:27.007Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-09-06T00:23:29.654Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:23:53.578Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:23:54.109Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-09-06T00:23:54.110Z"}
+{"level":"info","message":"Producto con stock suficiente añadido: id=66c7e5f1301cfedea1b2dd24, cantidad=1","timestamp":"2024-09-06T00:23:58.384Z"}
+{"level":"info","message":"Productos para facturar: [{\"product\":{\"_id\":\"66c7e5f1301cfedea1b2dd24\",\"title\":\"Sierra de Mano\",\"description\":\"dientes endurecidos\",\"price\":850,\"stock\":25,\"code\":\"carp02\",\"category\":\"Carpintería\",\"status\":true,\"owner\":\"admin\",\"__v\":0,\"thumbnail\":\"https://i.ibb.co/B6HmmTX/cierrademano.jpg\"},\"quantity\":1,\"_id\":\"66d1a0402ba7624e0f376b61\"}]","timestamp":"2024-09-06T00:23:58.385Z"}
+{"level":"info","message":"Productos sin stock restantes: []","timestamp":"2024-09-06T00:23:58.385Z"}
+{"level":"info","message":"Producto con stock suficiente añadido: id=66c7e5f1301cfedea1b2dd24, cantidad=1","timestamp":"2024-09-06T00:23:58.939Z"}
+{"level":"info","message":"Productos para facturar: [{\"product\":{\"_id\":\"66c7e5f1301cfedea1b2dd24\",\"title\":\"Sierra de Mano\",\"description\":\"dientes endurecidos\",\"price\":850,\"stock\":24,\"code\":\"carp02\",\"category\":\"Carpintería\",\"status\":true,\"owner\":\"admin\",\"__v\":0,\"thumbnail\":\"https://i.ibb.co/B6HmmTX/cierrademano.jpg\"},\"quantity\":1,\"_id\":\"66d1a0402ba7624e0f376b61\"}]","timestamp":"2024-09-06T00:23:58.939Z"}
+{"level":"info","message":"Productos sin stock restantes: []","timestamp":"2024-09-06T00:23:58.940Z"}
+{"level":"info","message":"Producto con stock suficiente añadido: id=66c7e5f1301cfedea1b2dd24, cantidad=1","timestamp":"2024-09-06T00:23:59.123Z"}
+{"level":"info","message":"Productos para facturar: [{\"product\":{\"_id\":\"66c7e5f1301cfedea1b2dd24\",\"title\":\"Sierra de Mano\",\"description\":\"dientes endurecidos\",\"price\":850,\"stock\":24,\"code\":\"carp02\",\"category\":\"Carpintería\",\"status\":true,\"owner\":\"admin\",\"__v\":0,\"thumbnail\":\"https://i.ibb.co/B6HmmTX/cierrademano.jpg\"},\"quantity\":1,\"_id\":\"66d1a0402ba7624e0f376b61\"}]","timestamp":"2024-09-06T00:23:59.124Z"}
+{"level":"info","message":"Productos sin stock restantes: []","timestamp":"2024-09-06T00:23:59.124Z"}
+{"level":"warn","message":"Compra abortada: no hay productos con stock suficiente","timestamp":"2024-09-06T00:23:59.916Z"}
+{"level":"info","message":"Correo de ticket de compra enviado exitosamente","resultado":{"accepted":["juanbalugano@gmail.com"],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelope":{"from":"juanbalugano@gmail.com","to":["juanbalugano@gmail.com"]},"envelopeTime":694,"messageId":"<12ab4e74-73bf-8171-4adf-e83b802112f8@gmail.com>","messageSize":399,"messageTime":639,"rejected":[],"response":"250 2.0.0 OK  1725582241 41be03b00d2f7-7d666fb3ee4sm526688a12.86 - gsmtp"},"timestamp":"2024-09-06T00:24:01.458Z"}
+{"level":"info","message":"Datos de compra: {\"purchaser\":\"lili@lili\",\"code\":46513,\"amount\":850,\"products\":[{\"product\":\"66c7e5f1301cfedea1b2dd24\",\"quantity\":1}],\"purchase_datetime\":1725582239210}","timestamp":"2024-09-06T00:24:01.459Z"}
+{"level":"info","message":"Correo de ticket de compra enviado exitosamente","resultado":{"accepted":["juanbalugano@gmail.com"],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelope":{"from":"juanbalugano@gmail.com","to":["juanbalugano@gmail.com"]},"envelopeTime":707,"messageId":"<f48bf3d0-9498-ff93-8c3f-76ce4cae1254@gmail.com>","messageSize":399,"messageTime":817,"rejected":[],"response":"250 2.0.0 OK  1725582241 41be03b00d2f7-7d4fbd8cc90sm3921262a12.30 - gsmtp"},"timestamp":"2024-09-06T00:24:01.644Z"}
+{"level":"info","message":"Datos de compra: {\"purchaser\":\"lili@lili\",\"code\":27758,\"amount\":850,\"products\":[{\"product\":\"66c7e5f1301cfedea1b2dd24\",\"quantity\":1}],\"purchase_datetime\":1725582238653}","timestamp":"2024-09-06T00:24:01.645Z"}
+{"level":"info","message":"Ticket creado: {\"code\":\"46513\",\"amount\":850,\"purchaser\":\"lili@lili\",\"products\":[{\"product\":\"66c7e5f1301cfedea1b2dd24\",\"quantity\":1}],\"_id\":\"66da4ba168c28b8b24a2a805\",\"purchase_dateTime\":\"2024-09-06T00:24:01.462Z\",\"createdAt\":\"2024-09-06T00:24:01.465Z\",\"updatedAt\":\"2024-09-06T00:24:01.465Z\",\"__v\":0}","timestamp":"2024-09-06T00:24:01.779Z"}
+{"level":"info","message":"Ticket creado: {\"code\":\"27758\",\"amount\":850,\"purchaser\":\"lili@lili\",\"products\":[{\"product\":\"66c7e5f1301cfedea1b2dd24\",\"quantity\":1}],\"_id\":\"66da4ba168c28b8b24a2a807\",\"purchase_dateTime\":\"2024-09-06T00:24:01.646Z\",\"createdAt\":\"2024-09-06T00:24:01.647Z\",\"updatedAt\":\"2024-09-06T00:24:01.647Z\",\"__v\":0}","timestamp":"2024-09-06T00:24:01.914Z"}
+{"level":"info","message":"Correo de ticket de compra enviado exitosamente","resultado":{"accepted":["juanbalugano@gmail.com"],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelope":{"from":"juanbalugano@gmail.com","to":["juanbalugano@gmail.com"]},"envelopeTime":719,"messageId":"<4d4ec4e2-11f7-35d3-6cf9-98499039f912@gmail.com>","messageSize":399,"messageTime":674,"rejected":[],"response":"250 2.0.0 OK  1725582242 d2e1a72fcca58-71778531da0sm3750925b3a.59 - gsmtp"},"timestamp":"2024-09-06T00:24:02.145Z"}
+{"level":"info","message":"Datos de compra: {\"purchaser\":\"lili@lili\",\"code\":85723,\"amount\":850,\"products\":[{\"product\":\"66c7e5f1301cfedea1b2dd24\",\"quantity\":1}],\"purchase_datetime\":1725582239396}","timestamp":"2024-09-06T00:24:02.146Z"}
+{"level":"info","message":"Ticket creado: {\"code\":\"85723\",\"amount\":850,\"purchaser\":\"lili@lili\",\"products\":[{\"product\":\"66c7e5f1301cfedea1b2dd24\",\"quantity\":1}],\"_id\":\"66da4ba268c28b8b24a2a809\",\"purchase_dateTime\":\"2024-09-06T00:24:02.147Z\",\"createdAt\":\"2024-09-06T00:24:02.147Z\",\"updatedAt\":\"2024-09-06T00:24:02.147Z\",\"__v\":0}","timestamp":"2024-09-06T00:24:02.404Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:24:14.480Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:24:14.733Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":0,"timestamp":"2024-09-06T00:24:14.733Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:24:34.020Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:24:50.682Z","usuario":"lili@lili"}
+{"level":"info","message":"Producto añadido al carrito: 66c7e6a5301cfedea1b2dd37","timestamp":"2024-09-06T00:24:57.155Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:24:59.859Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:25:00.393Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-09-06T00:25:00.394Z"}
+{"level":"info","message":"Cantidad del producto con ID 66c7e6a5301cfedea1b2dd37 reducida en el carrito con ID 66c7d8c0301cfedea1b2dc92","timestamp":"2024-09-06T00:25:03.401Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:25:04.783Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:25:05.050Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":0,"timestamp":"2024-09-06T00:25:05.050Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:25:07.568Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:25:09.834Z","usuario":"lili@lili"}
+{"level":"info","message":"Producto añadido al carrito: 66c7e6a5301cfedea1b2dd37","timestamp":"2024-09-06T00:25:12.262Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:25:15.087Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:25:15.605Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-09-06T00:25:15.606Z"}
+{"level":"info","message":"Producto con stock suficiente añadido: id=66c7e6a5301cfedea1b2dd37, cantidad=1","timestamp":"2024-09-06T00:25:18.346Z"}
+{"level":"info","message":"Productos para facturar: [{\"product\":{\"_id\":\"66c7e6a5301cfedea1b2dd37\",\"title\":\"Cincel para Madera\",\"description\":\"Cincel de acero de alta calidad\",\"price\":450,\"stock\":30,\"code\":\"carp03\",\"category\":\"Carpintería\",\"status\":true,\"owner\":\"admin\",\"__v\":0,\"thumbnail\":\"https://i.ibb.co/vxHJS4V/cincel.jpg\"},\"quantity\":1,\"_id\":\"66da4be868c28b8b24a2a82d\"}]","timestamp":"2024-09-06T00:25:18.346Z"}
+{"level":"info","message":"Productos sin stock restantes: []","timestamp":"2024-09-06T00:25:18.347Z"}
+{"level":"info","message":"Correo de ticket de compra enviado exitosamente","resultado":{"accepted":["juanbalugano@gmail.com"],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelope":{"from":"juanbalugano@gmail.com","to":["juanbalugano@gmail.com"]},"envelopeTime":522,"messageId":"<528a9139-388c-39cd-2823-b60ef558bd55@gmail.com>","messageSize":399,"messageTime":576,"rejected":[],"response":"250 2.0.0 OK  1725582321 41be03b00d2f7-7d4fbd85350sm3880346a12.10 - gsmtp"},"timestamp":"2024-09-06T00:25:20.909Z"}
+{"level":"info","message":"Datos de compra: {\"purchaser\":\"lili@lili\",\"code\":24640,\"amount\":450,\"products\":[{\"product\":\"66c7e6a5301cfedea1b2dd37\",\"quantity\":1}],\"purchase_datetime\":1725582318608}","timestamp":"2024-09-06T00:25:20.910Z"}
+{"level":"info","message":"Ticket creado: {\"code\":\"24640\",\"amount\":450,\"purchaser\":\"lili@lili\",\"products\":[{\"product\":\"66c7e6a5301cfedea1b2dd37\",\"quantity\":1}],\"_id\":\"66da4bf068c28b8b24a2a837\",\"purchase_dateTime\":\"2024-09-06T00:25:20.911Z\",\"createdAt\":\"2024-09-06T00:25:20.911Z\",\"updatedAt\":\"2024-09-06T00:25:20.911Z\",\"__v\":0}","timestamp":"2024-09-06T00:25:21.178Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:25:25.634Z","usuario":"lili@lili"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-09-06T00:25:28.168Z","usuario":"lili@lili"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-09-06T00:26:08.871Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-09-06T00:26:11.347Z"}
+{"level":"info","message":"Producto añadido al carrito: 66c7e6a5301cfedea1b2dd37","timestamp":"2024-09-06T00:26:12.681Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-09-06T00:26:15.038Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-09-06T00:26:15.580Z"}
+{"cid":"66c7d8c0301cfedea1b2dc92","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":1,"timestamp":"2024-09-06T00:26:15.580Z"}
+{"level":"info","message":"Producto con stock suficiente añadido: id=66c7e6a5301cfedea1b2dd37, cantidad=1","timestamp":"2024-09-06T00:26:21.640Z"}
+{"level":"info","message":"Productos para facturar: [{\"product\":{\"_id\":\"66c7e6a5301cfedea1b2dd37\",\"title\":\"Cincel para Madera\",\"description\":\"Cincel de acero de alta calidad\",\"price\":450,\"stock\":29,\"code\":\"carp03\",\"category\":\"Carpintería\",\"status\":true,\"owner\":\"admin\",\"__v\":0,\"thumbnail\":\"https://i.ibb.co/vxHJS4V/cincel.jpg\"},\"quantity\":1,\"_id\":\"66da4c249f0a0e058dbea1c0\"}]","timestamp":"2024-09-06T00:26:21.641Z"}
+{"level":"info","message":"Productos sin stock restantes: []","timestamp":"2024-09-06T00:26:21.641Z"}
+{"level":"info","message":"Correo de ticket de compra enviado exitosamente","resultado":{"accepted":["juanbalugano@gmail.com"],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelope":{"from":"juanbalugano@gmail.com","to":["juanbalugano@gmail.com"]},"envelopeTime":548,"messageId":"<9a5bb540-89e2-c0b3-16d5-9936bd3b1180@gmail.com>","messageSize":399,"messageTime":658,"rejected":[],"response":"250 2.0.0 OK  1725582383 41be03b00d2f7-7d50b6c8686sm1552679a12.6 - gsmtp"},"timestamp":"2024-09-06T00:26:23.854Z"}
+{"level":"info","message":"Datos de compra: {\"purchaser\":\"lili@lili\",\"code\":57204,\"amount\":450,\"products\":[{\"product\":\"66c7e6a5301cfedea1b2dd37\",\"quantity\":1}],\"purchase_datetime\":1725582381898}","timestamp":"2024-09-06T00:26:23.855Z"}
+{"level":"info","message":"Ticket creado: {\"code\":\"57204\",\"amount\":450,\"purchaser\":\"lili@lili\",\"products\":[{\"product\":\"66c7e6a5301cfedea1b2dd37\",\"quantity\":1}],\"_id\":\"66da4c2f9f0a0e058dbea1cb\",\"purchase_dateTime\":\"2024-09-06T00:26:23.857Z\",\"createdAt\":\"2024-09-06T00:26:23.860Z\",\"updatedAt\":\"2024-09-06T00:26:23.860Z\",\"__v\":0}","timestamp":"2024-09-06T00:26:24.137Z"}

@@ -1,0 +1,52 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "EndPoints Errores/Logger",
+    "collectionId": "f677b4e1-90c8-47f8-bb66-9a6294fecdf7",
+    "dateExported": "2024-08-23T10:39:03.759Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ca1986d0-6389-4f2d-8114-f167affe80a5",
+            "colId": "f677b4e1-90c8-47f8-bb66-9a6294fecdf7",
+            "containerId": "",
+            "name": "Error de agregar producto por titulo vacio",
+            "url": "http://localhost:8080/api/products",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-07-09T17:05:24.185Z",
+            "modified": "2024-07-17T18:39:31.466Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{    \"title\": \"silla\",\n      \"description\": \"A bateria\",\n      \"price\": 65,\n      \"stock\": 30,\n      \"thumbnail\": \"https://ibb.co/gjekxd\",\n      \"code\": \"as21asa\",\n      \"category\": \"herramientas\",\n      \"status\" : true}",
+                "form": []
+            }
+        },
+        {
+            "_id": "ecb6e749-f86f-4eeb-a501-8a168052b467",
+            "colId": "f677b4e1-90c8-47f8-bb66-9a6294fecdf7",
+            "containerId": "",
+            "name": "Error agregar producto por carrito inexistente",
+            "url": "http://localhost:8080/api/carts/66621de6ec9f175d61c68ede/products/6637f40f832b8b712d563e03",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-07-09T17:12:27.141Z",
+            "modified": "2024-07-09T17:12:44.568Z",
+            "headers": []
+        },
+        {
+            "_id": "3b85fabd-5578-4be0-8df3-b87c92c5c5c3",
+            "colId": "f677b4e1-90c8-47f8-bb66-9a6294fecdf7",
+            "containerId": "",
+            "name": "Error obtener carrito por id",
+            "url": "http://localhost:8080/api/carts/66b94573e9e5085442710249",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-07-09T19:13:41.830Z",
+            "modified": "2024-08-15T10:46:32.813Z",
+            "headers": []
+        }
+    ],
+    "ref": "Ewx2mqz8juLLzFMGc6y-AqA8-nuOY3d09A4nTvF_OAhwhvKCGQK0QDZ_mrzlZTK3sHoZ9PkMchp6i6LIwf0XwA"
+}
