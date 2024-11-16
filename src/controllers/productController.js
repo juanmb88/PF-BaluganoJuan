@@ -5,7 +5,7 @@ import { productoExistente, tituloObligatorioProduct } from "../utils/erroresPro
 import { logger } from "../helper/Logger.js";
 import { faker } from "@faker-js/faker";
 
-export class ProductController {
+export class productController {
 
     static getProduct = async (req, res) => {
         try {
