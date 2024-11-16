@@ -32,3 +32,5 @@
 {"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T14:24:27.342Z"}
 {"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T14:49:30.539Z"}
 {"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T14:49:32.944Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:11:46.348Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:11:48.933Z"}

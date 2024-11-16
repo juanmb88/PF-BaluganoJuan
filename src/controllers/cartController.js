@@ -6,7 +6,7 @@ import {sendTicketDeCompraEmail } from '../helper/nodeMailer.js';
 import { logger } from '../helper/Logger.js';
 
 
-export class CartController{
+export class cartController{
 
         static getAll = async (req, res) => {
         try {

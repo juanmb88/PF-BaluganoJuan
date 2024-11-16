@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { CartController } from "../controllers/CartController.js";
+import { cartController } from "../controllers/cartController.js";
 import  { authToken } from "../middleware/auth.js";
 
 export const router = Router();
 
-router.get("/", CartController.getAll);
-router.get("/:cid", CartController.getById);
-router.post("/", CartController.createNewCart);
-router.post('/:cid/products/:pid',authToken,  CartController.addProductToCart )
-router.delete("/:cid/products/:pid", CartController.deleteProductByCart );
-router.delete("/:cid", CartController.deleteCartById);
-router.put("/:cId/products/:pId", CartController.updateProduct);
-router.post("/:cid/purchase", authToken, CartController.purchase);
+router.get("/", cartController.getAll);
+router.get("/:cid", cartController.getById);
+router.post("/", cartController.createNewCart);
+router.post('/:cid/products/:pid',authToken,  cartController.addProductToCart )
+router.delete("/:cid/products/:pid", cartController.deleteProductByCart );
+router.delete("/:cid", cartController.deleteCartById);
+router.put("/:cId/products/:pId", cartController.updateProduct);
+router.post("/:cid/purchase", authToken, cartController.purchase);
