@@ -34,3 +34,75 @@
 {"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T14:49:32.944Z"}
 {"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:11:46.348Z"}
 {"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:11:48.933Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:15:41.698Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:15:44.283Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T15:17:35.452Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:19:17.685Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:19:20.147Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:19:38.507Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:19:41.016Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T15:19:46.714Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:20:22.882Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:20:25.397Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:20:48.910Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:20:51.456Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T15:20:52.109Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:21:12.953Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lolo@lolo","timestamp":"2024-11-16T15:21:14.122Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:21:15.531Z"}
+{"level":"info","message":"Usuario lolo@lolo autenticado con éxito","timestamp":"2024-11-16T15:21:16.972Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-11-16T15:21:17.535Z","usuario":"lolo@lolo"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:21:46.839Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lolo@lolo","timestamp":"2024-11-16T15:21:48.929Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:21:49.324Z"}
+{"level":"info","message":"Usuario lolo@lolo autenticado con éxito","timestamp":"2024-11-16T15:21:50.704Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:22:41.338Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:22:43.925Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-11-16T15:22:45.600Z","usuario":"lolo@lolo"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T15:22:50.700Z"}
+{"level":"info","message":"se cerro sesion de: lolo lolo","timestamp":"2024-11-16T15:22:50.940Z"}
+{"level":"info","message":"LA SESION HA SIDO CERRADA.","timestamp":"2024-11-16T15:22:50.942Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lolo@lolo","timestamp":"2024-11-16T15:22:54.638Z"}
+{"level":"info","message":"Usuario lolo@lolo autenticado con éxito","timestamp":"2024-11-16T15:22:55.185Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-11-16T15:22:55.716Z","usuario":"lolo@lolo"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T15:23:01.315Z"}
+{"level":"info","message":"se cerro sesion de: lolo lolo","timestamp":"2024-11-16T15:23:01.575Z"}
+{"level":"info","message":"LA SESION HA SIDO CERRADA.","timestamp":"2024-11-16T15:23:01.576Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-11-16T15:23:05.859Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T15:23:08.011Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-11-16T15:23:12.421Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T15:23:13.556Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T15:23:19.406Z"}
+{"level":"info","message":"Intento de inicio de sesión para el usuario lolo@lolo","timestamp":"2024-11-16T15:23:35.607Z"}
+{"level":"info","message":"Usuario lolo@lolo autenticado con éxito","timestamp":"2024-11-16T15:23:36.212Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-11-16T15:23:36.775Z","usuario":"lolo@lolo"}
+{"cid":"66d64a4031f90369cb50c65a","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-11-16T15:23:39.287Z"}
+{"cid":"66d64a4031f90369cb50c65a","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-11-16T15:23:39.551Z"}
+{"cid":"66d64a4031f90369cb50c65a","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":0,"timestamp":"2024-11-16T15:23:39.552Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:24:56.591Z"}
+{"cid":"66d64a4031f90369cb50c65a","level":"info","message":"Solicitud recibida para obtener carrito","timestamp":"2024-11-16T15:24:58.448Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:24:59.173Z"}
+{"cid":"66d64a4031f90369cb50c65a","level":"info","message":"ID del carrito que se pasa a la vista como string:","timestamp":"2024-11-16T15:24:59.461Z"}
+{"cid":"66d64a4031f90369cb50c65a","level":"info","message":"Carrito encontrado y productos obtenidos","productCount":0,"timestamp":"2024-11-16T15:24:59.462Z"}
+{"level":"warn","message":"Compra abortada: no hay productos con stock suficiente","timestamp":"2024-11-16T15:25:01.456Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-11-16T15:25:03.726Z","usuario":"lolo@lolo"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lolo@lolo","timestamp":"2024-11-16T15:27:48.007Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-11-16T15:27:52.007Z","usuario":"lolo@lolo"}
+{"level":"info","message":"Acceso a la ruta de perfil para el usuario lolo@lolo","timestamp":"2024-11-16T15:27:53.176Z"}
+{"level":"info","message":"Página de inicio cargada con éxito","timestamp":"2024-11-16T15:27:54.809Z","usuario":"lolo@lolo"}
+{"level":"info","message":"Usuarios inactivos eliminados.","timestamp":"2024-11-16T15:27:56.361Z"}
+{"level":"warn","message":"Acceso denegado por rol insuficiente: user","timestamp":"2024-11-16T15:27:56.362Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T15:29:13.310Z"}
+{"level":"info","message":"se cerro sesion de: lolo lolo","timestamp":"2024-11-16T15:29:13.553Z"}
+{"level":"info","message":"LA SESION HA SIDO CERRADA.","timestamp":"2024-11-16T15:29:13.554Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T15:44:13.066Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T15:44:15.651Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T16:03:52.299Z"}
+{"level":"info","message":"Server corriendo en http://localhost:8080","timestamp":"2024-11-16T16:05:19.976Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T16:05:20.117Z"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB","timestamp":"2024-11-16T16:05:22.554Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T16:05:23.958Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-11-16T16:05:26.147Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T16:05:26.940Z"}
+{"level":"info","message":"Acceso a la ruta de registro","timestamp":"2024-11-16T16:05:27.701Z"}
+{"level":"info","message":"Acceso a la ruta de login","timestamp":"2024-11-16T16:05:28.213Z"}

@@ -62,7 +62,7 @@ router.post("/login", passport.authenticate("login", { session: false, failureRe
         res.cookie("CookiePrueba", token, { httpOnly: true }); 
 
          if (web) {
-         return  res.redirect("/");
+         return  res.redirect("/menuPrincipal");
         } else { 
             res.setHeader('Content-Type', 'application/json');
             return res.status(200).json({ payload: "Login correcto", usuario, token });

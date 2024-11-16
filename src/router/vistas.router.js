@@ -15,7 +15,7 @@ router.get('/realTimeproducts', passport.authenticate('current', { session: fals
     res.status(200).render('realTimeProducts');
 });
 
-router.get('/',passport.authenticate("current", {session : false}), async (req, res) => {
+router.get('/menuPrincipal',passport.authenticate("current", {session : false}), async (req, res) => {
     try {
 
         
@@ -152,7 +152,7 @@ router.get('/register', (req, res) => {
     }
 });
     
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     try {
         let { error, mensaje } = req.query;
         logger.info('Acceso a la ruta de login');
