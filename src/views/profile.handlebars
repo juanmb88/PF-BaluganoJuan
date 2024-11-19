@@ -1,5 +1,4 @@
 {{>menu}}
-<input type="hidden" value="{{this.carrito._id}}" id="inputCarrito">
 
 <h2 class="text-black text-center m-4">Datos del Usuario :  {{usuario.first_name}}</h2>
 <div class="d-flex justify-content-center fw-bolder bg-light">
@@ -13,10 +12,8 @@
 
 <div class="container mt-5">
   <h2>Subir Documentos</h2>
-<input type="hidden" value="{{this.carrito._id}}"  id="inputCarrito">
 
   <form action="/users/{{usuario._id}}/documents" method="POST" enctype="multipart/form-data">
-    <p>ID usuario: {{usuario._id}}</p>
 
     <div class="mb-3">
       <label for="identificacion" class="form-label">Subir Identificación</label>

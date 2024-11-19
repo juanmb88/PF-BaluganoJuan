@@ -62,7 +62,7 @@ router.post("/login", passport.authenticate("login", { session: false, failureRe
         res.cookie("CookiePrueba", token, { httpOnly: true }); 
 
          if (web) {
-         return  res.redirect("/menuPrincipal");
+         return  res.redirect("/");
         } else { 
             res.setHeader('Content-Type', 'application/json');
             return res.status(200).json({ payload: "Login correcto", usuario, token });
@@ -72,7 +72,7 @@ router.post("/login", passport.authenticate("login", { session: false, failureRe
     }
 });
 
-router.get('/', async (req, res) => {
+/* router.get('/', async (req, res) => {
     try {
         const users = await usersManager.getAllUsers();
         res.status(200).json(users);
@@ -80,7 +80,7 @@ router.get('/', async (req, res) => {
         console.error('Error en GET "/":', error);
         res.status(500).json({ message: 'Error al obtener los usuarios', error: error.message });
     }
-});
+}); */
 
 router.get('/github', passport.authenticate('github', { session: false, scope: ['user:email'] }))
 

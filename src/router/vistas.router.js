@@ -15,7 +15,7 @@ router.get('/realTimeproducts', passport.authenticate('current', { session: fals
     res.status(200).render('realTimeProducts');
 });
 
-router.get('/menuPrincipal',passport.authenticate("current", {session : false}), async (req, res) => {
+router.get('/',passport.authenticate("current", {session : false}), async (req, res) => {
     try {
 
         
@@ -152,7 +152,7 @@ router.get('/register', (req, res) => {
     }
 });
     
-router.get('/', (req, res) => {
+router.get('/login', (req, res) => {
     try {
         let { error, mensaje } = req.query;
         logger.info('Acceso a la ruta de login');
@@ -166,9 +166,10 @@ router.get('/', (req, res) => {
 router.get('/profile', passportCall("current"), (req, res) => {
     try {
         const usuario = req.user;
+        const carrito = usuario.carrito;
         logger.info(`Acceso a la ruta de perfil para el usuario ${usuario.email}`);
         res.setHeader("Content-Type", "text/html");
-        res.status(200).render("profile", { usuario, login: usuario });
+        res.status(200).render("profile", { usuario, login: usuario, carrito });
     } catch (error) {
         logger.error('Error al renderizar la página de perfil', { error: error.message });
         res.status(500).send('Error interno del servidor');
