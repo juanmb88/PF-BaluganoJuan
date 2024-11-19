@@ -1,3 +1,4 @@
+## (Solo por motivos de esta entrega se incluyen archivos .env)
 ##  Comandos para iniciar proyecto desde terminal   
 
     git clone ( URL REPO )    
